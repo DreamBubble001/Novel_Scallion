@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en-us">
+<html dir="ltr" lang="en-us" data-scheme="light">
+
 <head>
 	<meta content="Hugo 0.133.0" name="generator">
 	<meta charset="utf-8">
@@ -21,12 +22,41 @@
 	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
+<style>
+body.dark {
+     background-color: #2c2c2c;
+     color: #e0e0e0;
+   }
+</style>
 	<script>
-	(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()
-	</script>
+		function toggle() {
+    var element = document.body;
+    element.classList.toggle("dark");
+}
+</script>
 	<script>
-	(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()
-	</script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script>
+	<script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
 	<div class="container main-container flex on-phone--column extended">
 		<aside class="sidebar left-sidebar sticky">
 			<button aria-label="Toggle Menu" class="hamburger hamburger--spin" id="toggle-menu" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
@@ -93,22 +123,32 @@
 					<span>友站連結(施工中)</span></a>
 				</li>
 				<li class="menu-bottom-section">
-					<ol class="menu">
-						<li id="dark-mode-toggle">
-							<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-							<path stroke="none" d="M0 0h24v24H0z"></path>
-							<circle cx="8" cy="12" r="2"></circle>
-							<rect x="2" y="6" width="20" height="12" rx="6"></rect>
-							</svg>
-							<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-							<path stroke="none" d="M0 0h24v24H0z"></path>
-							<circle cx="16" cy="12" r="2"></circle>
-							<rect x="2" y="6" width="20" height="12" rx="6"></rect>
-							</svg>
-							<span>Dark Mode</span>
-						</li>
-					</ol>
-				</li>
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"></path>
+  <circle cx="8" cy="12" r="2"></circle>
+  <rect x="2" y="6" width="20" height="12" rx="6"></rect>
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"></path>
+  <circle cx="16" cy="12" r="2"></circle>
+  <rect x="2" y="6" width="20" height="12" rx="6"></rect>
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+
+                
+            </ol>
+        </li>
 			</ol>
 		</aside>
 		<aside class="sidebar right-sidebar sticky">
@@ -373,5 +413,16 @@
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js">
 	</script>
-	<script defer src="/ts/main.js" type="text/javascript">
+	<script defer src="ts/main.js" type="text/javascript">
 	</script>
+	<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
