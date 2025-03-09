@@ -1,0 +1,1004 @@
+<!doctype html>
+<html lang=en-us dir=ltr>
+	<head>
+		<meta charset=utf-8>
+		<meta name=viewport content='width=device-width,initial-scale=1'>
+		<meta name=description content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
+		<title>萬鬼潛行夜遊園</title>
+
+		<link rel=canonical href=https://demo.stack.jimmycai.com/p/markdown-syntax-guide/> <link rel=stylesheet href=../../scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css> <meta property='og:title' content="Markdown Syntax Guide">
+		<meta property='og:site_name' content='青蔥小說-司南-萬鬼潛行夜遊園'>
+		<meta property='og:type' content='article'>
+		<meta property='article:section' content='Post'>
+		<meta property='article:tag' content='markdown'>
+		<meta property='article:tag' content='css'>
+		<meta property='article:tag' content='html'>
+		<meta property='article:tag' content='themes'>
+		<meta name=twitter:title content="青蔥小說-司南-萬鬼潛行夜遊園">
+		<link rel="shortcut icon" href=/favicon.png> </head> <body class=article-page>
+		<script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script>
+		<script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script>
+		<style>
+
+			.column-list {
+				display: flex;
+				justify-content: space-between;
+			}
+			
+			.column {
+				padding: 0 1em;
+			}
+			
+			.column:first-child {
+				padding-left: 0;
+			}
+			
+			.column:last-child {
+				padding-right: 0;
+			}
+			
+			.table_of_contents-item {
+				display: block;
+				font-size: 0.875rem;
+				line-height: 1.3;
+				padding: 0.125rem;
+			}
+			
+			.table_of_contents-indent-1 {
+				margin-left: 1.5rem;
+			}
+			
+			.table_of_contents-indent-2 {
+				margin-left: 3rem;
+			}
+			
+			.table_of_contents-indent-3 {
+				margin-left: 4.5rem;
+			}
+			
+			.table_of_contents-link {
+				text-decoration: none;
+				opacity: 0.7;
+				border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+			}
+			
+			table,
+			th,
+			td {
+				border: 1px solid rgba(55, 53, 47, 0.09);
+				border-collapse: collapse;
+			}
+			
+			table {
+				border-left: none;
+				border-right: none;
+			}
+			
+			th,
+			td {
+				font-weight: normal;
+				padding: 0.25em 0.5em;
+				line-height: 1.5;
+				min-height: 1.5em;
+				text-align: left;
+			}
+			
+			th {
+				color: rgba(55, 53, 47, 0.6);
+			}
+			
+			ol,
+			ul {
+				margin: 0;
+				margin-block-start: 0.6em;
+				margin-block-end: 0.6em;
+			}
+			
+			li > ol:first-child,
+			li > ul:first-child {
+				margin-block-start: 0.6em;
+			}
+			
+			ul > li {
+				list-style: disc;
+			}
+			
+			ul.to-do-list {
+				padding-inline-start: 0;
+			}
+			
+			ul.to-do-list > li {
+				list-style: none;
+			}
+			
+			.to-do-children-checked {
+				text-decoration: line-through;
+				opacity: 0.375;
+			}
+			
+			ul.toggle > li {
+				list-style: none;
+			}
+			
+			ul {
+				padding-inline-start: 1.7em;
+			}
+			
+			ul > li {
+				padding-left: 0.1em;
+			}
+			
+			ol {
+				padding-inline-start: 1.6em;
+			}
+			
+			ol > li {
+				padding-left: 0.2em;
+			}
+			
+			.mono ol {
+				padding-inline-start: 2em;
+			}
+			
+			.mono ol > li {
+				text-indent: -0.4em;
+			}
+			
+			.toggle {
+				padding-inline-start: 0em;
+				list-style-type: none;
+			}
+			
+			/* Indent toggle children */
+			.toggle > li > details {
+				padding-left: 1.7em;
+			}
+			
+			.toggle > li > details > summary {
+				margin-left: -1.1em;
+			}
+			
+			.selected-value {
+				display: inline-block;
+				padding: 0 0.5em;
+				background: rgba(206, 205, 202, 0.5);
+				border-radius: 3px;
+				margin-right: 0.5em;
+				margin-top: 0.3em;
+				margin-bottom: 0.3em;
+				white-space: nowrap;
+			}
+			
+			.collection-title {
+				display: inline-block;
+				margin-right: 1em;
+			}
+			
+			.page-description {
+			    margin-bottom: 2em;
+			}
+			
+			.simple-table {
+				margin-top: 1em;
+				font-size: 0.875rem;
+				empty-cells: show;
+			}
+			.simple-table td {
+				height: 29px;
+				min-width: 120px;
+			}
+			
+			.simple-table th {
+				height: 29px;
+				min-width: 120px;
+			}
+			
+			.simple-table-header-color {
+				background: rgb(247, 246, 243);
+				color: black;
+			}
+			.simple-table-header {
+				font-weight: 500;
+			}
+			
+			time {
+				opacity: 0.5;
+			}
+			
+			.icon {
+				display: inline-block;
+				max-width: 1.2em;
+				max-height: 1.2em;
+				text-decoration: none;
+				vertical-align: text-bottom;
+				margin-right: 0.5em;
+			}
+			
+			img.icon {
+				border-radius: 3px;
+			}
+			
+			.user-icon {
+				width: 1.5em;
+				height: 1.5em;
+				border-radius: 100%;
+				margin-right: 0.5rem;
+			}
+			
+			.user-icon-inner {
+				font-size: 0.8em;
+			}
+			
+			.text-icon {
+				border: 1px solid #000;
+				text-align: center;
+			}
+			
+			.page-cover-image {
+				display: block;
+				object-fit: cover;
+				width: 100%;
+				max-height: 30vh;
+			}
+			
+			.page-header-icon {
+				font-size: 3rem;
+				margin-bottom: 1rem;
+			}
+			
+			.page-header-icon-with-cover {
+				margin-top: -0.72em;
+				margin-left: 0.07em;
+			}
+			
+			.page-header-icon img {
+				border-radius: 3px;
+			}
+			
+			.link-to-page {
+				margin: 1em 0;
+				padding: 0;
+				border: none;
+				font-weight: 500;
+			}
+			
+			p > .user {
+				opacity: 0.5;
+			}
+			
+			td > .user,
+			td > time {
+				white-space: nowrap;
+			}
+			
+			input[type="checkbox"] {
+				transform: scale(1.5);
+				margin-right: 0.6em;
+				vertical-align: middle;
+			}
+			
+			p {
+				margin-top: 0.5em;
+				margin-bottom: 0.5em;
+			}
+			
+			.image {
+				border: none;
+				margin: 1.5em 0;
+				padding: 0;
+				border-radius: 0;
+				text-align: center;
+			}
+			
+			.code,
+			code {
+				background: rgba(135, 131, 120, 0.15);
+				border-radius: 3px;
+				padding: 0.2em 0.4em;
+				border-radius: 3px;
+				font-size: 85%;
+				tab-size: 2;
+			}
+			
+			code {
+				color: #eb5757;
+			}
+			
+			.code {
+				padding: 1.5em 1em;
+			}
+			
+			.code-wrap {
+				white-space: pre-wrap;
+				word-break: break-all;
+			}
+			
+			.code > code {
+				background: none;
+				padding: 0;
+				font-size: 100%;
+				color: inherit;
+			}
+			
+			blockquote {
+				font-size: 1.25em;
+				margin: 1em 0;
+				padding-left: 1em;
+				border-left: 3px solid rgb(55, 53, 47);
+			}
+			
+			.bookmark {
+				text-decoration: none;
+				max-height: 8em;
+				padding: 0;
+				display: flex;
+				width: 100%;
+				align-items: stretch;
+			}
+			
+			.bookmark-title {
+				font-size: 0.85em;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				height: 1.75em;
+				white-space: nowrap;
+			}
+			
+			.bookmark-text {
+				display: flex;
+				flex-direction: column;
+			}
+			
+			.bookmark-info {
+				flex: 4 1 180px;
+				padding: 12px 14px 14px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+			
+			.bookmark-image {
+				width: 33%;
+				flex: 1 1 180px;
+				display: block;
+				position: relative;
+				object-fit: cover;
+				border-radius: 1px;
+			}
+			
+			.bookmark-description {
+				color: rgba(55, 53, 47, 0.6);
+				font-size: 0.75em;
+				overflow: hidden;
+				max-height: 4.5em;
+				word-break: break-word;
+			}
+			
+			.bookmark-href {
+				font-size: 0.75em;
+				margin-top: 0.25em;
+			}
+			
+			.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+			.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+			.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+			.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+			.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+			.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+			.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+			.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+			.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+			.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+			.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+			.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+			.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+			.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+			.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+			.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+			.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+			.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+			.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+			.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+			.highlight-default {
+				color: rgba(55, 53, 47, 1);
+			}
+			.highlight-gray {
+				color: rgba(120, 119, 116, 1);
+				fill: rgba(120, 119, 116, 1);
+			}
+			.highlight-brown {
+				color: rgba(159, 107, 83, 1);
+				fill: rgba(159, 107, 83, 1);
+			}
+			.highlight-orange {
+				color: rgba(217, 115, 13, 1);
+				fill: rgba(217, 115, 13, 1);
+			}
+			.highlight-yellow {
+				color: rgba(203, 145, 47, 1);
+				fill: rgba(203, 145, 47, 1);
+			}
+			.highlight-teal {
+				color: rgba(68, 131, 97, 1);
+				fill: rgba(68, 131, 97, 1);
+			}
+			.highlight-blue {
+				color: rgba(51, 126, 169, 1);
+				fill: rgba(51, 126, 169, 1);
+			}
+			.highlight-purple {
+				color: rgba(144, 101, 176, 1);
+				fill: rgba(144, 101, 176, 1);
+			}
+			.highlight-pink {
+				color: rgba(193, 76, 138, 1);
+				fill: rgba(193, 76, 138, 1);
+			}
+			.highlight-red {
+				color: rgba(212, 76, 71, 1);
+				fill: rgba(212, 76, 71, 1);
+			}
+			.highlight-default_background {
+				color: rgba(55, 53, 47, 1);
+			}
+			.highlight-gray_background {
+				background: rgba(241, 241, 239, 1);
+			}
+			.highlight-brown_background {
+				background: rgba(244, 238, 238, 1);
+			}
+			.highlight-orange_background {
+				background: rgba(251, 236, 221, 1);
+			}
+			.highlight-yellow_background {
+				background: rgba(251, 237, 214, 1);
+			}
+			.highlight-teal_background {
+				background: rgba(237, 243, 236, 1);
+			}
+			.highlight-blue_background {
+				background: rgba(231, 243, 248, 1);
+			}
+			.highlight-purple_background {
+				background: rgba(244, 240, 247, 0.8);
+			}
+			.highlight-pink_background {
+				background: rgba(249, 238, 243, 0.8);
+			}
+			.highlight-red_background {
+				background: rgba(253, 235, 236, 1);
+			}
+			.block-color-default {
+				color: inherit;
+				fill: inherit;
+			}
+			.block-color-gray {
+				color: rgba(120, 119, 116, 1);
+				fill: rgba(120, 119, 116, 1);
+			}
+			.block-color-brown {
+				color: rgba(159, 107, 83, 1);
+				fill: rgba(159, 107, 83, 1);
+			}
+			.block-color-orange {
+				color: rgba(217, 115, 13, 1);
+				fill: rgba(217, 115, 13, 1);
+			}
+			.block-color-yellow {
+				color: rgba(203, 145, 47, 1);
+				fill: rgba(203, 145, 47, 1);
+			}
+			.block-color-teal {
+				color: rgba(68, 131, 97, 1);
+				fill: rgba(68, 131, 97, 1);
+			}
+			.block-color-blue {
+				color: rgba(51, 126, 169, 1);
+				fill: rgba(51, 126, 169, 1);
+			}
+			.block-color-purple {
+				color: rgba(144, 101, 176, 1);
+				fill: rgba(144, 101, 176, 1);
+			}
+			.block-color-pink {
+				color: rgba(193, 76, 138, 1);
+				fill: rgba(193, 76, 138, 1);
+			}
+			.block-color-red {
+				color: rgba(212, 76, 71, 1);
+				fill: rgba(212, 76, 71, 1);
+			}
+			.block-color-default_background {
+				color: inherit;
+				fill: inherit;
+			}
+			.block-color-gray_background {
+				background: rgba(241, 241, 239, 1);
+			}
+			.block-color-brown_background {
+				background: rgba(244, 238, 238, 1);
+			}
+			.block-color-orange_background {
+				background: rgba(251, 236, 221, 1);
+			}
+			.block-color-yellow_background {
+				background: rgba(251, 237, 214, 1);
+			}
+			.block-color-teal_background {
+				background: rgba(237, 243, 236, 1);
+			}
+			.block-color-blue_background {
+				background: rgba(231, 243, 248, 1);
+			}
+			.block-color-purple_background {
+				background: rgba(244, 240, 247, 0.8);
+			}
+			.block-color-pink_background {
+				background: rgba(249, 238, 243, 0.8);
+			}
+			.block-color-red_background {
+				background: rgba(253, 235, 236, 1);
+			}
+			.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+			.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+			.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+			.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+			.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+			.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+			.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+			.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+			.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+			.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+			.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+			.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+			.select-value-color-pageGlass { background-color: undefined; }
+			.select-value-color-washGlass { background-color: undefined; }
+			
+			.checkbox {
+				display: inline-flex;
+				vertical-align: text-bottom;
+				width: 16;
+				height: 16;
+				background-size: 16px;
+				margin-left: 2px;
+				margin-right: 5px;
+			}
+			
+			.checkbox-on {
+				background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+			}
+			
+			.checkbox-off {
+				background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+			}
+		</style>
+
+		<div class="container main-container flex on-phone--column extended">
+			<aside class="sidebar left-sidebar sticky">
+				<button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+					<span class=hamburger-box>
+						<span class=hamburger-inner></span>
+					</span>
+				</button>
+				<header>
+					<figure class=site-avatar>
+						<a href="../../index.html"/>
+						<img src=../../img/avatar_hu897059592634026878.png width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+						</a>
+						<span class=emoji>🍥</span>
+					</figure>
+					<div class=site-meta>
+						<h1 class=site-name>
+							<a href="../../index.html"/>青蔥小說</a>
+						</h1>
+						<h2 class=site-description>##</h2>
+					</div>
+				</header>
+				<!--<ol class=menu-social>
+					<li>
+						<a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank title=GitHub rel=me>
+							<svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+								<path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" />
+							</svg>
+						</a>
+					</li>
+					<li>
+						<a href=https://twitter.com target=_blank title=Twitter rel=me>
+							<svg class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+								<path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84.0 00.497-3.753C20.18 7.773 21.692 5.25 22 4.009z" />
+							</svg>
+						</a>
+					</li>
+				</ol>-->
+				<ol class="menu" id="main-menu">
+				<li class="current">
+					<a href="../../index.html">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+					<path stroke="none" d="M0 0h24v24H0z"></path>
+					<polyline points="5 12 3 12 12 3 21 12 19 12"></polyline>
+					<path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+					<path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+					</svg>
+					<span>首頁</span></a>
+				</li>
+				<li>
+					<a href="../../archives/index.html">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+					<path stroke="none" d="M0 0h24v24H0z"></path>
+					<rect x="3" y="4" width="18" height="4" rx="2"></rect>
+					<path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10"></path>
+					<line x1="10" y1="12" x2="14" y2="12"></line>
+					</svg> <span>小說列表</span></a>
+				</li>
+				
+				<li>
+					<a>
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+					<path stroke="none" d="M0 0h24v24H0z"></path>
+					<path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"></path>
+					<path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"></path>
+					</svg>
+					<span>友站連結(施工中)</span></a>
+				</li>
+				<li class="menu-bottom-section">
+					<ol class="menu">
+						<li id="dark-mode-toggle">
+							<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z"></path>
+							<circle cx="8" cy="12" r="2"></circle>
+							<rect x="2" y="6" width="20" height="12" rx="6"></rect>
+							</svg>
+							<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z"></path>
+							<circle cx="16" cy="12" r="2"></circle>
+							<rect x="2" y="6" width="20" height="12" rx="6"></rect>
+							</svg>
+							<span>Dark Mode</span>
+						</li>
+					</ol>
+				</li>
+			</ol>
+		</aside>
+			<aside class="sidebar right-sidebar sticky">
+				<section class="widget archives">
+					<div class=widget-icon>
+						<svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z" />
+							<line x1="5" y1="9" x2="19" y2="9" />
+							<line x1="5" y1="15" x2="19" y2="15" />
+							<line x1="11" y1="4" x2="7" y2="20" />
+							<line x1="17" y1="4" x2="13" y2="20" />
+						</svg>
+					</div>
+					<h2 class="widget-title section-title">章節列表</h2>
+					<div class=widget--toc>
+						<nav id=TableOfContents>
+							<ol>
+								<li>
+									<a href=#one>#55 白雁番外 1</a>
+								</li>
+								<li>
+									<a href=#two>#56 白雁番外 2</a>
+								</li>
+								
+								
+							</ol>
+						</nav>
+					</div>
+				</section>
+			</aside>
+			<main class="main full-width">
+				<article class=main-article>
+					<header class=article-header>
+						<div class=article-details>
+							<header class=article-category>
+								<a href=/categories/themes/>連載中
+								   </a> <a href=/categories/syntax/>司南 </a> </header> <div class=article-title-wrapper>
+									<h2 class=article-title>
+										<!--<a href=/p/markdown-syntax-guide/>Markdown Syntax Guide</a> </h2> <h3 class=article-subtitle>Sample article showcasing basic Markdown syntax and formatting for HTML elements.</h3>-->
+						</div>
+						<!--<footer class=article-time>
+							<div>
+								<svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+									<path stroke="none" d="M0 0h24v24H0z" />
+									<path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4" />
+									<circle cx="18" cy="18" r="4" />
+									<path d="M15 3v4" />
+									<path d="M7 3v4" />
+									<path d="M3 11h16" />
+									<path d="M18 16.496V18l1 1" />
+								</svg>
+								<time class=article-time--published>Sep 07, 2023</time>
+							</div>
+							<div>
+								<svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+									<path stroke="none" d="M0 0h24v24H0z" />
+									<circle cx="12" cy="12" r="9" />
+									<polyline points="12 7 12 12 15 15" />
+								</svg>
+								<time class=article-time--reading>3 minute read</time>
+							</div>
+						</footer>-->
+		</div>
+		</header>
+		<section class=article-content>
+			<!--<p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.</p>-->
+			<!--<h2 id=headings>Headings</h2>
+			<p>The following HTML <code>&lt;h1></code>—<code>&lt;h6></code> elements represent six levels of section headings. <code>&lt;h1></code> is the highest section level while <code>&lt;h6></code> is the lowest.</p>
+			<h1 id=h1>H1</h1>
+			<h2 id=h2>H2</h2>
+			<h3 id=h3>H3</h3>
+			<h4 id=h4>H4</h4>
+			<h5 id=h5>H5</h5>
+			<h6 id=h6>H6</h6>-->
+			<h2 id=one>#55 白雁番外 1</h2>
+			<div class="page-body">
+				<pre><code class="language-Go" style="white-space:pre-wrap;word-break:break-all">那是一段極其久遠的往事，悠久地，令白雁幾乎記不清楚細節。
+
+猶記，那日綿綿細雨，遠處山海川河似如畫，一對佳人，相逢於桃花樹下。那時他們兩小無猜，情竇初開，初心萌動，私定終身。
+
+畫面一轉，那日的少女，轉瞬間，成了亭亭玉立的姑娘家，而當初的懵懂少年，也成了玉樹臨風的公子哥，二人一齊，模樣依舊般配。
+
+只可惜，姑娘家道中落，血親倚仗著祖輩流傳下來的古老醫術，艱難地在央城維生。
+
+還記得那一日，也是個細雨紛飛的日子，她卻獨身一人，模樣消瘦的立在先人的墳前，哀悼。
+
+也是那一日，少年郎為她撐起了一把傘，許她一處歸宿。
+
+她成為了藥師，寄宿於大戶人家。不曾想，那兒時的少年郎，竟是都城大戶中的公子哥。縱然他們心繫彼此，承諾此生，但依舊敵不過父母之命，媒妁之言。
+
+少年郎被迫成娶妻成家，圓房那夜，她在屋外，獨自失神，倒去那一壺壺助興的藥酒，聽著屋內放浪的歡愉聲，心似如刀割。
+
+新婚月餘，她恍惚間發覺自己有了身孕，可如今，那少年郎已不再是她的情郎，為掩去流言蜚語，她決定辭別人家。
+
+當少年郎得知此事時，她已經離去多時，不知去向。
+
+她尋了一處清幽所在，誕下一女，經年存下的錢財，足夠她在異鄉養活自己與嬰孩。
+
+時光飛逝，她素日上街擺攤，替人診病，閒暇時，便教導女娃識得醫理。女娃生來無父，她便也未替孩子取名從姓，總是丫頭…丫頭地，叫喚著女娃。
+
+女娃頗具慧根，年歲尚輕，便已學成，女娃上街行醫時，年不過十六。
+
+能得此女，如此才華，她此生已然無憾…
+
+迷迷糊糊地睡了一覺，白雁迷濛的睜開眼睛，一抹影子正壓在她的面容上，待她看清時，那人已經偷完香，噙著得意的笑，打趣她的不解風情。
+
+白雁抹過唇角，那裡隱約還殘存著淡淡餘香，她無奈的望向楚玹，「我如今已無肉身，你僅是吻著一縷清風，也覺歡喜麼？」
+
+楚玹笑了笑，湊近她，「誰說妳無肉身的？」說著，從衣襟裡取出一只人型玉，她指腹上下來回摩挲著玉人，又抬眼去看白雁，只見白雁抿著唇，瞬時紅了面容，嗔道一句，「無賴！」
+
+待在鬼樓久了，彷彿忘卻了時間流逝，楚玹天天在此，哪裡也不去，白雁與她一齊，她們日日相對，卻也不覺得看厭了對方。
+
+反倒…夜裡，她們偶時難眠，楚玹精力充沛，總是能掏出一心窩子的情話來，令白雁難以招架，紅去大半面容。
+
+一夜歡快，破曉時分，白雁掀起薄被，垂眸掃了自己一眼，眸光淡淡地，尋過衣裳，掩住自己光裸的身姿。
+
+她正要離去，身後卻突然襲來一隻玉手。白雁轉身，薄被裡還藏著一人，楚玹睡眼惺忪的拉住她的衣角，問著她，上哪去？
+
+白雁傾身，把她安頓好，「鬼樓結界有動靜，許是重明回來了，我去看看。」
+
+楚玹撅了撅嘴，不捨她走，悶悶道，「兒孫自有兒孫福，我們瞎摻和也無用。」
+
+「再說了…」楚玹手背揉著眼睛，口中念叨不停歇，欲再發話，卻隱約感覺有黑影降下，她反應過來時，已是慢了，她手腕被人捏住，唇瓣被馥郁氣息侵擾，口一時不能言。
+
+白雁難得主動，楚玹內心欣喜，兩人一番溫存，待她們分離時，白皙的臉龐映上幾分潮紅，楚玹媚眼含笑，「我曉得你是在安撫我，這對我，的確受用。」
+
+白雁勾起唇角，神情深不可測，她笑語，「那些都是曾前往事，如今，我與他們再無瓜葛。我自是問心無愧，又何須再多此一舉，來討好你？」
+
+這拐彎抹角的示好，惹得楚玹羞臊的抓起薄被，遮羞似地，將自己掩得緊實。
+
+白雁理好衣衫，朝外走去。重明已經過了結界，在涼亭處等待。這鬼樓就似一座牢籠，束縛了楚玹，也桎梏了她，而她們相互牽制，試探著對方深淺。白雁踩在沿海的橋面上，撫著欄杆，這條路，她已經走過了無數次，這海色，也已令她悵然許多回。
+
+她步伐越漸緩慢，至終，她停頓下來，闔眸嘆息。良久，身畔傳來腳步聲，她睜開眼，慢慢回身，楚玹梳妝打扮，襲一身白衫，緩步而來，見她還停頓在這，有些訝異，「你難道在等我？我原以為，你該是會更加迫不及待些，去探尋他們的消息。」
+
+白雁搖頭，苦笑一聲，「我如今此身，豈能逃得出你的掌心之外…我盼求外面的消息，也不過是為著貪圖一時樂趣。」
+
+「哦？」楚玹走過她，朝著前方行去，白雁在後跟隨，聽得她淡道，「既是貪圖一時樂趣，此時，又怎麼耐住了這興致？先前，你對我萬般柔情，好將我支開，不就是盼著這個“樂趣”麼？」
+
+白雁默。楚玹不得她回覆，心中倏地升騰出無名火。早前，這女人才在與她濃情蜜意，現在便又見異思遷，去想著那與她無緣無份之人…
+
+楚玹一時氣不過，她轉回身，就要朝著身後人發難。白雁未曾想過她會動怒，一時毫無防備，愣然著一雙大眼，無辜望她。
+
+楚玹咬牙切齒道，「他們…他們總是佔著你心尖上的位置，你的心裡又可曾有過我的一席之地？」
+
+白雁張了張口，欲言又止。楚玹不放過她，意氣用事地，嘴上盡說著氣話，「既然你固執如此，我又何必再將你強留於此！」她拿出那隻人型玉，憋紅了眼眶，當著白雁的面，將玉身扔向大海。白雁愣愣地看著物件落入水中，不待她反應過來，那楚玹又道，「既然你對我已再無遐想，那我便也…便也放下你，從今往後，以禮相待，不會再踰矩。」
+
+言畢，楚玹拂袖離去，白雁立在原地，似在思量，好一陣子，才又提步跟上。</code></pre>
+				<p id="6c538e87-c8b8-4037-8c05-9bc3c52a2840" class="">
+				</p>
+			</div>
+
+
+			<h2 id=two>#56 白雁番外 2</h2>
+			<div class="page-body">
+				<pre><code class="language-Go" style="white-space:pre-wrap;word-break:break-all">許是在這無趣的鬼樓中待得太久，白雁對曾前往事，不再上心。也漸漸地，那些人世在她心中淡忘，思緒一空蕩，那些潛藏在腦海深處的記憶，似鑽了空子的猛獸，日復一日地，強佔她的心神，竟讓她想起了，在她受罰落入人間前的那段日子。
+
+白雁望著波光粼粼的海面，憶起過往，嘴角帶過一絲淺笑。那段日子，是她最最歡喜的時候，那時親友聚在，有溫潤賢淑的恩師，也有待她親切的同窗良友，日子逍遙快意，這一晃眼，便是千百年。
+
+還記得，她的同窗是個特立獨行之人，她醉心於世間奇術，尤其熱愛鑽研禁忌之術。旁人皆認為她是邪魔轉世，是要降大難於天下，因而遭人排擠。但她也是心大，被人孤立後，未覺不妥，反倒更沉浸於研究邪術。
+
+白雁知曉她天賦異稟，也明白她為人純善，非是傳言那般罪大惡極。於是乎，在別人不願親近她時，白雁便擁有比其他人更多的時間，與她朝夕相伴。
+
+許是長年累月，日久生情，白雁待她越漸曖昧，可同窗卻不以為意，甚至無從察覺，只道是姐妹情深，不曾多想。同窗既不覺反感，白雁便也以此為樂。
+
+就當白雁以為她們的小日子會這麼持續下去的時候，她的同窗，鑄造出了一逆天神器，此物一出，滿城風雨，那宛若偌大的幻境，能使人迷失神智，沉醉於溫柔鄉。據說此物，後被封入一七角水晶中，打入一處無望冥海。
+
+她的同窗因而受責罰，白雁不忍她這等才華被隱沒，便在行刑前夜，悄然帶走她，又在處刑時分，替作她，代她受罰。
+
+那一日，天打雷劈，她…跌落了人間，成了凡夫俗子。
+
+海面盪起漣漪，白雁收回心神，朝一旁看去，楚玹不知何時來到她身畔，持著小石子，擲向海面，打出翩翩水花。
+
+她道，「想甚麼這般入神，竟連我過來了，也無察覺？」
+
+白雁抿唇，口吻溫和，「一些往事。」
+
+楚玹皺了皺眉，扔下石子，涼涼道，「這樣啊。」眼看她就要走，白雁急忙拉住她。
+
+楚玹回過頭，面色閃過一絲不耐，「還要如何？」
+
+白雁看著她，瞧出她許是又生起了悶氣，但是她嘴笨，不曉得如何安撫，直道，「你難道就不想知曉，我想得往事，與誰人有關？」
+
+「與誰人何關，又與我何干？你便是自想自的，又何須說與我聽！」楚玹甩開她的手，拂袖要走，白雁不讓，她指頭微動，包裹在掌上的枷鎖，變成道道鎖鏈，將楚玹的半隻臂膀束縛了住。
+
+楚玹大呼一聲，「你做何！」
+
+白雁貼近她，幽幽道，「既然你不願再與我親近，又何必如此嘴硬？這鬼樓也不過是你所造出的一道幻境，那日，你意氣用事，想將我丟去，可你不過是做個虛樣，我那玉身，如今也還安妥的在你手上，不是麼？」
+
+楚玹，「…。」她嘴角微抽，眼神飄亂，「我不曉得你說甚麼，扔了的東西，便是扔了，又怎麼會…」
+
+白雁似乎也來了脾氣，「少自欺欺人了，楚玹，你待我反覆無常，你就這麼想看我笑話麼！」
+
+「你在…甚麼說呀？」這下換楚玹摸不著頭緒了，她輕擰著眉，直視白雁的眼睛，白雁此時的眼神很是認真，「我怎麼會想要…看你笑話？」
+
+白雁咬著下唇，憋了一陣，才悶悶道，「你就是笑話我，心思單純，才會遇了個負心漢，你就是拿我笑話，才會與我曖昧…」
+
+楚玹呆了眼，神情逐漸困惑，至扭曲，「我何故要拿這種事來笑話你？」
+
+白雁垂眸，一副委屈可怜的模樣，「當初我也是這般巴巴地跟在你身後，你並無任何表示，如今…我落得了這番窘境，你卻是這個樣子，你還說…你不是為著奚落我，故意而為之？」
+
+「你便是想看著我，與你親近、相好…再來取笑我的不是，你明明對我沒那心思，又何必要再我面前演上這麼一齣戲？你將我留在身邊，便不是真心要與我斷去往來，你假情假意在先…卻還要與我置氣，豈不過份？」
+
+楚玹，「…。」明明是這女人總胡思亂想，到頭來，竟反倒成了她的不是？
+
+「我才沒有假情假意…」
+
+「你有…」
+
+「當初我不知曉你是這般喜歡我，我還以為只是姐妹情深…」
+
+白雁鼓著雙頰，「哪裡有姊妹情深會那般親嘴的？」
+
+「我…我當初心思不在此，也不曾遇過心儀之人，又豈會知曉情人間，會做出甚麼事來？」
+
+「你這…榆木。」白雁鬆了束縛，她別開臉，吐息一聲。
+
+楚玹見她態度漸軟，拉起她的手，輕輕捏了捏指尖，「你才是，你明明記起了我，與我歡愛時，心裡卻還想著別人…」
+
+「你…慎言！我才沒有在我們那個時…想別人…」白雁雙頰燒得火紅，這楚玹口不擇言，竟也不曉得將那事說得委婉些…
+
+「我沒誣賴你，我瞧你，你總是走神…」
+
+「那還不是因著你…」白雁一手掩面，羞道，「曾前，你明明不喜歡我，如今，你將我強留在身邊，還一個勁的做這些事，過頭得…讓我後怕你是不是在計較甚麼…」
+
+「我沒有啊。」楚玹直脫口而出，「我留住你，一是為著我的私心，想要你儘早想起我。二是，我擔心若是放跑了你，你日後若與旁人再生情愫，那我可得再等你多少年，才能盼得你斬斷情思呀？」
+
+白雁，「…。」她總算看明白了，楚玹這人不只榆木，作態還很小心眼，不講理。
+
+二人道破心結，重歸舊好。楚玹將白雁拉進懷裡，仔細摟著，「你說得不錯，這裡是我的鬼樓，也是我造就的幻境，那一日我確實是做作樣子，全為試探你心意。我費盡苦心才找到你，又等了你一生一世，我不踰矩，也放任著你的胡來。那時，你說你孤寂，我便為你鑽研幻術之法，再教授於你…我本以為你是為了再與他重逢。」
+
+楚玹忽然停頓，許是覺得自己的想法可笑，她嗤笑一聲，「現在細想下來，卻是我小肚雞腸了。你說你孑然一身，太過落寞，你便自個兒地，將你那些已故血親一個個召喚…只是，我不曾想，你是這般單純，毫無雜念，無心做壞。要知道，這幻術之法，非是正道術法，一旦沾染惡念，逞兇作亂，一時半會，兩界也難得以消停。」
+
+白雁埋在她心窩，聽著她說話時，發出嗡嗡的音色，她仰頭笑道，「我本就無心做壞，只怪我那時身世淒涼，心中一願，便是盼得親友團聚，好令我有些許依靠和慰藉。」
+
+「倒是你…置身事外，將我看了個明明白白。我卻不知，我們分隔許久，理應是再毫無干係，你又是如何對我動心動情的？」
+
+「這…說來話長。」楚玹有意為自己開脫，但白雁此時哪會再放過她？楚玹是在她們之中，唯一綜觀全局之人。
+
+白雁也好，亦暖、安向晚也罷，皆是渾渾噩噩地受著命運擺佈，唯獨楚玹，她看盡這世間因果輪迴，心中也通透著，但她默然應對，一切講究著隨緣。
+
+白雁捏住她的下顎，迫使她望著自己，「說。」
+
+「唉。」楚玹與她相視著，許是受不了對方的威迫，她沉不住氣，先是一歎，才說，「感情一事，我向來懵懵懂懂，在你忽然消失的那陣子，我尋了你好久…好久。後來才知曉，你替我受罰，落入人間，嚐遍世間苦楚滋味，那時，我就在這鬼樓裡自罰禁閉，閒暇時，便用幻象鏡去尋你。隨著時間推移，我成了最最懂你之人，曉得你的為難，也明白你的渴望，但唯獨不明白，何故…何故那些你同我做過之事，能夠這般隨意的，去與那登徒子…做得更甚逾越！」
+
+「後來，我便日夜想著你，心裡卻頗有怨言，何故…當時，你未曾如此待我。直到好多好多年後，你身旁皆再無佳人，我才恍惚明白，這份歷練，便是愛別離，而我又何嘗不是，在與你一同承受這份歷練？」楚玹說著，她感覺眼眶有些酸澀，默默地別開了臉，「只怪我開竅得太晚，若是我再早一些頓悟，或許，我便不會鑽研這麼多奇術邪法，你也不會因我替罪，受盡那些人間苦。」
+
+得楚玹這一番肺腑之言，白雁卻沒忍住嘴角笑意，她失聲笑了笑，眼角卻是早已泛紅，滾著淚花，「替罪一事，那只是我的一廂情願，你何必往自己心上去？」
+
+「我捨不得你呀。」楚玹吸了吸鼻子，悶悶的望回來，見白雁一副我見猶憐的模樣，慌措道，「我說我的，你跟著哭甚麼呀…」
+
+白雁沒應話，她嚥下淚水，與她相擁相依。她心有感慨，她這一生並沒白費，楚玹終於良心發現，挽回她們本要被斬斷的情緣。
+
+在遠處，重明坐在涼亭的簷上，她取下遮掩眼睛的布帛，嘴角止不住溢出笑意。一對佳人終於修成正果，重明自認自己功不可沒…如今，她歡心看見自己促成的良緣，心有戚戚焉，她萬分感動，更有萬分悵然。若是在當初，七角水晶一事，她能做得更盡善盡美些，那便好了…</code></pre>
+				<p id="6c538e87-c8b8-4037-8c05-9bc3c52a2840" class="">
+				</p>
+			</div>
+
+			
+		</section>
+		<footer class=article-footer>
+			<section class=article-tags>
+				<a href=/tags/markdown/>連載中 </a>
+				   <!--<a href=../tags/css/>Css </a>
+				   <a href=../tags/html/>Html </a>-->
+				   <a href=../tags/themes/>司南 </a> </section> <section class=article-copyright>
+					<svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" />
+						<circle cx="12" cy="12" r="9" />
+						<path d="M14.5 9a3.5 4 0 100 6" />
+					</svg>
+					<span>蔥十七</span>
+			</section>
+		</footer>
+		</article>
+		<!--<div class=disqus-container>
+			<div id=disqus_thread></div>
+			<script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//hugo-theme-stack.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script>
+			<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a> </noscript> <a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span>
+				</a>
+		</div>-->
+		<style>.disqus-container{background-color:var(--card-background);border-radius:var(--card-border-radius);box-shadow:var(--shadow-l1);padding:var(--card-padding)}</style>
+		<script>window.addEventListener("onColorSchemeChange",e=>{typeof DISQUS=="object"&&DISQUS.reset({reload:!0})})</script>
+		<footer class=site-footer>
+			<section class="copyright">
+				&copy; 2020 - 2024 Hugo Theme Stack Starter
+				&used; ©chen.uu Studio 2024.
+			</section>
+			<section class="powerby">
+				Built with <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo</a>
+				<br>
+				Theme <b>
+					<a data-version="3.26.0" href="https://github.com/CaiJimmy/hugo-theme-stack" rel="noopener" target="_blank">Stack</a>
+				</b> designed by <a href="https://jimmycai.com" rel="noopener" target="_blank">Jimmy</a>
+			</section>
+		</footer>
+		<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+			<div class=pswp__bg></div>
+			<div class=pswp__scroll-wrap>
+				<div class=pswp__container>
+					<div class=pswp__item></div>
+					<div class=pswp__item></div>
+					<div class=pswp__item></div>
+				</div>
+				<div class="pswp__ui pswp__ui--hidden">
+					<div class=pswp__top-bar>
+						<div class=pswp__counter></div>
+						<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+						<button class="pswp__button pswp__button--share" title=Share></button>
+						<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+						<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+						<div class=pswp__preloader>
+							<div class=pswp__preloader__icn>
+								<div class=pswp__preloader__cut>
+									<div class=pswp__preloader__donut></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+						<div class=pswp__share-tooltip></div>
+					</div>
+					<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+					</button>
+					<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+					<div class=pswp__caption>
+						<div class=pswp__caption__center></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script>
+		<script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script>
+		<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous>
+		<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous>
+		</main>
+		</div>
+		<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script>
+		<script type=text/javascript src=../../ts/main.js defer></script>
+		<script>
+			(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()
+		</script>
+		</body>
+</html>

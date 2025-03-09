@@ -1,0 +1,1000 @@
+<!doctype html>
+<html lang=en-us dir=ltr>
+	<head>
+		<meta charset=utf-8>
+		<meta name=viewport content='width=device-width,initial-scale=1'>
+		<meta name=description content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
+		<title>萬鬼潛行夜遊園</title>
+
+		<link rel=canonical href=https://demo.stack.jimmycai.com/p/markdown-syntax-guide/> <link rel=stylesheet href=../../scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css> <meta property='og:title' content="Markdown Syntax Guide">
+		<meta property='og:site_name' content='青蔥小說-司南-萬鬼潛行夜遊園'>
+		<meta property='og:type' content='article'>
+		<meta property='article:section' content='Post'>
+		<meta property='article:tag' content='markdown'>
+		<meta property='article:tag' content='css'>
+		<meta property='article:tag' content='html'>
+		<meta property='article:tag' content='themes'>
+		<meta name=twitter:title content="青蔥小說-司南-萬鬼潛行夜遊園">
+		<link rel="shortcut icon" href=/favicon.png> </head> <body class=article-page>
+		<script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script>
+		<script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script>
+		<style>
+
+			.column-list {
+				display: flex;
+				justify-content: space-between;
+			}
+			
+			.column {
+				padding: 0 1em;
+			}
+			
+			.column:first-child {
+				padding-left: 0;
+			}
+			
+			.column:last-child {
+				padding-right: 0;
+			}
+			
+			.table_of_contents-item {
+				display: block;
+				font-size: 0.875rem;
+				line-height: 1.3;
+				padding: 0.125rem;
+			}
+			
+			.table_of_contents-indent-1 {
+				margin-left: 1.5rem;
+			}
+			
+			.table_of_contents-indent-2 {
+				margin-left: 3rem;
+			}
+			
+			.table_of_contents-indent-3 {
+				margin-left: 4.5rem;
+			}
+			
+			.table_of_contents-link {
+				text-decoration: none;
+				opacity: 0.7;
+				border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+			}
+			
+			table,
+			th,
+			td {
+				border: 1px solid rgba(55, 53, 47, 0.09);
+				border-collapse: collapse;
+			}
+			
+			table {
+				border-left: none;
+				border-right: none;
+			}
+			
+			th,
+			td {
+				font-weight: normal;
+				padding: 0.25em 0.5em;
+				line-height: 1.5;
+				min-height: 1.5em;
+				text-align: left;
+			}
+			
+			th {
+				color: rgba(55, 53, 47, 0.6);
+			}
+			
+			ol,
+			ul {
+				margin: 0;
+				margin-block-start: 0.6em;
+				margin-block-end: 0.6em;
+			}
+			
+			li > ol:first-child,
+			li > ul:first-child {
+				margin-block-start: 0.6em;
+			}
+			
+			ul > li {
+				list-style: disc;
+			}
+			
+			ul.to-do-list {
+				padding-inline-start: 0;
+			}
+			
+			ul.to-do-list > li {
+				list-style: none;
+			}
+			
+			.to-do-children-checked {
+				text-decoration: line-through;
+				opacity: 0.375;
+			}
+			
+			ul.toggle > li {
+				list-style: none;
+			}
+			
+			ul {
+				padding-inline-start: 1.7em;
+			}
+			
+			ul > li {
+				padding-left: 0.1em;
+			}
+			
+			ol {
+				padding-inline-start: 1.6em;
+			}
+			
+			ol > li {
+				padding-left: 0.2em;
+			}
+			
+			.mono ol {
+				padding-inline-start: 2em;
+			}
+			
+			.mono ol > li {
+				text-indent: -0.4em;
+			}
+			
+			.toggle {
+				padding-inline-start: 0em;
+				list-style-type: none;
+			}
+			
+			/* Indent toggle children */
+			.toggle > li > details {
+				padding-left: 1.7em;
+			}
+			
+			.toggle > li > details > summary {
+				margin-left: -1.1em;
+			}
+			
+			.selected-value {
+				display: inline-block;
+				padding: 0 0.5em;
+				background: rgba(206, 205, 202, 0.5);
+				border-radius: 3px;
+				margin-right: 0.5em;
+				margin-top: 0.3em;
+				margin-bottom: 0.3em;
+				white-space: nowrap;
+			}
+			
+			.collection-title {
+				display: inline-block;
+				margin-right: 1em;
+			}
+			
+			.page-description {
+			    margin-bottom: 2em;
+			}
+			
+			.simple-table {
+				margin-top: 1em;
+				font-size: 0.875rem;
+				empty-cells: show;
+			}
+			.simple-table td {
+				height: 29px;
+				min-width: 120px;
+			}
+			
+			.simple-table th {
+				height: 29px;
+				min-width: 120px;
+			}
+			
+			.simple-table-header-color {
+				background: rgb(247, 246, 243);
+				color: black;
+			}
+			.simple-table-header {
+				font-weight: 500;
+			}
+			
+			time {
+				opacity: 0.5;
+			}
+			
+			.icon {
+				display: inline-block;
+				max-width: 1.2em;
+				max-height: 1.2em;
+				text-decoration: none;
+				vertical-align: text-bottom;
+				margin-right: 0.5em;
+			}
+			
+			img.icon {
+				border-radius: 3px;
+			}
+			
+			.user-icon {
+				width: 1.5em;
+				height: 1.5em;
+				border-radius: 100%;
+				margin-right: 0.5rem;
+			}
+			
+			.user-icon-inner {
+				font-size: 0.8em;
+			}
+			
+			.text-icon {
+				border: 1px solid #000;
+				text-align: center;
+			}
+			
+			.page-cover-image {
+				display: block;
+				object-fit: cover;
+				width: 100%;
+				max-height: 30vh;
+			}
+			
+			.page-header-icon {
+				font-size: 3rem;
+				margin-bottom: 1rem;
+			}
+			
+			.page-header-icon-with-cover {
+				margin-top: -0.72em;
+				margin-left: 0.07em;
+			}
+			
+			.page-header-icon img {
+				border-radius: 3px;
+			}
+			
+			.link-to-page {
+				margin: 1em 0;
+				padding: 0;
+				border: none;
+				font-weight: 500;
+			}
+			
+			p > .user {
+				opacity: 0.5;
+			}
+			
+			td > .user,
+			td > time {
+				white-space: nowrap;
+			}
+			
+			input[type="checkbox"] {
+				transform: scale(1.5);
+				margin-right: 0.6em;
+				vertical-align: middle;
+			}
+			
+			p {
+				margin-top: 0.5em;
+				margin-bottom: 0.5em;
+			}
+			
+			.image {
+				border: none;
+				margin: 1.5em 0;
+				padding: 0;
+				border-radius: 0;
+				text-align: center;
+			}
+			
+			.code,
+			code {
+				background: rgba(135, 131, 120, 0.15);
+				border-radius: 3px;
+				padding: 0.2em 0.4em;
+				border-radius: 3px;
+				font-size: 85%;
+				tab-size: 2;
+			}
+			
+			code {
+				color: #eb5757;
+			}
+			
+			.code {
+				padding: 1.5em 1em;
+			}
+			
+			.code-wrap {
+				white-space: pre-wrap;
+				word-break: break-all;
+			}
+			
+			.code > code {
+				background: none;
+				padding: 0;
+				font-size: 100%;
+				color: inherit;
+			}
+			
+			blockquote {
+				font-size: 1.25em;
+				margin: 1em 0;
+				padding-left: 1em;
+				border-left: 3px solid rgb(55, 53, 47);
+			}
+			
+			.bookmark {
+				text-decoration: none;
+				max-height: 8em;
+				padding: 0;
+				display: flex;
+				width: 100%;
+				align-items: stretch;
+			}
+			
+			.bookmark-title {
+				font-size: 0.85em;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				height: 1.75em;
+				white-space: nowrap;
+			}
+			
+			.bookmark-text {
+				display: flex;
+				flex-direction: column;
+			}
+			
+			.bookmark-info {
+				flex: 4 1 180px;
+				padding: 12px 14px 14px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+			
+			.bookmark-image {
+				width: 33%;
+				flex: 1 1 180px;
+				display: block;
+				position: relative;
+				object-fit: cover;
+				border-radius: 1px;
+			}
+			
+			.bookmark-description {
+				color: rgba(55, 53, 47, 0.6);
+				font-size: 0.75em;
+				overflow: hidden;
+				max-height: 4.5em;
+				word-break: break-word;
+			}
+			
+			.bookmark-href {
+				font-size: 0.75em;
+				margin-top: 0.25em;
+			}
+			
+			.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+			.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+			.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+			.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+			.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+			.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+			.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+			.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+			.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+			.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+			.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+			.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+			.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+			.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+			.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+			.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+			.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+			.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+			.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+			.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+			.highlight-default {
+				color: rgba(55, 53, 47, 1);
+			}
+			.highlight-gray {
+				color: rgba(120, 119, 116, 1);
+				fill: rgba(120, 119, 116, 1);
+			}
+			.highlight-brown {
+				color: rgba(159, 107, 83, 1);
+				fill: rgba(159, 107, 83, 1);
+			}
+			.highlight-orange {
+				color: rgba(217, 115, 13, 1);
+				fill: rgba(217, 115, 13, 1);
+			}
+			.highlight-yellow {
+				color: rgba(203, 145, 47, 1);
+				fill: rgba(203, 145, 47, 1);
+			}
+			.highlight-teal {
+				color: rgba(68, 131, 97, 1);
+				fill: rgba(68, 131, 97, 1);
+			}
+			.highlight-blue {
+				color: rgba(51, 126, 169, 1);
+				fill: rgba(51, 126, 169, 1);
+			}
+			.highlight-purple {
+				color: rgba(144, 101, 176, 1);
+				fill: rgba(144, 101, 176, 1);
+			}
+			.highlight-pink {
+				color: rgba(193, 76, 138, 1);
+				fill: rgba(193, 76, 138, 1);
+			}
+			.highlight-red {
+				color: rgba(212, 76, 71, 1);
+				fill: rgba(212, 76, 71, 1);
+			}
+			.highlight-default_background {
+				color: rgba(55, 53, 47, 1);
+			}
+			.highlight-gray_background {
+				background: rgba(241, 241, 239, 1);
+			}
+			.highlight-brown_background {
+				background: rgba(244, 238, 238, 1);
+			}
+			.highlight-orange_background {
+				background: rgba(251, 236, 221, 1);
+			}
+			.highlight-yellow_background {
+				background: rgba(251, 237, 214, 1);
+			}
+			.highlight-teal_background {
+				background: rgba(237, 243, 236, 1);
+			}
+			.highlight-blue_background {
+				background: rgba(231, 243, 248, 1);
+			}
+			.highlight-purple_background {
+				background: rgba(244, 240, 247, 0.8);
+			}
+			.highlight-pink_background {
+				background: rgba(249, 238, 243, 0.8);
+			}
+			.highlight-red_background {
+				background: rgba(253, 235, 236, 1);
+			}
+			.block-color-default {
+				color: inherit;
+				fill: inherit;
+			}
+			.block-color-gray {
+				color: rgba(120, 119, 116, 1);
+				fill: rgba(120, 119, 116, 1);
+			}
+			.block-color-brown {
+				color: rgba(159, 107, 83, 1);
+				fill: rgba(159, 107, 83, 1);
+			}
+			.block-color-orange {
+				color: rgba(217, 115, 13, 1);
+				fill: rgba(217, 115, 13, 1);
+			}
+			.block-color-yellow {
+				color: rgba(203, 145, 47, 1);
+				fill: rgba(203, 145, 47, 1);
+			}
+			.block-color-teal {
+				color: rgba(68, 131, 97, 1);
+				fill: rgba(68, 131, 97, 1);
+			}
+			.block-color-blue {
+				color: rgba(51, 126, 169, 1);
+				fill: rgba(51, 126, 169, 1);
+			}
+			.block-color-purple {
+				color: rgba(144, 101, 176, 1);
+				fill: rgba(144, 101, 176, 1);
+			}
+			.block-color-pink {
+				color: rgba(193, 76, 138, 1);
+				fill: rgba(193, 76, 138, 1);
+			}
+			.block-color-red {
+				color: rgba(212, 76, 71, 1);
+				fill: rgba(212, 76, 71, 1);
+			}
+			.block-color-default_background {
+				color: inherit;
+				fill: inherit;
+			}
+			.block-color-gray_background {
+				background: rgba(241, 241, 239, 1);
+			}
+			.block-color-brown_background {
+				background: rgba(244, 238, 238, 1);
+			}
+			.block-color-orange_background {
+				background: rgba(251, 236, 221, 1);
+			}
+			.block-color-yellow_background {
+				background: rgba(251, 237, 214, 1);
+			}
+			.block-color-teal_background {
+				background: rgba(237, 243, 236, 1);
+			}
+			.block-color-blue_background {
+				background: rgba(231, 243, 248, 1);
+			}
+			.block-color-purple_background {
+				background: rgba(244, 240, 247, 0.8);
+			}
+			.block-color-pink_background {
+				background: rgba(249, 238, 243, 0.8);
+			}
+			.block-color-red_background {
+				background: rgba(253, 235, 236, 1);
+			}
+			.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+			.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+			.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+			.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+			.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+			.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+			.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+			.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+			.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+			.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+			.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+			.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+			.select-value-color-pageGlass { background-color: undefined; }
+			.select-value-color-washGlass { background-color: undefined; }
+			
+			.checkbox {
+				display: inline-flex;
+				vertical-align: text-bottom;
+				width: 16;
+				height: 16;
+				background-size: 16px;
+				margin-left: 2px;
+				margin-right: 5px;
+			}
+			
+			.checkbox-on {
+				background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+			}
+			
+			.checkbox-off {
+				background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+			}
+		</style>
+
+		<div class="container main-container flex on-phone--column extended">
+			<aside class="sidebar left-sidebar sticky">
+				<button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+					<span class=hamburger-box>
+						<span class=hamburger-inner></span>
+					</span>
+				</button>
+				<header>
+					<figure class=site-avatar>
+						<a href="../../index.html"/>
+						<img src=../../img/avatar_hu897059592634026878.png width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+						</a>
+						<span class=emoji>🍥</span>
+					</figure>
+					<div class=site-meta>
+						<h1 class=site-name>
+							<a href="../../index.html"/>青蔥小說</a>
+						</h1>
+						<h2 class=site-description>##</h2>
+					</div>
+				</header>
+				<!--<ol class=menu-social>
+					<li>
+						<a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank title=GitHub rel=me>
+							<svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+								<path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" />
+							</svg>
+						</a>
+					</li>
+					<li>
+						<a href=https://twitter.com target=_blank title=Twitter rel=me>
+							<svg class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+								<path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84.0 00.497-3.753C20.18 7.773 21.692 5.25 22 4.009z" />
+							</svg>
+						</a>
+					</li>
+				</ol>-->
+				<ol class="menu" id="main-menu">
+				<li class="current">
+					<a href="../../index.html">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+					<path stroke="none" d="M0 0h24v24H0z"></path>
+					<polyline points="5 12 3 12 12 3 21 12 19 12"></polyline>
+					<path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+					<path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+					</svg>
+					<span>首頁</span></a>
+				</li>
+				<li>
+					<a href="../../archives/index.html">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+					<path stroke="none" d="M0 0h24v24H0z"></path>
+					<rect x="3" y="4" width="18" height="4" rx="2"></rect>
+					<path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10"></path>
+					<line x1="10" y1="12" x2="14" y2="12"></line>
+					</svg> <span>小說列表</span></a>
+				</li>
+				
+				<li>
+					<a>
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+					<path stroke="none" d="M0 0h24v24H0z"></path>
+					<path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"></path>
+					<path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"></path>
+					</svg>
+					<span>友站連結(施工中)</span></a>
+				</li>
+				<li class="menu-bottom-section">
+					<ol class="menu">
+						<li id="dark-mode-toggle">
+							<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z"></path>
+							<circle cx="8" cy="12" r="2"></circle>
+							<rect x="2" y="6" width="20" height="12" rx="6"></rect>
+							</svg>
+							<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z"></path>
+							<circle cx="16" cy="12" r="2"></circle>
+							<rect x="2" y="6" width="20" height="12" rx="6"></rect>
+							</svg>
+							<span>Dark Mode</span>
+						</li>
+					</ol>
+				</li>
+			</ol>
+		</aside>
+			<aside class="sidebar right-sidebar sticky">
+				<section class="widget archives">
+					<div class=widget-icon>
+						<svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z" />
+							<line x1="5" y1="9" x2="19" y2="9" />
+							<line x1="5" y1="15" x2="19" y2="15" />
+							<line x1="11" y1="4" x2="7" y2="20" />
+							<line x1="17" y1="4" x2="13" y2="20" />
+						</svg>
+					</div>
+					<h2 class="widget-title section-title">章節列表</h2>
+					<div class=widget--toc>
+						<nav id=TableOfContents>
+							<ol>
+								<li>
+									<a href=#one>#57 業火冥森凰骨塚 1</a>
+								</li>
+								<li>
+									<a href=#two>#57 業火冥森凰骨塚 1</a>
+								</li>
+								
+								
+							</ol>
+						</nav>
+					</div>
+				</section>
+			</aside>
+			<main class="main full-width">
+				<article class=main-article>
+					<header class=article-header>
+						<div class=article-details>
+							<header class=article-category>
+								<a href=/categories/themes/>連載中
+								   </a> <a href=/categories/syntax/>司南 </a> </header> <div class=article-title-wrapper>
+									<h2 class=article-title>
+										<!--<a href=/p/markdown-syntax-guide/>Markdown Syntax Guide</a> </h2> <h3 class=article-subtitle>Sample article showcasing basic Markdown syntax and formatting for HTML elements.</h3>-->
+						</div>
+						<!--<footer class=article-time>
+							<div>
+								<svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+									<path stroke="none" d="M0 0h24v24H0z" />
+									<path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4" />
+									<circle cx="18" cy="18" r="4" />
+									<path d="M15 3v4" />
+									<path d="M7 3v4" />
+									<path d="M3 11h16" />
+									<path d="M18 16.496V18l1 1" />
+								</svg>
+								<time class=article-time--published>Sep 07, 2023</time>
+							</div>
+							<div>
+								<svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+									<path stroke="none" d="M0 0h24v24H0z" />
+									<circle cx="12" cy="12" r="9" />
+									<polyline points="12 7 12 12 15 15" />
+								</svg>
+								<time class=article-time--reading>3 minute read</time>
+							</div>
+						</footer>-->
+		</div>
+		</header>
+		<section class=article-content>
+			<!--<p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.</p>-->
+			<!--<h2 id=headings>Headings</h2>
+			<p>The following HTML <code>&lt;h1></code>—<code>&lt;h6></code> elements represent six levels of section headings. <code>&lt;h1></code> is the highest section level while <code>&lt;h6></code> is the lowest.</p>
+			<h1 id=h1>H1</h1>
+			<h2 id=h2>H2</h2>
+			<h3 id=h3>H3</h3>
+			<h4 id=h4>H4</h4>
+			<h5 id=h5>H5</h5>
+			<h6 id=h6>H6</h6>-->
+			<h2 id=one>#57 業火冥森凰骨塚 1</h2>
+			<div class="page-body">
+				<pre><code class="language-Go" style="white-space:pre-wrap;word-break:break-all">安向晚這一覺睡得極其不安穩，身上不時有著蝕骨的苦楚，她反覆醒來，又因累極再次睡死過去。不知過了多少個日夜，她在迷糊中，隱約感覺到有人將她扶起，又捏著她的下顎，將無甚滋味的米粥，灌進她的口中。
+
+安向晚想要反抗，但她試了幾次，身體乏力得很，只能暗自隱忍著。直到這日，那人又粗暴地過來與她餵食，這回，安向晚凝神聚力，好不容易才挪動了指尖稍許，但僅是如此程度，根本不足以稱得上反抗。
+
+安向晚心中黯然，認命地，正要接受這沈家不懂憐香惜玉的對待時，那人卻忽然停下了動作。旋後，安向晚感覺自己的指尖被人無故捉起，仔細地揉捏住指腹。耳邊有瓷器緩落的聲響，周身起伏的聲色，一會兒清晰，一會兒又變得混濁難辨，她整個腦子暈乎乎的，難以盼清。
+
+「阿九，怎麼了？」男子的聲音似從湖底緩緩朝著水面浮現，輕淺落進了安向晚耳中。
+
+半晌，無人回應，唯有細微的布料摩擦聲，安向晚感覺周身有溫熱氣息貼近，許是那名喚作阿九的男子，朝她過來了。
+
+指腹被人揉了揉，又鬆開。
+
+「手指…？安姑娘方才動了指尖麼？」沈半夏猶疑著，似在自言自語，忽然又一改情緒，歡快道，「太好了！這身體有了反應，想來安姑娘將不消多久，便能轉醒了！」
+
+沈半夏不是個能沉住氣的人，得了好消息後，便又匆忙離去。離開前，他吩咐阿九留下來照看，阿九沒有應聲，但安向晚曉得，這個阿九並未離開，他在房中與她相伴，又中規中矩地，按著時辰給她餵膳食。
+
+費了一番功夫，當安向晚艱難地睜開眼時，窗外已然降下夜幕。此時，阿九環著她的身姿，正一勺一匙的將米粥壓上她的唇。安向晚抿緊唇線，勺匙受了阻力，被迫停頓，安向晚視線上移，二人四目相交。
+
+男子總是戴著面具，面具下的眼睛深邃，如淵潭般幽漆。男子見她轉醒，眼底閃過一絲驚喜，頃刻，他情緒歸回平淡，放下匙子，伸手將不慎沾染唇瓣的殘汁拭去。安向晚盯著他動作，無力阻撓，一陣子，安向晚動了動唇，憋出簡短字句，「放開…」
+
+阿九從善如流，將人安置在牆邊，他想，安向晚既然已經醒來，如此難得，想必也不會想要再躺著歇息。
+
+果不其然，安向晚雖然身體暫時動不得，但她一雙眼睛明亮清晰，轉來晃去，正打量著這陌生房間。阿九與她保持數步距離，也不逾越，正襟危坐。
+
+幾次見面，安向晚曉得此人口不能言，便也不多得罪，諒在他對自己多有照顧的份上，安向晚放軟了聲音，同他問話，「這裡是何處，沈半夏他人呢？」
+
+阿九抬眸，神色淡淡的掃了她一眼。
+
+安向晚又說，「你去取紙筆，寫於我看。」
+
+阿九收回視線，壓膝起身，聽話的準備筆墨，帶上白紙，這才又坐回來。
+
+輕點筆墨，字跡娟秀，安向晚望著紙上，又打量起阿九這個人來。她還以為沈家養得啞人，盡是一群莽夫武人，行事應當再更隨意些，作態潦草，但她先入為主，想以字識人，卻不料，這人字跡與她原先設想不同，非是那般硬猛隨興張牙舞爪，而是相當有條理的，筆墨間，將一橫一豎勾勒出來。
+
+“這裡是東閣，是少爺的院子，少爺身有要事，歸時不知。”
+
+安向晚默了默，又問，「你又是甚麼人，木炎是他讓你帶來的麼？」
+
+阿九知無不言，他微微停頓，似在思量，旋後，又點過墨料，緩緩寫下，“少爺手下的啞人，排行第九。不是。”
+
+安向晚愣然，急問，「怎會…那何故你們要拿木炎來要脅我？」
+
+阿九提眸，安向晚與他視線交會，兩人心緒不同，相互猜忌。阿九又寫下，“依姑娘的為人，待風波過去後，定是不會甘願留下，替沈老做些為非作歹的事情。於是，我便在司南守著，一來保全司南無恙，完成任務，二來，也能抓上好用的人質，將你套牢。”
+
+安向晚警惕的望著他，頓時危機感上湧，令她慌措不已，此人善惡難定，但眼下，這人對她抱有歹心，卻是不爭的事實。
+
+阿九見她神情緊張，不免一笑，“姑娘不必這般畏懼我，我非是想要害你。只是沈老手段狠絕，且不講理，如若姑娘當時執意反抗，想來只會遭受更多不必要的苦頭。既然終歸都避不了了，何不乾脆些，也好少受一些苦？”
+
+安向晚默了默，心中困惑。這人特意將木炎抓來，原來只是想讓她安份些，可他們萍水相逢，互不相識，何故這人要這般替她設想？
+
+阿九笑了笑，“你不信我，那也無妨。那小哥就關在偏院裡，你已服軟，沈老不會再對他下手，除非…”
+
+後話他沒寫下去，安向晚心裡通透，只要她乖乖的，木炎就不會有事。阿九這人也是狡猾，同沈家人一個模樣，為了讓她留下，竟用了這等下三濫的手段！
+
+安向晚並不懼怕自己陷入險境，怕就怕這幫歹人，一個比一個精明…令她插翅難逃。
+
+翌日，沈半夏回來了，他帶著一箱箱華貴的物品，愉悅的踏進房門，那邊阿九和安向晚同時抬頭，朝門口看去，沈半夏也瞧見了他倆，歡喜道，「安姑娘，我已將這門親事宣揚出去，這囍事，我思來想去，我們還是儘早辦了吧，免得夜長夢多。」
+
+房中燃著薰香，氣味淺淡，不易察覺，安向晚不曉得這薰香是甚麼功用，她待了幾日，身體並未出現異狀，而這阿九日夜與她相伴，看上去也沒有甚麼古怪之處。
+
+安向晚因著木炎的關係，心裡對阿九有些懷疑跟牴觸。明明身邊就有人可以詢問，但她還是要強的，要等沈半夏回來，替她解惑。然，這沈半夏也沒多想，心直口快地，便回答了她，「這薰香麼？那是良物，能壓制住你體內那份不適，血術殘暴，而你又是肉體凡身，本來是難以駕馭的，既然如今你挺過來了，家主體恤，便將這府上最最上等的藥材全送來了，助你養身。」
+
+安向晚斂眉，心道，原來是用上等藥材調和而製…，難怪，這阿九絕非必要時，一步也不願踏出這房門。她悄悄朝阿九的方向瞥過去，卻冷不防地，被阿九識破了，阿九揚著一抹淺笑，那笑意深邃，看得安向晚心頭湧起一股煩躁之感。
+
+沈半夏牽起安向晚的手，安向晚這才回神過來，沈半夏似個得了蜜糖的孩子，笑得燦爛，「安姑娘，我曉得你身子尚未養好，不好圓房，但這不打緊，我們就先走個過場，將婚禮給先辦了，日後…待你身子好些了，我們在…在…嘿嘿！」
+
+安向晚，「…。」
+
+良久，不得安向晚回應，沈半夏心裡懸起幾分忐忑，「安姑娘…？」
+
+他退開些許，壓低身子，想要瞧清安向晚的面容，這時，安向晚緩緩抬頭，朝他抿出一彎淺笑，輕聲道，「我能信你麼？」
+
+「能！自然是能！」沈半夏還以為安向晚沉默是要拒絕他，殊不知，這安向晚非但沒有表現出一絲厭棄，反倒還露出柔和模樣，就似…似那待出嫁的兒女，滿懷羞澀之情。
+
+得了佳人一聲應允，沈半夏樂得合不攏嘴，他急著將事情圓滿，匆匆來過後，便又匆匆離去，只說，婚事近了，不出三日，定將準備妥善。安向晚沒有別的意見，只讓沈半夏不要通知司南的人過來，沈半夏猶疑一瞬，明白她心中忌憚，點頭應允，又問，「那木炎？」
+
+安向晚張了張口，「既然是婚禮，不好沒有娘家人，木炎…讓他來吧。」
+
+日升月落，時間飛逝。不過眨眼間，整個沈家大院洋溢著喜氣的氛圍，紅色的彩燈，從院子頭，掛到了院子尾，安向晚立在屋簷下，恍惚地望著那豔紅的囍紙，她不曾想過，原來自己有一天也會與人成親，這多少年間，她因心中執念，忽略了這兒女情長。
+
+如今，她就要成親了，她才想起自己也只是一介姑娘家，也是需要相夫教子的…
+
+初冬帶來些許寒意，她身影單薄，並未多著衣衫，不消多時，便覺冷風刺骨，她哆嗦了一下，肩膀上忽然有重力壓了下來，她大驚，猛然回頭，瞧見身後人是阿九。阿九取來了披掛，將她身子遮掩緊實。
+
+安向晚心驚，她雖是走神，但也並未鬆懈至有人靠近了而不自知的程度。這阿九是何時走來，又是何時近她身的？沈家臥虎藏龍，如若沈半夏身邊親信，皆是這等貨色，那她若果要逃，只她一人，又豈能應付得來這些個高手？
+
+事到如今，安向晚才感到懼怕。原先，她並不將與沈半夏成親一事真正放在眼裡，只要沈半夏講信用，不會動她，她便有底氣，與沈家周旋。可如若，光只是一個沈半夏，就有阿九這樣的武痴在身旁侍奉。若以阿九作為基準，阿九…排行第九，那上頭還有八個似阿九這般的狠角色，那她，不用說是想逃了，就是淘氣反抗，也鬧不了多久，惹不出多少腥風血雨…
+
+如果她在沈家，也有個似阿九這般的手下便好了…
+
+阿九並不知她心中所想，安向晚緊了緊披掛，轉身走過阿九。阿九跟隨在後，一路跟進了屋中。</code></pre>
+				<p id="6c538e87-c8b8-4037-8c05-9bc3c52a2840" class="">
+				</p>
+			</div>
+
+
+			<h2 id=two>#58 業火冥森凰骨塚 2</h2>
+			<div class="page-body">
+				<pre><code class="language-Go" style="white-space:pre-wrap;word-break:break-all">大婚的日子，天氣正好，空中雲層稀薄，暖陽籠罩大地。安向晚一早便被喚醒，她望著桌上備下的紅喜服，心中五味雜陳。可時間緊湊，不得她耽擱，她換下衣衫，正要穿上喜服時，瞥見了手臂上的包紮，她一時鬼迷心竅，將那層棉布拆卸下來，似是要確認傷勢是否好全。這幾日，她臂上的棉布不曾被替換過，阿九同她言說，在她昏睡的這段時日，傷處已經好得差不多，已無大礙，她便也沒將此事往心上放。
+
+許是近日憂慮過甚，心中受其憂擾，安向晚看著自己的手臂處，總有股不好的預感。她三兩下將棉布取下，驚見自己臂上的傷口已經癒合，而在那皮肉之中，鑲著一小塊晶瑩的石玉。安向晚猛吸一口大氣，瞳孔緊縮，憤慨不已，她恨不得立即取刀將這石玉挖出！
+
+「明明…我明明將它取出來了！為何又…」安向晚咬牙切齒著，她心頭縱然有諸多不快，但奈何她尚在困境之中，擺脫不得，只能暫時忍氣吞聲，伺機而動。
+
+門外傳來催促的聲音，安向晚拾起喜服，將自己打理妥善，這才出去迎人。門開了，門外站著一高挑的身影，安向晚見了來者，頓時一愣，也忘記要找他發難，脫口先道，「怎麼是你？」
+
+阿九將事先準備好的紙條遞給她，“少爺吩咐我來替姑娘整理儀容。”
+
+安向晚呆呆的看著他，發出質疑，「你一個大男人，曉得如何給人上胭脂？」
+
+阿九勾起唇角，安向晚不讓身，他也進不去，兩人在門口僵持一陣，阿九又取出一張紙條，“別誤了良辰，少爺要怪罪的。”
+
+安向晚拿他沒辦法，只能讓身，阿九入了房，將人招攬入座，安向晚半信半疑的坐在梳妝檯前，看著身後那大男人將自己的頭髮輕輕撩起，又利索的在髮絲上做出了個繁雜的髮髻，之後，將厚重的鳳冠輕輕放上。
+
+取胭脂，抹過紅唇和眼尾。安向晚看著阿九屈膝蹲跪在自己跟前，神色專注，她不自覺打量起眼前人，這阿九膚白細緻，雖有面具遮掩，但掩藏不住那姣好輪廓，他薄唇輕抿，瞳色幽黑深邃。她思緒飄遠，不禁想，原來男子也能生得這般美艷好看的麼？
+
+阿九忽然笑了一聲，安向晚如夢初醒，她尷尬的移開目光，阿九伸手略過她，指了指銅鏡，安向晚順著他的動作看去，銅鏡裡的自己，不同以往姿態，得了粉墨妝扮，增添了一絲平日少有的撫媚與柔情。
+
+阿九盤算著時辰，將安向晚背著出院子，走在迴廊上，慢步走向正廳。安向晚伏在他背上，雙手往前伸，輕輕圈住他的脖子，鼻尖繚繞著他身上特有的馥郁藥草氣味，稱不上是難聞，卻是獨特的，令人不自覺去記憶。
+
+離正廳越近，安向晚越覺緊張侷促，她下意識的縮了縮臂膀，阿九察覺到了，他停下腳步，微微側頭，似在做詢問。安向晚緩了幾口氣，才道，「我只是…有些緊張，你可以…不必管我。」
+
+阿九看回眼前，提步前進。安向晚埋頭進他的背心，嘆息一聲，如若非得要在沈家挑個人結親，能擇阿九這般聽話少言之人，許是，便能圓滿了罷…
+
+在老遠，便能瞧見一群人立在院子中，賓客齊聚，而在那人海最前的是沈半夏，阿九朝他走去，待站定，才將人穩穩放下。沈半夏先是看了一眼紅蓋頭，盈起笑意，這才向阿九說話，「阿九，有勞了。」
+
+阿九頷首，轉身走了。沈半夏牽起安向晚的手，與她接耳，「安姑娘，對不住，家主其實並不贊同你我的婚事。但我不願就此與你情斷，便算是我癡情執意，我也要將你的人留在身邊，好生看著，不讓旁人覬覦了去。所以今夜…還望安姑娘能體諒沈某魯莽。」
+
+安向晚指尖一僵，紅蓋頭下的面容已然青白。不曾想，沈半夏一句對不住，便能將誓言全然背棄。
+
+後續的流程，安向晚渾渾噩噩，沒有記清，兩人拜過堂後，安向晚便又被阿九帶離，進了囍房。當阿九要離去時，安向晚才反應過來，她慌忙地將人留下，也顧不及禮儀，鳳冠晃蕩落地，扯下了那紅蓋頭，阿九訝然回身時，撞見的，便是安向晚強忍著淚水，雙眼通紅的模樣。
+
+「沈半夏失言毀信。我本是不願嫁與他的…」安向晚哽咽一聲，無助地傾訴著，「他說過他不會在今夜與我圓房的，他說過，他要等我養好身子…我還以為，我有時間…有時間，能夠逃走…］
+
+阿九撥開她的手，走到房門口，安向晚失神的望著他離開，心頓時涼去大半。她安慰自己，也是，阿九本就是沈半夏的人，他心有效忠之人，這門親事，他想必也是同意的。
+
+房門喀噠一聲，落了鎖。安向晚聞聲抬頭，阿九走了回來，朝她指了指桌椅，安向晚了然意思，兩人入座，阿九從懷裡取出一瓶罐和毛筆，又從袖口帶出一張紙，他撥開瓶口，將筆尖探入，取出時，筆尖染上漆黑墨汁。
+
+阿九思㤔一陣，落筆，“姑娘想毀婚？”
+
+安向晚看著那字樣，一時不知該如何回答才好，「我…不喜歡他。」
+
+阿九沒得到滿意的答案，又在那句問話後面敲了幾下。
+
+安向晚憋紅了眼眶，委屈的連鼻尖都皺了起來，「我不想嫁與他，那是你們沈家不義、不講理，我迫不得已，才只能…。這婚事本就不該存在，又何談悔婚…」
+
+阿九又寫，“可你們方才剛拜過堂，你已是他過門的妻子。”
+
+安向晚急喊一聲，「我不願！」
+
+阿九忍不住發笑，潦草寫下，“你小點聲，我不聾。”
+
+門外有賓客路過，腳步聲極近，又走遠。阿九收回視線，提筆又寫下，“沈老並不同意這門婚事，少爺也只是在堵氣。今日這婚宴，就如少爺所說，只是走個形式，不具備實質意義。”
+
+安向晚看著他，不解其意，「甚麼意思？」
+
+阿九盯著她的眼睛，笑了笑，“意思是，沈半夏他不配。”
+
+安向晚越看越糊塗，阿九收起笑意，認真寫道，“你身份特殊，在鬼界風評並不好，沈老講究利益和權力，又豈會讓族人這般蠢笨，引火自焚？縱然你身上具有他們強留你的價值，但也還不足以要用親事將你捆住。”
+
+他頓了頓，猶疑一瞬，才寫下，“…木炎，尚在府中。”
+
+「木炎…」安向晚眸光黯然，「阿九，你能替我將他救出麼？我能信任你麼？」
+
+阿九停筆，按在桌面上，安向晚抬頭看他，阿九朝她搖頭。
+
+安向晚被拒，苦笑一聲，卻能諒解，「對不起，我不該這般為難你。」
+
+阿九點頭，重新提筆，“你的事，沈老留你有用處。入夜後，你跟我走。”
+
+安向晚問，「沈半夏不會這麼輕易放過我，若是被他發現了，我又該如何與他交代？」
+
+阿九，“沈老自有安排。”寫下後，他轉頭看向一處牆壁，安向晚也跟著看過去，再看回來時，紙上多了一句，“少爺身邊並不缺乏女人。</code></pre>
+				<p id="6c538e87-c8b8-4037-8c05-9bc3c52a2840" class="">
+				</p>
+			</div>
+
+			
+		</section>
+		<footer class=article-footer>
+			<section class=article-tags>
+				<a href=/tags/markdown/>連載中 </a>
+				   <!--<a href=../tags/css/>Css </a>
+				   <a href=../tags/html/>Html </a>-->
+				   <a href=../tags/themes/>司南 </a> </section> <section class=article-copyright>
+					<svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" />
+						<circle cx="12" cy="12" r="9" />
+						<path d="M14.5 9a3.5 4 0 100 6" />
+					</svg>
+					<span>蔥十七</span>
+			</section>
+		</footer>
+		</article>
+		<!--<div class=disqus-container>
+			<div id=disqus_thread></div>
+			<script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//hugo-theme-stack.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script>
+			<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a> </noscript> <a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span>
+				</a>
+		</div>-->
+		<style>.disqus-container{background-color:var(--card-background);border-radius:var(--card-border-radius);box-shadow:var(--shadow-l1);padding:var(--card-padding)}</style>
+		<script>window.addEventListener("onColorSchemeChange",e=>{typeof DISQUS=="object"&&DISQUS.reset({reload:!0})})</script>
+		<footer class=site-footer>
+			<section class="copyright">
+				&copy; 2020 - 2024 Hugo Theme Stack Starter
+				&used; ©chen.uu Studio 2024.
+			</section>
+			<section class="powerby">
+				Built with <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo</a>
+				<br>
+				Theme <b>
+					<a data-version="3.26.0" href="https://github.com/CaiJimmy/hugo-theme-stack" rel="noopener" target="_blank">Stack</a>
+				</b> designed by <a href="https://jimmycai.com" rel="noopener" target="_blank">Jimmy</a>
+			</section>
+		</footer>
+		<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+			<div class=pswp__bg></div>
+			<div class=pswp__scroll-wrap>
+				<div class=pswp__container>
+					<div class=pswp__item></div>
+					<div class=pswp__item></div>
+					<div class=pswp__item></div>
+				</div>
+				<div class="pswp__ui pswp__ui--hidden">
+					<div class=pswp__top-bar>
+						<div class=pswp__counter></div>
+						<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+						<button class="pswp__button pswp__button--share" title=Share></button>
+						<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+						<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+						<div class=pswp__preloader>
+							<div class=pswp__preloader__icn>
+								<div class=pswp__preloader__cut>
+									<div class=pswp__preloader__donut></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+						<div class=pswp__share-tooltip></div>
+					</div>
+					<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+					</button>
+					<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+					<div class=pswp__caption>
+						<div class=pswp__caption__center></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script>
+		<script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script>
+		<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous>
+		<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous>
+		</main>
+		</div>
+		<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script>
+		<script type=text/javascript src=../../ts/main.js defer></script>
+		<script>
+			(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()
+		</script>
+		</body>
+</html>

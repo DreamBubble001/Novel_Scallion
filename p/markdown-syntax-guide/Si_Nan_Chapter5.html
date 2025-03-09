@@ -1,0 +1,2631 @@
+<!doctype html>
+<html lang=en-us dir=ltr>
+	<head>
+		<meta charset=utf-8>
+		<meta name=viewport content='width=device-width,initial-scale=1'>
+		<meta name=description content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
+		<title>萬鬼潛行夜遊園</title>
+
+		<link rel=canonical href=https://demo.stack.jimmycai.com/p/markdown-syntax-guide/> <link rel=stylesheet href=../../scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css> <meta property='og:title' content="Markdown Syntax Guide">
+		<meta property='og:site_name' content='青蔥小說-司南-萬鬼潛行夜遊園'>
+		<meta property='og:type' content='article'>
+		<meta property='article:section' content='Post'>
+		<meta property='article:tag' content='markdown'>
+		<meta property='article:tag' content='css'>
+		<meta property='article:tag' content='html'>
+		<meta property='article:tag' content='themes'>
+		<meta name=twitter:title content="青蔥小說-司南-萬鬼潛行夜遊園">
+		<link rel="shortcut icon" href=/favicon.png> </head> <body class=article-page>
+		<script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script>
+		<script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script>
+		<style>
+
+			.column-list {
+				display: flex;
+				justify-content: space-between;
+			}
+			
+			.column {
+				padding: 0 1em;
+			}
+			
+			.column:first-child {
+				padding-left: 0;
+			}
+			
+			.column:last-child {
+				padding-right: 0;
+			}
+			
+			.table_of_contents-item {
+				display: block;
+				font-size: 0.875rem;
+				line-height: 1.3;
+				padding: 0.125rem;
+			}
+			
+			.table_of_contents-indent-1 {
+				margin-left: 1.5rem;
+			}
+			
+			.table_of_contents-indent-2 {
+				margin-left: 3rem;
+			}
+			
+			.table_of_contents-indent-3 {
+				margin-left: 4.5rem;
+			}
+			
+			.table_of_contents-link {
+				text-decoration: none;
+				opacity: 0.7;
+				border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+			}
+			
+			table,
+			th,
+			td {
+				border: 1px solid rgba(55, 53, 47, 0.09);
+				border-collapse: collapse;
+			}
+			
+			table {
+				border-left: none;
+				border-right: none;
+			}
+			
+			th,
+			td {
+				font-weight: normal;
+				padding: 0.25em 0.5em;
+				line-height: 1.5;
+				min-height: 1.5em;
+				text-align: left;
+			}
+			
+			th {
+				color: rgba(55, 53, 47, 0.6);
+			}
+			
+			ol,
+			ul {
+				margin: 0;
+				margin-block-start: 0.6em;
+				margin-block-end: 0.6em;
+			}
+			
+			li > ol:first-child,
+			li > ul:first-child {
+				margin-block-start: 0.6em;
+			}
+			
+			ul > li {
+				list-style: disc;
+			}
+			
+			ul.to-do-list {
+				padding-inline-start: 0;
+			}
+			
+			ul.to-do-list > li {
+				list-style: none;
+			}
+			
+			.to-do-children-checked {
+				text-decoration: line-through;
+				opacity: 0.375;
+			}
+			
+			ul.toggle > li {
+				list-style: none;
+			}
+			
+			ul {
+				padding-inline-start: 1.7em;
+			}
+			
+			ul > li {
+				padding-left: 0.1em;
+			}
+			
+			ol {
+				padding-inline-start: 1.6em;
+			}
+			
+			ol > li {
+				padding-left: 0.2em;
+			}
+			
+			.mono ol {
+				padding-inline-start: 2em;
+			}
+			
+			.mono ol > li {
+				text-indent: -0.4em;
+			}
+			
+			.toggle {
+				padding-inline-start: 0em;
+				list-style-type: none;
+			}
+			
+			/* Indent toggle children */
+			.toggle > li > details {
+				padding-left: 1.7em;
+			}
+			
+			.toggle > li > details > summary {
+				margin-left: -1.1em;
+			}
+			
+			.selected-value {
+				display: inline-block;
+				padding: 0 0.5em;
+				background: rgba(206, 205, 202, 0.5);
+				border-radius: 3px;
+				margin-right: 0.5em;
+				margin-top: 0.3em;
+				margin-bottom: 0.3em;
+				white-space: nowrap;
+			}
+			
+			.collection-title {
+				display: inline-block;
+				margin-right: 1em;
+			}
+			
+			.page-description {
+			    margin-bottom: 2em;
+			}
+			
+			.simple-table {
+				margin-top: 1em;
+				font-size: 0.875rem;
+				empty-cells: show;
+			}
+			.simple-table td {
+				height: 29px;
+				min-width: 120px;
+			}
+			
+			.simple-table th {
+				height: 29px;
+				min-width: 120px;
+			}
+			
+			.simple-table-header-color {
+				background: rgb(247, 246, 243);
+				color: black;
+			}
+			.simple-table-header {
+				font-weight: 500;
+			}
+			
+			time {
+				opacity: 0.5;
+			}
+			
+			.icon {
+				display: inline-block;
+				max-width: 1.2em;
+				max-height: 1.2em;
+				text-decoration: none;
+				vertical-align: text-bottom;
+				margin-right: 0.5em;
+			}
+			
+			img.icon {
+				border-radius: 3px;
+			}
+			
+			.user-icon {
+				width: 1.5em;
+				height: 1.5em;
+				border-radius: 100%;
+				margin-right: 0.5rem;
+			}
+			
+			.user-icon-inner {
+				font-size: 0.8em;
+			}
+			
+			.text-icon {
+				border: 1px solid #000;
+				text-align: center;
+			}
+			
+			.page-cover-image {
+				display: block;
+				object-fit: cover;
+				width: 100%;
+				max-height: 30vh;
+			}
+			
+			.page-header-icon {
+				font-size: 3rem;
+				margin-bottom: 1rem;
+			}
+			
+			.page-header-icon-with-cover {
+				margin-top: -0.72em;
+				margin-left: 0.07em;
+			}
+			
+			.page-header-icon img {
+				border-radius: 3px;
+			}
+			
+			.link-to-page {
+				margin: 1em 0;
+				padding: 0;
+				border: none;
+				font-weight: 500;
+			}
+			
+			p > .user {
+				opacity: 0.5;
+			}
+			
+			td > .user,
+			td > time {
+				white-space: nowrap;
+			}
+			
+			input[type="checkbox"] {
+				transform: scale(1.5);
+				margin-right: 0.6em;
+				vertical-align: middle;
+			}
+			
+			p {
+				margin-top: 0.5em;
+				margin-bottom: 0.5em;
+			}
+			
+			.image {
+				border: none;
+				margin: 1.5em 0;
+				padding: 0;
+				border-radius: 0;
+				text-align: center;
+			}
+			
+			.code,
+			code {
+				background: rgba(135, 131, 120, 0.15);
+				border-radius: 3px;
+				padding: 0.2em 0.4em;
+				border-radius: 3px;
+				font-size: 85%;
+				tab-size: 2;
+			}
+			
+			code {
+				color: #eb5757;
+			}
+			
+			.code {
+				padding: 1.5em 1em;
+			}
+			
+			.code-wrap {
+				white-space: pre-wrap;
+				word-break: break-all;
+			}
+			
+			.code > code {
+				background: none;
+				padding: 0;
+				font-size: 100%;
+				color: inherit;
+			}
+			
+			blockquote {
+				font-size: 1.25em;
+				margin: 1em 0;
+				padding-left: 1em;
+				border-left: 3px solid rgb(55, 53, 47);
+			}
+			
+			.bookmark {
+				text-decoration: none;
+				max-height: 8em;
+				padding: 0;
+				display: flex;
+				width: 100%;
+				align-items: stretch;
+			}
+			
+			.bookmark-title {
+				font-size: 0.85em;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				height: 1.75em;
+				white-space: nowrap;
+			}
+			
+			.bookmark-text {
+				display: flex;
+				flex-direction: column;
+			}
+			
+			.bookmark-info {
+				flex: 4 1 180px;
+				padding: 12px 14px 14px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+			
+			.bookmark-image {
+				width: 33%;
+				flex: 1 1 180px;
+				display: block;
+				position: relative;
+				object-fit: cover;
+				border-radius: 1px;
+			}
+			
+			.bookmark-description {
+				color: rgba(55, 53, 47, 0.6);
+				font-size: 0.75em;
+				overflow: hidden;
+				max-height: 4.5em;
+				word-break: break-word;
+			}
+			
+			.bookmark-href {
+				font-size: 0.75em;
+				margin-top: 0.25em;
+			}
+			
+			.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+			.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+			.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+			.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+			.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+			.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+			.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+			.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+			.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+			.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+			.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+			.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+			.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+			.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+			.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+			.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+			.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+			.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+			.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+			.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+			.highlight-default {
+				color: rgba(55, 53, 47, 1);
+			}
+			.highlight-gray {
+				color: rgba(120, 119, 116, 1);
+				fill: rgba(120, 119, 116, 1);
+			}
+			.highlight-brown {
+				color: rgba(159, 107, 83, 1);
+				fill: rgba(159, 107, 83, 1);
+			}
+			.highlight-orange {
+				color: rgba(217, 115, 13, 1);
+				fill: rgba(217, 115, 13, 1);
+			}
+			.highlight-yellow {
+				color: rgba(203, 145, 47, 1);
+				fill: rgba(203, 145, 47, 1);
+			}
+			.highlight-teal {
+				color: rgba(68, 131, 97, 1);
+				fill: rgba(68, 131, 97, 1);
+			}
+			.highlight-blue {
+				color: rgba(51, 126, 169, 1);
+				fill: rgba(51, 126, 169, 1);
+			}
+			.highlight-purple {
+				color: rgba(144, 101, 176, 1);
+				fill: rgba(144, 101, 176, 1);
+			}
+			.highlight-pink {
+				color: rgba(193, 76, 138, 1);
+				fill: rgba(193, 76, 138, 1);
+			}
+			.highlight-red {
+				color: rgba(212, 76, 71, 1);
+				fill: rgba(212, 76, 71, 1);
+			}
+			.highlight-default_background {
+				color: rgba(55, 53, 47, 1);
+			}
+			.highlight-gray_background {
+				background: rgba(241, 241, 239, 1);
+			}
+			.highlight-brown_background {
+				background: rgba(244, 238, 238, 1);
+			}
+			.highlight-orange_background {
+				background: rgba(251, 236, 221, 1);
+			}
+			.highlight-yellow_background {
+				background: rgba(251, 237, 214, 1);
+			}
+			.highlight-teal_background {
+				background: rgba(237, 243, 236, 1);
+			}
+			.highlight-blue_background {
+				background: rgba(231, 243, 248, 1);
+			}
+			.highlight-purple_background {
+				background: rgba(244, 240, 247, 0.8);
+			}
+			.highlight-pink_background {
+				background: rgba(249, 238, 243, 0.8);
+			}
+			.highlight-red_background {
+				background: rgba(253, 235, 236, 1);
+			}
+			.block-color-default {
+				color: inherit;
+				fill: inherit;
+			}
+			.block-color-gray {
+				color: rgba(120, 119, 116, 1);
+				fill: rgba(120, 119, 116, 1);
+			}
+			.block-color-brown {
+				color: rgba(159, 107, 83, 1);
+				fill: rgba(159, 107, 83, 1);
+			}
+			.block-color-orange {
+				color: rgba(217, 115, 13, 1);
+				fill: rgba(217, 115, 13, 1);
+			}
+			.block-color-yellow {
+				color: rgba(203, 145, 47, 1);
+				fill: rgba(203, 145, 47, 1);
+			}
+			.block-color-teal {
+				color: rgba(68, 131, 97, 1);
+				fill: rgba(68, 131, 97, 1);
+			}
+			.block-color-blue {
+				color: rgba(51, 126, 169, 1);
+				fill: rgba(51, 126, 169, 1);
+			}
+			.block-color-purple {
+				color: rgba(144, 101, 176, 1);
+				fill: rgba(144, 101, 176, 1);
+			}
+			.block-color-pink {
+				color: rgba(193, 76, 138, 1);
+				fill: rgba(193, 76, 138, 1);
+			}
+			.block-color-red {
+				color: rgba(212, 76, 71, 1);
+				fill: rgba(212, 76, 71, 1);
+			}
+			.block-color-default_background {
+				color: inherit;
+				fill: inherit;
+			}
+			.block-color-gray_background {
+				background: rgba(241, 241, 239, 1);
+			}
+			.block-color-brown_background {
+				background: rgba(244, 238, 238, 1);
+			}
+			.block-color-orange_background {
+				background: rgba(251, 236, 221, 1);
+			}
+			.block-color-yellow_background {
+				background: rgba(251, 237, 214, 1);
+			}
+			.block-color-teal_background {
+				background: rgba(237, 243, 236, 1);
+			}
+			.block-color-blue_background {
+				background: rgba(231, 243, 248, 1);
+			}
+			.block-color-purple_background {
+				background: rgba(244, 240, 247, 0.8);
+			}
+			.block-color-pink_background {
+				background: rgba(249, 238, 243, 0.8);
+			}
+			.block-color-red_background {
+				background: rgba(253, 235, 236, 1);
+			}
+			.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+			.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+			.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+			.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+			.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+			.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+			.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+			.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+			.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+			.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+			.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+			.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+			.select-value-color-pageGlass { background-color: undefined; }
+			.select-value-color-washGlass { background-color: undefined; }
+			
+			.checkbox {
+				display: inline-flex;
+				vertical-align: text-bottom;
+				width: 16;
+				height: 16;
+				background-size: 16px;
+				margin-left: 2px;
+				margin-right: 5px;
+			}
+			
+			.checkbox-on {
+				background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+			}
+			
+			.checkbox-off {
+				background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+			}
+		</style>
+
+		<div class="container main-container flex on-phone--column extended">
+			<aside class="sidebar left-sidebar sticky">
+				<button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+					<span class=hamburger-box>
+						<span class=hamburger-inner></span>
+					</span>
+				</button>
+				<header>
+					<figure class=site-avatar>
+						<a href="../../index.html"/>
+						<img src=../../img/avatar_hu897059592634026878.png width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+						</a>
+						<span class=emoji>🍥</span>
+					</figure>
+					<div class=site-meta>
+						<h1 class=site-name>
+							<a href="../../index.html"/>青蔥小說</a>
+						</h1>
+						<h2 class=site-description>##</h2>
+					</div>
+				</header>
+				<!--<ol class=menu-social>
+					<li>
+						<a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank title=GitHub rel=me>
+							<svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+								<path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" />
+							</svg>
+						</a>
+					</li>
+					<li>
+						<a href=https://twitter.com target=_blank title=Twitter rel=me>
+							<svg class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+								<path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84.0 00.497-3.753C20.18 7.773 21.692 5.25 22 4.009z" />
+							</svg>
+						</a>
+					</li>
+				</ol>-->
+				<ol class="menu" id="main-menu">
+				<li class="current">
+					<a href="../../index.html">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+					<path stroke="none" d="M0 0h24v24H0z"></path>
+					<polyline points="5 12 3 12 12 3 21 12 19 12"></polyline>
+					<path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+					<path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+					</svg>
+					<span>首頁</span></a>
+				</li>
+				<li>
+					<a href="../../archives/index.html">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+					<path stroke="none" d="M0 0h24v24H0z"></path>
+					<rect x="3" y="4" width="18" height="4" rx="2"></rect>
+					<path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10"></path>
+					<line x1="10" y1="12" x2="14" y2="12"></line>
+					</svg> <span>小說列表</span></a>
+				</li>
+				
+				<li>
+					<a>
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+					<path stroke="none" d="M0 0h24v24H0z"></path>
+					<path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"></path>
+					<path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"></path>
+					</svg>
+					<span>友站連結(施工中)</span></a>
+				</li>
+				<li class="menu-bottom-section">
+					<ol class="menu">
+						<li id="dark-mode-toggle">
+							<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z"></path>
+							<circle cx="8" cy="12" r="2"></circle>
+							<rect x="2" y="6" width="20" height="12" rx="6"></rect>
+							</svg>
+							<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z"></path>
+							<circle cx="16" cy="12" r="2"></circle>
+							<rect x="2" y="6" width="20" height="12" rx="6"></rect>
+							</svg>
+							<span>Dark Mode</span>
+						</li>
+					</ol>
+				</li>
+			</ol>
+		</aside>
+			<aside class="sidebar right-sidebar sticky">
+				<section class="widget archives">
+					<div class=widget-icon>
+						<svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z" />
+							<line x1="5" y1="9" x2="19" y2="9" />
+							<line x1="5" y1="15" x2="19" y2="15" />
+							<line x1="11" y1="4" x2="7" y2="20" />
+							<line x1="17" y1="4" x2="13" y2="20" />
+						</svg>
+					</div>
+					<h2 class="widget-title section-title">章節列表</h2>
+					<div class=widget--toc>
+						<nav id=TableOfContents>
+							<ol>
+								<li>
+									<a href=#one>#40 都城商甲沈公子 1</a>
+								</li>
+								<li>
+									<a href=#two>#41 都城商甲沈公子 2</a>
+								</li>
+								<li>
+									<a href=#three>#42 都城商甲沈公子 3</a>
+								</li>
+								<li>
+									<a href=#four>#43 都城商甲沈公子 4</a>
+								</li>
+								<li>
+									<a href=#five>#44 都城商甲沈公子 5</a>
+								</li>
+								<li>
+									<a href=#six>#45 都城商家沈公子 6</a>
+								</li>
+								
+								<li>
+									<a href=#seven>#46 都城商甲沈公子 7</a>
+								</li>
+								
+								<li>
+									<a href=#eight>#47 都城商甲沈公子 8</a>
+								</li>
+								
+								<li>
+									<a href=#nine>#48 都城商甲沈公子 9</a>
+								</li>
+								
+								<li>
+									<a href=#ten>#49 都城商甲沈公子 10</a>
+								</li>
+								
+								<li>
+									<a href=#eleven>#50 都城商甲沈公子 11</a>
+								</li>
+
+								<li>
+									<a href=#twelve>#51 都城商甲沈公子 12</a>
+								</li>
+								
+								<li>
+									<a href=#thirteen>#52 都城商甲沈公子 13</a>
+								</li>
+
+								<li>
+									<a href=#fourteen>#53 都城商甲沈公子 14</a>
+								</li>
+
+<li>
+									<a href=#fifteen>#54 都城商甲沈公子 15</a>
+								</li>
+								
+							</ol>
+						</nav>
+					</div>
+				</section>
+			</aside>
+			<main class="main full-width">
+				<article class=main-article>
+					<header class=article-header>
+						<div class=article-details>
+							<header class=article-category>
+								<a href=/categories/themes/>連載中
+								   </a> <a href=/categories/syntax/>司南 </a> </header> <div class=article-title-wrapper>
+									<h2 class=article-title>
+										<!--<a href=/p/markdown-syntax-guide/>Markdown Syntax Guide</a> </h2> <h3 class=article-subtitle>Sample article showcasing basic Markdown syntax and formatting for HTML elements.</h3>-->
+						</div>
+						<!--<footer class=article-time>
+							<div>
+								<svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+									<path stroke="none" d="M0 0h24v24H0z" />
+									<path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4" />
+									<circle cx="18" cy="18" r="4" />
+									<path d="M15 3v4" />
+									<path d="M7 3v4" />
+									<path d="M3 11h16" />
+									<path d="M18 16.496V18l1 1" />
+								</svg>
+								<time class=article-time--published>Sep 07, 2023</time>
+							</div>
+							<div>
+								<svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+									<path stroke="none" d="M0 0h24v24H0z" />
+									<circle cx="12" cy="12" r="9" />
+									<polyline points="12 7 12 12 15 15" />
+								</svg>
+								<time class=article-time--reading>3 minute read</time>
+							</div>
+						</footer>-->
+		</div>
+		</header>
+		<section class=article-content>
+			<!--<p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.</p>-->
+			<!--<h2 id=headings>Headings</h2>
+			<p>The following HTML <code>&lt;h1></code>—<code>&lt;h6></code> elements represent six levels of section headings. <code>&lt;h1></code> is the highest section level while <code>&lt;h6></code> is the lowest.</p>
+			<h1 id=h1>H1</h1>
+			<h2 id=h2>H2</h2>
+			<h3 id=h3>H3</h3>
+			<h4 id=h4>H4</h4>
+			<h5 id=h5>H5</h5>
+			<h6 id=h6>H6</h6>-->
+			<h2 id=one>#40 都城商甲沈公子 1</h2>
+			<div class="page-body">
+				<pre><code class="language-Go" style="white-space:pre-wrap;word-break:break-all">三人出了鬼樓，難躲追兵，重明鳥因而幻化為原型，以鳥獸型態，護送著三位去往城外的地界口，待將人平安送達後，才返身歸回。
+
+風塵僕僕，她們回到司南時，已是入夜。木炎在前廳忙碌未歇，聽見門外有動靜，他心下一喜，急著去門前迎人。木炎盼了好幾個日夜，這回，終是將人給等回來了。
+
+木炎歡喜的打開大門，見著來人，不待看清就先露出一抹燦爛的笑意，喊道，「安姐姐，你們終於回來啦，讓我好等。」說著，他揚著手裡的燈火，火光照耀在三人身上，安向晚神態疲倦地被亦暖攙扶著，褚守護在她另一側。木炎見狀，面色驟變，急忙讓開身，將幾位請進來。
+
+亦暖將人帶回臥房，褚守則被木炎攔下，請至大廳內。屋中火光明亮，褚守尋了凳子坐下，木炎就站在她面前，模樣急切，「這究竟怎麼一回事，怎麼…怎麼安姐姐她此番回來，又是這般病態？」
+
+褚守抹了把臉，深深呼了口氣，鬼樓中處境歷歷在目，「你安姐姐真是個性子猛烈的人，她膽子大，敢與鬼王么女做交易，也就罷了…但她，她她她…竟還敢與對方賭氣要脅！」
+
+木炎聞言，愣了愣，他不曾去往鬼界，不知鬼界規矩，以往也總是聽雨燐回報，但依著安向晚的意思，雨燐總是報喜不報憂，要不是安向晚近期幾回總是負傷歸回，木炎還以為鬼界人就同人間老百姓一般好相處。
+
+木炎戰戰兢兢，「你們這是惹上了甚麼人嗎？」
+
+褚守搖頭，「我哪有那個膽去惹誰呀…」她頓了頓，又是一歎，「是你安姐姐不分青紅皂白地與人做交易，噯！小哥呀，你可知你安姐姐過去是個甚麼來歷呀？」
+
+木炎思索了一下，一臉老實，「我還小的時候，便被安姐姐收留，那時，她四處接取任務，我記得她接得最多的，就是鏢局的單子。送鏢危險，可錢多，安姐姐當時很缺用錢，她說，她要在城中安置個生意鋪子，張羅珍寶，日後等著別人給她送錢財來。」
+
+「張羅珍寶…？」褚守又問，「那你可知，你安姐姐如今多大歲數了？」
+
+木炎皺起鼻尖，他搖頭，「我不知曉。」木炎只知道安向晚身世不一般，卻不曾細問過，安向晚是他的救命恩人，且行蹤隱密，除卻他們在司南走動時，必須走訪的幾個商行，其餘的，木炎一概不知。現在一細想，當初他還小，安向晚便是這副模樣，如今他長大了，安向晚面容依舊，不顯老態。
+
+褚守也沉默下來，她思量著當時在鬼樓，她師傅丹楓撞見她們仨時的表情，有些不太尋常。褚守轉動著腦袋瓜，將安向晚過去種種事蹟聯繫在一起，若安向晚非人非鬼，又不是妖精身份，那麼…難道在鬼差間流傳的那則故事，其中的主角便是安向晚嗎？
+
+且依木炎所言，這安向晚的性子與尋常姑娘家不一般，她既有勇謀，膽敢出入鬼界，走訪禁地，取得那玉面鬼娃，她膽識過人，一點也不似尋常二十初頭歲的姑娘家該有的模樣…
+
+而她心中懷有執念，她先前為求玉面鬼娃一事，便是如此。安向晚所尋找的這個人，褚守不傻，經過重明鳥點提，又有楚玹從旁描述，玉面鬼娃裡封印的是某位鬼差的魂魄，想來這安向晚也是知情的。既然安向晚所尋之人是鬼差，那她便能和那故事裡的主角重合上了！
+
+褚守忽然大拍手心，惹出好大一聲動靜，嚇得木炎原地跳腳，頻頻望過來。褚守激動道，「原來那個被鬼界阻絕在外的人，便是安姑娘呀！」之前安向晚說過自己不好頻繁往來鬼界，要讓雨燐替她跑腿，褚守還當是司南生意繁忙，安向晚抽不開身，現下一梳理，褚守茅塞頓開，事情始末全都聯繫上了，她暢快的露出笑容，四肢百骸像是被打入了精氣，她伸了個懶腰，站起身。
+
+木炎困惑地望著她，褚守發出一聲喟嘆，隨後往門口走去，木炎喊聲，「喂，你上哪去？」
+
+褚守心情暢爽，她揚了揚手，給木炎留下一個颯爽的身姿，「我想通啦，我睏啦，我要回屋睏覺啦。」
+
+木炎，「…。」
+
+死氣侵擾著安向晚的身體，亦暖將人帶入房中後，並未馬上離去，安向晚倚在床頭，神色蔫然，亦暖坐在床沿，緊盯著她，安向晚輕輕顫了眼睫，疲倦地望了她一眼，「我無礙。你幾日未能得到安歇，想來定也累了罷，還是早些回去歇息…」
+
+亦暖不動作，她說，「安姑娘，今日你失態了。身為商人，你卻在楚玹面前犯了大忌，你讓這筆交易變得毫無價值。」
+
+安向晚微微側了側臉，視線隨意地落在了床尾的橫欄上，「日後我便不會再與殿下接觸，不妨豪賭這麼一場。而我，也已經將你覲見給殿下，往後，你們之間因著我以往的交情，若要再交易，也好延續。亦暖，這不就是你想要的局面麼？」
+
+亦暖默了默，半晌沒吭聲。安向晚舒了一口氣，又輕輕咬下一聲淺息，她出言趕人，「我乏了，便不送了。」
+
+亦暖始終沒有說話，她起身，朝門口走去。安向晚側耳一聽，門被人推開，又闔上，一陣子，她才轉頭望過去，對著無人的門扉，她抿了抿唇，旋後，扯過被子一角，翻身睡去。
+
+夜空上雲層密佈，亦暖望著沒有月色的天空，她並未離去，站姿筆直，像尊恪守本分的石雕像。自她將靈丹吸入體內之後，她心頭總有一股情愫湧動，而她在面對著安向晚的時候，那異樣感更甚，她弄不明白這究竟是怎麼回事。就好似她曾前識過安向晚，可當她仔細回憶時，腦海裡卻又記不清那人的眉目。
+
+陌生的記憶硬生生地闖入了她的腦海裡，迫使她去記住，去面對…
+
+亦暖闔上眼，額間的筋絡隱隱抽動著，她微微擰起了眉，思緒在大腦裡匯聚，又分離，當她聚精會神正要觸及那份模糊記憶時，門後卻忽然傳來一呻吟聲。
+
+亦暖猛地睜開眼，回身將門推開，闖了進去。房中燈火未滅，安向晚依舊在床上安歇，亦暖放輕步伐走過去，卻在半路時，聽見安向晚虛弱的聲音，「是誰…？」
+
+「安姑娘，是我。我在外聽見了動靜，你出了甚麼事？」亦暖沒有再走近，安向晚背對著她，身子被遮掩了大半。
+
+「你…」安向晚沉沉的吐息一聲，才說，「未曾離去？」
+
+「不曾。」
+
+又是一低淺的呻吟，伴隨著難耐的喘息，亦暖這回忍不住了，她抬步來到床沿，伸手扯住了棉被，就要拉開。安向晚適時的捏緊被子一角，力道受了阻礙，亦暖蹙了眉，她只是再添一分力，那被子便鬆落了。
+
+安向晚失去了遮掩，她下意識的蜷縮起身子，亦暖探頭去看，安向晚緊捏著自己心口處，而在那裡，指掌間有殷紅擴散，浸染了衣襟。這無緣無故地便受了創傷，使得亦暖也亂了手腳，她傾身去觸碰安向晚的手背，試圖將那傷處展露，卻不想，安向晚不配合，反倒將人推開，「你要…做甚麼？」
+
+動作間，安向晚不得不翻動身子，本就未收攏好的衣襟，凌亂地鬆散開來，安向晚心口處有道細小的傷口，創傷處未癒合，正在往外淌著新鮮的血液。而她手中握著一物，物件沾上腥紅，卻被她緊緊握在手中。亦暖扳過她的雙肩，安向晚力氣不如她，掙扎無果，反倒牽動了傷處，她皺了皺眉，悶哼一聲。
+
+「安向晚，你到底在做甚麼？」口吻裡帶著些許慍怒，因著亦暖眼尖瞧見，就在安向晚身側，落下了一只小巧銀鏢。安向晚心口上的傷處，是她自己弄下的。
+
+安向晚抬起眼眸，疲態盡顯，她惜字如金，「養玉。」
+
+亦暖猶疑了一瞬，才想起先前安向晚與褚守的對談，當時安向晚便提及這養玉相當費力耗神，「你用精血…在養玉？」
+
+「嗯。」安向晚許是虛弱至極，她放棄了抵抗，手似是欲拒還迎地扯著亦暖的前襟，「妖玉喜嗜血，唯有此法，才能養好得快些。雨燐是我得力助手，司南裡不能沒有她…」
+
+「安向晚，你胡鬧！」怒意甚極，亦暖那按住雙肩的手骨分明，施力極大。安向晚吃痛，別開了臉，她緊抿著唇，不吭出一聲。她是知理之人，曉得亦暖動怒的理由，她身子本就抱恙，卻為求急功近利，導致身體更加痛苦難受，此時，一昧的顯露弱態，非但不得同情，還只會令對方更覺生氣。
+
+「我是胡鬧了，可我也別無他法。多拖延一日，便是讓玉中人受盡折磨…我也說過，寄宿於玉中，玉身即為肉身，而玉並不會自行痊癒。玉、石一類的礦質，皆是經過長年累月，吸取萬物精華所造就，那得花上好幾年、好幾十年、好幾百年…」安向晚語氣平淡，話中顯露無奈，亦暖注視著她的側臉，安向晚唇色蒼白，氣色欠佳，她又垂眸掃了一眼，心口處血液流淌著…
+
+亦暖往後退了些許，取過安向晚手裡的半塊太極玉。安向晚試圖反抗，但實是抵擋不過亦暖強搶。
+
+安向晚，「…。」
+
+亦暖捂著玉身，沒看她，「這養玉得吸食多少精血？你這身子骨太虛弱了，連自己都照顧不來了，卻還妄想著去照料他人？」
+
+安向晚伸手要搶回，亦暖揚手躲開了，「雨燐不是別人…她是我在這世上，如今唯一的至親了。」
+
+亦暖微愣，安向晚自知自己鬥不過亦暖，但就怕她給跑了，便欺身撲倒上去，殊不知這回，亦暖壓根兒沒閃躲，安向晚壓倒在她身上，指尖一點點上爬，捉住了亦暖的手腕，她微微撐起身體，目光專注在亦暖的掌心處。
+
+方觸及玉身，指尖便被人一併握了住，亦暖另一手扶著她的身側，兩人坐起了身，亦暖將玉推回她手中，「對不起。」
+
+「她既然是你至親之人，你便要更親力親為地好生照料著。」亦暖理好衣襟，起身站在床緣，她背對著安向晚，「我可有甚麼能幫得上忙的地方麼？」
+
+安向晚看著她的背影，心中雖納悶她情緒轉變未免太快速，但想起近日她性情反覆無常，許是邪物作祟，尚未掌握穩定，便也不做多想，「櫃架上有隻碟子，煩勞你替我取來。」
+
+亦暖依言走到櫃架前，架上藥品稀少，還被人分門別類的劃分開來，亦暖隨意掃了一眼，好幾個瓶瓶罐罐被人推至一旁角落，而方便取得的地方，卻僅擺放著單獨一瓶傷藥。
+
+瓶身小巧，樣式熟悉，亦暖翻看瓶子底部，底部處有落下特殊的記號，經過確認，此瓶傷藥確實出自她之手。亦暖將傷藥放回去，後面傳來聲音，「有找著麼？」
+
+「嗯。」碟子就在下層，亦暖老早就瞧見了，她取過物件，返身回來。安向晚衣襟鬆散著，一枚銀鏢被她握在指尖，亦暖將碟子交予她後，便轉過身。安向晚見她迴避，心中一暖，「多謝。」
+
+銀鏢劃過肌膚，血絲順著物器的弧線往下滴落，待鮮紅浸染碟子底部，安向晚才收起銀鏢，闔衣，「好了。」
+
+亦暖回身，安向晚將玉放入碟中，亦暖取過碟子，往桌上擱著，又把乾淨棉布塞到安向晚手中，「這便成了麼？」
+
+安向晚側過半身，棉布被她壓在心口處上止血，她淡淡道，「沒，每隔三日還需得再放心頭血餵養之。」
+
+亦暖啞口，「需得多長時日？」
+
+「一旬。」
+
+一旬十日，那便是再二回。亦暖呼了口氣，但又隨即緊張起來，這心頭血也不是個簡單的東西，如何能夠頻繁供給的？
+
+亦暖神色變了幾遍，安向晚瞧見了，淺笑一聲，「雨燐身手不差，在我之上，以往她鮮少受傷，後來，曉得化回玉身的法子後，這養玉一事，便不再有過。」這話意上看似要人放寬心，但實則卻是暗諷著褚守保護不周，而原先這主意，安、雨二人並不同意，亦暖自知理虧。之後幾日，她似賠罪般地，照料起安向晚的日常所需。更甚之，她日夜守在安向晚床邊，每每當安向晚夜裡難眠時，扭頭一望，便能瞧見亦暖那雙幽綠獸瞳，安向晚險些被嚇破膽，這大半夜的，亦暖這樣實在嚇人。</code></pre>
+				<p id="6c538e87-c8b8-4037-8c05-9bc3c52a2840" class="">
+				</p>
+			</div>
+
+
+			<h2 id=two>#41 都城商甲沈公子 2</h2>
+			<div class="page-body">
+				<pre><code class="language-Go" style="white-space:pre-wrap;word-break:break-all">時間飛逝，一晃眼，十日便過去了。前夜，安向晚才放下心頭血，妖玉浸入盛著血液的碟子中，養過一日一夜，玉身上的紋路漸淺，玉石光滑，受滋潤，散發著妖邪紅光。
+
+這天，亦暖去廚房煎藥，日前，她們從鬼界回來時，安向晚受了死氣侵染，身子骨虛弱，又因幾個日子持續消耗，不得安歇，因而落下病根。房中，安向晚睡得很沉，外面日頭還不高漲，房間並未點燈，視線昏暗。屋中寧靜，桌上小碟被一股輕煙環繞，不多時，一道身影顯現，火紅色的衣衫似極了那出嫁時的喜服，女子身姿妖嬈，她款步邁向床邊，輕聲摸上了床榻，擁入溫柔鄉。
+
+當亦暖持著湯藥回來時，見著床上多了一抹身影，她神情微愣，生怕變故，也顧不得其他，胡亂將湯藥往桌上一擺，便匆忙來到床邊。雨燐埋著頭，手搭在安向晚腰間，小鳥依人，動作親暱。亦暖辨出那人後，沉著一張臉，「雨姑娘…」
+
+雨燐耳尖微動，她鬆了手，半坐起身，她不耐的往後掃了一眼，眼底浮光湧動著，陰沉道，「你，給我離安生遠些…」
+
+亦暖靜默的看著她，雨燐見她不離開，一時心緒煩躁，袖口微震，帶出折扇，行雲流水般直襲亦暖面門。亦暖不是省油的燈，她腳步輕轉，身子微橫，折扇貼著她面頰滑了過去。
+
+「雨姑娘，你這是甚麼意思？」亦暖才開口，雨燐不給她說話的機會，緊追而來，指尖挑起折扇，反手來一擊回馬槍。亦暖抬手阻擋，手臂幻出半形獸化，折扇將將止在了她側頸處，雨燐氣憤道，「要不是你，盡是亂出些餿主意，我與安生眼下又豈會這般受限？」
+
+亦暖皺了皺眉，「凡事多有變數，事態本就難以預料，又怎能全全怪罪他人？」
+
+「你當然會這麼說！安生內心柔軟，見不得他人受罪，寧可自己攔下承擔。當時情況緊迫，為求局面和氣，安生選擇退讓，也是因著信任你們。可後來呢，我總算看出來了，你與那小鬼差就是一路人，壓根兒沒將過去的事情放下，你心裡記恨著我們，此行跟著我們，就是想藉機向我們報仇！」雨燐咬牙切齒，她護在床前，不讓亦暖再靠近，虎著一張臉，想用氣勢將人趕出去。
+
+「隨你怎麼說。」亦暖飄開視線，走到桌前將藥碗取起，「我不過提了意見，而安姑娘也同意了。雨姑娘，你既然跟隨她，又依她而行事，就不該妄自多做遐想，懷有二心。」亦暖不理會她的威嚇，走到床邊，雨燐狠狠瞪著她，卻又拿她毫無辦法，亦暖說得是實話，她既聽命於安向晚，自當以安向晚的想法為重，只是她心中不服氣，安向晚近期盡是偏袒著外人…
+
+「你！我讓你別過來，你沒聽見麼！」雨燐想要再阻攔，身後卻突然冒出一隻手，按下她的手臂，那人聲音虛浮，「雨燐，你冷靜些。你這般吵鬧，我無法安歇。」
+
+雨燐倏地回頭，安向晚面色有些蒼白，「安生…」
+
+安向晚朝她淺笑，又抬眼，對著亦暖露出歉然的神情，「亦暖，勞煩你了。這裡有雨燐在，你先回去休息罷。」
+
+藥碗轉了個方向，落到雨燐跟前，雨燐接過手，亦暖轉頭便走了，至房門口時，她忽然停頓了一下，床上二人見狀，心中納悶。亦暖說，「安姑娘，你身子尚虛，這水藥，必須仔細服用，我會依照時辰送來。至於膳食…」
+
+「膳食用不著你操心。」雨燐心中不快，語氣就也差了幾分。亦暖沒往心裡去，「如此…那我晚些再過來。」
+
+身影踏過門檻，吱呀一聲，門闔上了。
+
+雨燐拎著碗發愣，安向晚撫上她的手背，想將碗接過，才觸及，雨燐便回神了，「安生，我來餵你罷。」
+
+安向晚笑了笑，回道，「我還不至於虛弱到連個碗都握不住。」
+
+雨燐撇了撇嘴，安向晚喝過藥，碗便被搶了過去，一陣子，雨燐又回來，安向晚倚在床頭，雨燐坐在她旁邊，二人沉默一陣，安向晚才開口，「我曉得你心裡不滿，對不住。積怨已久，你其實可以同我發洩。」
+
+雨燐嘆息一聲，不久前她才向亦暖發了重話，心裡堵著的那口氣，也消下大半。其實她雖說是埋怨安向晚的決策，倒不如說，更是氣著自己無用。
+
+「唉，事已至此，我置氣又有何用。我就是擔心，安生…亦暖這個人究竟可否信任？」
+
+「不知。」安向晚搖頭。
+
+「那你還處處維護著她？」雨燐激動道。
+
+「亦暖也是個可憐人。我先前對她多為同情憐憫，寬而待之。那時，她並未將心思放在我們身上，我便也以為她同褚守那般性子單純直接，好操弄。」原本安向晚只是想藉由褚守的身份來達成自己的目的，哪能料到後續種種。雖然她半推半就的應承著事態發展，褚守會她被收入麾下，也是機緣巧合，至於亦暖…
+
+安向晚不願放棄拉攏亦暖，可她心裡又沒有幾分把握。坦白說，自她們奪取靈丹後，亦暖性情大變，有時，她面對著亦暖，彷彿有種成了被盯上的獵物的感覺。不知這是否為邪物作祟的影響，安向晚極其不喜這種感覺，以往，她總是拿捏著別人，如今，她掌握不住局面，她心裡不踏實，也覺不安。
+
+「我需得再觀察她一段時日。」安向晚說著，雨燐盯著她眉目，見她神色專注似是在思量事情，便也不出言打擾。 
+
+經過十日精血餵養，雨燐腿上的創傷已經好全，她估摸著時辰去準備膳食，她知道安向晚喜好，尋著飯館去買，當她回來時，正好到了用膳時間，經過廚房時，一陣藥味撲鼻，她側頭去看，亦暖守在火爐前煎藥，見了人影靠近，亦暖抬起頭，兩人相互打了面照。
+
+雨燐不待見亦暖，亦暖也曉得，彼此間氣氛微妙，誰也不吭聲。雨燐心道，這亦暖倒是規矩，說了按時辰送藥，也不馬虎，這才剛到飯點，便提前來準備水藥了。
+
+雨燐扭頭走了。亦暖見她離去，又低頭看回藥爐，神色莫辯。
+
+房中安向晚正在更換藥布，雨燐推門進來時，她將將把棉紗纏回身上，雨燐擺上盒飯，正要過來服侍她穿衣，安向晚早一步將內衫套上，雨燐取過外衫，安向晚抬了手臂，雨燐埋頭整理著她的衣襟，輕聲說道，「我方才路過廚房，見那人類姑娘在那煎藥。」
+
+安向晚說，「也不知她是跟著鬼差久了，耳濡目染，也染上這一板一眼的性子。她這循規蹈矩的，也不曉得是好還是壞？」
+
+換完衣衫，兩人相繼入座用膳。言談起幾日前，她們去鬼樓時的情況，那時雨燐負傷，歸附玉身中修養，並未參與其中，安向晚便將那日之事，細細告知。
+
+「安生，既然玉面鬼娃中的鬼差，不是你所尋之人，日後，你又該如何打算？要不，我再去鬼界搜尋，多走訪幾個禁地，說不定會有其他新的發現？」雨燐道。
+
+「鬼差間自有鬼器，若能尋到她的貼身鬼器，說不定便還有辦法…雨燐，我想勞煩你和褚守。」安向晚說，「殿下不願告知那些無主鬼器的去向，想來那些物件定是被埋藏在某處戒備森嚴的禁地裡，我要你們去替我打探這個地方在何處。」
+
+「我明白了。」雨燐點頭，「安生，若是我們進展順利，你可還記得，你那位鬼差的鬼器是個甚麼模樣？」
+
+「嗯…我印象中，她持有的是一對純白色雙劍，劍身上有這麼一個記號…」安向晚取過紙筆，筆鋒點過黑墨，在紙上描繪著記憶裡的兵器模樣，在劍身處有雲紋圖案，一路從劍峰走到劍柄。
+
+雨燐端詳著物件模樣。這時門忽然被敲響，安向晚起身去應門。門外亦暖端著藥碗，安向晚要接手，卻被亦暖躲了開來，她東張西望地朝屋內掃了一眼，安向晚見她似有話要說，便將人請入屋內。
+
+亦暖入座時，雨燐正好將紙張放到燭火上燃燒，火光吞噬著畫中劍，亦暖看著紙面燃盡，才收回視線。她輕描淡寫說，「外面來了客人，我瞧木炎神態緊張，似乎應付不來。」
+
+聞言，二人面色一凜，雨燐急忙起身，「不好，我們耽擱這麼多時日，木炎一個人肯定忙不過來了。安生，我先去鋪中查看一趟！」
+
+「嗯。」安向晚應了一聲，雨燐匆忙離開，留得屋中二人面面相覷。
+
+「瞧你將雨燐支開，可是有甚麼話想同我說麼？」安向晚倒了一盞茶水，推至亦暖面前。
+
+亦暖面色如常，她捧著茶盞，輕抿一口，細聲說著，「既然我答應了你的條件，無論如何，也算是司南的一份子了。雨姑娘這般不待見我，安姑娘，你也就這般任由著她來麼？」
+
+安向晚扶額，「雨燐護主心切，性子一向如此，她嘴巴上壞，心裡並不壞。我想你也看得明白，就當是給我面子，莫要怪罪於她。」
+
+亦暖不回話，只是笑了笑。安向晚自討沒趣，為緩解尷尬，也給自己添了一盞茶水，乾飲著。
+
+「我此來，」亦暖又開口，安向晚停下了飲茶的動作，斜眼飄向她，聽著她說下去，「是想同你言說，我與褚守的事情。前些日子，我們曾在鬼界客棧中言談到，楚玹既然將玉面鬼娃的任務交予給你，那麼，褚守會再接獲到任務，便很是不尋常。」
+
+「如若當時，我與褚守不將那玉面鬼娃交出，而是直接上繳回去。你認為，楚玹她會如何作想？」亦暖語氣平穩，她打量著安向晚的眉目，見著對方，眉頭微擰，眸色漸深，想來是在仔細思量此事的後果。
+
+「楚玹會怎麼做，我不好定論。但若換作是我，我會對你們的動機抱持懷疑，更甚之，我會將你們留下，仔細觀察，查探你們背後接觸之人。」安向晚邊說，邊覺得哪裡不妥當。如果當時，她去到無望冥海，洞悉了玉面鬼娃裡的身份，而褚守也沒受傷，職責依舊的話…
+
+那麼，當褚守上繳玉面鬼娃後，楚玹又會是何種心態？假如按著安向晚的思維去思量，楚玹若是懷疑起褚守和亦暖，未必不會去調查曾經與她們有過接觸之人，那麼…她安向晚此番作為，豈不可疑？倘若她稍一處理不慎，那倒不是誤打誤撞，成了他人的替罪羔羊？
+
+思及此，安向晚沉著臉色，緊握著指骨，她不曾想自己竟會遭人算計，「亦暖，此事你同褚守商討過了麼？」
+
+「鬼差間接取任務的方式並不多，一是按照鬼界程序，去城中專門機構接取委託，二是經由直屬師傅代由分發。」亦暖頓了頓，「我問過褚守，這玉面鬼娃的任務，她並不是由城中機構接取。」
+
+「褚守的師傅…」安向晚呢喃一聲，「他們的目的究竟是甚麼，何故要取玉面鬼娃？既然最後的目的都要上繳，難不成就只是為求殿下青睞？」
+
+亦暖搖頭，也表示不解。
+
+濃烈的未知感將她們包圍，她們只曉得自己已被牽連其中，卻無力去對應，只能束手無策的等著對方尋上門來…
+
+老遠就聽見前廳吵雜，雨燐快步走進屋內，視線轉了一圈，落在櫃台前。木炎模樣慌亂，迎著那來人，他已潰不成軍，雨燐適時的走了過去，替他解圍，「呀，這位不是沈公子嗎，是甚麼風將您給請來啦？」
+
+沈半夏聞聲看去，雨燐笑盈盈的迎著貴客，兩人談笑春風，噓寒問暖，就是不聊生意事。雨燐一來，木炎得已脫身，他機靈的跑出門外，往偏院走，尋救兵去。
+
+庭園裡，褚守站在花圃旁，看著一位姑娘逗弄著狗子，那狗子活潑，喜歡向人撒嬌討摸，姑娘也不計較污泥染上裙擺，她擼著狗頭，自言自語地，同那狗子說話，「鯇魚呀，幾個月不見，有沒有想姐姐我呀…」
+
+鯇魚三兩下將地上的碎肉啃食乾淨，牠高昂的汪了一聲，當是回應。
+
+「沈…沈姑娘原來喜歡狗子麼？」褚守離了他們數步之遠，她強烈表達了，有狗的地方沒有她，有她的地方沒有狗的精神。
+
+沈雲煙順著狗子的皮毛，鯇魚時常被木炎捉去清洗，身上並無太重的異味，遭人喜愛也是正常，「嗯，只可惜，家中長輩不喜馴養這些走獸。」
+
+褚守試圖邁出腳步，方才踏出，鯇魚便激動的彈起豐腴的小身子，牠吐著寬長的舌頭，模樣憨傻可愛的朝著褚守猛搖尾巴，鯇魚很有靈性，只要褚守敢再踏出一步，牠便敢衝過去撲倒她。
+
+褚守默默的收回了腿，心道，惹不得…惹不得，好狗狗，你…你可別過來呀！
+
+沈雲煙見狀發笑，「鯇魚溫和親人，你不用怕牠。喏，過來，你摸摸牠，牠不咬你，我說真的。」
+
+褚守面有難色，可奈何木炎才交代過她，必須好生照料客人，他們做生意的，最是不敢得罪這些貴客，他們還盼著維持好關係，等著客人給他們送錢上門呢。於是乎…褚守心一橫，眼睛一閉，腳步沉沉踏出，與之同時，那邊嗷聲大起，爪子磨地的聲音由遠及近，不待褚守反悔，那毛茸茸的東西便已撲上她的衣襬。
+
+褚守渾身一抖，身體似在抽蓄，她蒼白了臉色，一口大氣也不敢喘上。
+
+那沈雲煙不嫌事大，她拍了拍裙擺，走到褚守身邊，她好心的將鯇魚抱起，湊到褚守面前，和善道，「喏，你把手伸出來嘛，摸一摸牠。噯，別閉眼呀，鯇魚多可愛呀，你看看牠呀。」
+
+褚守深吸一口氣，好不容易才壓下心中恐懼，她聽話的睜開眼，鯇魚放大數倍的狗面就貼近在她眸前，濃郁的狗味撲鼻，使得褚守嚇得花容失色，瞪直雙目，「別…別別，我的好姐姐，你別讓牠這麼靠近我呀…」
+
+「噢。」沈雲煙從善如流，將狗子往後抱開些許，鯇魚閃著一雙水汪汪大眼睛，尾巴搖晃賣力，就等著褚守伸手過來摸牠。
+
+「來，手給我。」沈雲煙不罷休，循序漸進的逼迫著褚守突破內心恐懼，而褚守也不是個善於表達之人，根本不懂如何拒絕別人善意的脅迫。她再一次鼓起勇氣，將手遞出去，沈雲煙牽過她的手，往那狗背身上按，鯇魚比她倆更激動，歡快的在沈雲煙懷中掙扎，一狗頭撞上了褚守的掌心，牠使勁蹭了蹭，似覺不夠，便又仰頭在那指尖上，舔了舔。
+
+「哇啊…！！！」幾乎是反射動作，褚守猛地抽開手，她退離數步，盯著自己掌心看，露出一副懷疑自我的神情。
+
+沈雲煙見她反應這般大，一時沒忍住，在那無良地，笑得花枝亂顫。而那鯇魚看是不服氣，見褚守逃跑，對著褚守的方向，一個勁地狂吠，彷彿是在叫她快些回來。
+
+但褚守根本沒注意到他們，她許是被嚇出了魂，對著自己的手念叨著，「這手不能要了…這手不能留了…啊…啊啊…啊啊啊！」說著，她朝著後院的方向跑去，途經前廳時，雨燐正攜著貴客出來，褚守顧不上禮節，倉促的跑過二人，逃離現場，雨燐在後叫喚她幾聲，依舊留不住人。
+
+雨燐沉了臉，沈半夏卻只是笑笑，「我看那姑娘是個生面孔，可是安掌櫃招來的新人？」
+
+雨燐心裡沒好氣，嘴巴上卻還是端著柔和的嗓音，應聲，「嗯，讓沈公子見笑了。」
+
+那邊沈雲煙抱著鯇魚走過來，「哥，你們商談完了麼？」
+
+二人相繼回頭，雨燐見了沈雲煙，頓時一愣，沒想到這沈家來了兄妹倆。她想給安向晚打掩護，可奈何身旁沒有木炎褚守，她一個人又不能擅自離開，獨留客人，有失禮數。這下可該怎麼辦才好？
+
+沈半夏搖頭，「沒見著安掌櫃，聽聞雨姑娘言說，安掌櫃前些日子身體抱恙，如今方癒，我現下便要隨雨姑娘前去叨擾，雲煙，你可要一起過去？」
+
+沈雲煙呵樂著，「好呀！我倒想親眼見一見這安掌櫃，看她究竟是怎麼將我兄長迷成這般魂不守舍的模樣。」鯇魚被她往地上放，她理了理衣袖，跟上了二人。
+
+沈半夏聞言大笑，兄妹一左一右走在雨燐身側，雨燐嘴角微抽，腳步沉重，無奈地領著他倆往偏院行去。</code></pre>
+				<p id="6c538e87-c8b8-4037-8c05-9bc3c52a2840" class="">
+				</p>
+			</div>
+
+
+			<h2 id=three>#42 都城商甲沈公子 3</h2>
+			<div class="page-body">
+				<pre><code class="language-Go" style="white-space:pre-wrap;word-break:break-all">安向晚和亦暖討論不出結論，二人各懷心思，一陣子都沒說上話。門外傳來凌亂的腳步聲，亦暖過去開門，安向晚緊隨其後，見了門外木炎氣喘吁吁，「安姐姐…不好了！沈家公子來了！雨燐現下拖著他，可是…沈公子難纏，雨燐恐怕…撐不了多久。」
+
+「沈公子來了？」安向晚心中大驚，面上卻還是一副鎮靜模樣，「我明白了，我稍作整頓便過去。」
+
+「好。」木炎應聲。他守在屋簷下，不敢懈怠，就怕沈公子來的太快，安向晚準備不及。
+
+亦暖闔上門，回頭一望，安向晚並不拖延，她從衣櫃裡翻出一套男款服裝，動作利索地，套上衣裝，又將秀髮重新梳理過，綁了個高挑的公子髻，當她回身時，亦暖眼睛一亮，安向晚著一襲白裝，她眉宇柔和，未塗胭脂時，模樣清秀，就似個知書達禮的溫潤公子哥。
+
+亦暖走向前，上下打量著安向晚的身段，給出評語，「你做男裝扮也耐看，不錯。」
+
+安向晚正理著袖襬，聽聞亦暖一言，她愣神一瞬，才失笑道，「你可別打趣我了，我這是不得已而為之。」
+
+二人離了房，木炎就在屋簷下等待，三人沿著廊道，要走往前廳，在半路上便遇見了雨燐攜著二位貴客。木炎瞧見沈雲煙時，神色驚慌，心道糟了，怎麼這沈公子原來不是單獨過來的麼？
+
+沈半夏迎上前，朝安向晚伸手，「安兄，許久不見，別來無恙呀！」
+
+安向晚皮笑肉不笑的應聲，「沈兄。」
+
+「聽聞安姑娘身體抱恙，她人還好麼？」沈半夏關心道。
+
+「我小妹剛歇下。」
+
+「如此…那便不叨擾了。有安兄在，這生意找誰談，都一樣！」沈半夏勾著安向晚的肩膀，笑呵呵往外走去。沈雲煙一雙眼直勾勾的盯著安向晚，她機靈的跑到另一側，努力博取安向晚注目。
+
+亦暖在後看著他們走遠，雨燐扶額，同木炎說，「怎麼沈家這回來了二人，這兄妹倆可難纏了，安生一個人如何有辦法應對…壞了壞了！」
+
+「安姑娘和這沈家有甚麼淵源？」亦暖好奇道。
+
+木炎也是一副苦惱的模樣，「這沈家是都城裡一大戶商甲，我們好多筆的買賣，都是同沈家交易。沈家財大氣粗，盡喜歡收集些珍寶玉石，所以我們司南才四處與百姓們張羅稀物，從中揀些質量高的，給沈家供貨。」
+
+「原來如此。」亦暖點了點頭，當初她便覺著奇怪，怎麼這司南賣貨便賣貨，竟還學人做起了當舖，一來二往根本賺不了幾個錢，反倒還得賠上更多本金，現在木炎這麼一說，原來這當舖背後是有沈家這個大金主在撐腰呢。
+
+幾人浩浩蕩蕩的走回前廳，商舖裡。安向晚坐在櫃台前，沈半夏笑吟吟的對著她，櫃檯上放著一只書約，安向晚垂眸掃過，神色微沉。
+
+那邊雨燐木炎和亦暖，三人聚集在貨架邊上，安向晚談生意，他們仨插不上話，便尋著事情做，但又實在好奇這個沈公子會做出甚麼事情，三雙眼睛時不時投遞過去。
+
+「沈公子這是何意？」安向晚指尖點了點書約上的內容，這白紙上大晃晃的標題，寫著提親二字。
+
+這沈公子家世好，長相也不差，算得上是一表人才，他自覺自己品行不差，為人也良善，理應不會遭人拒絕才是。沈半夏覺得這事多半能成，心裡美滋滋的，他難得靦腆的笑了起來，模樣有些羞澀，「安兄，我與你小妹也認識有幾個年頭了，而我膝下並無子嗣，聽聞安姑娘如今還是一個人，我便想…便想…嘿嘿。」
+
+安向晚見他這般，只覺腦門疼得很，又不好馬上拒絕這門親事，只得拖延道，「此事，我還得同我小妹商量，才好給沈公子一個答覆。」
+
+「那是當然！」沈半夏舔了舔乾澀的唇，面上笑得燦爛，「這人生大事可不能馬虎，此事不急，我就是先來通知一聲，只要安姑娘同意，我便隨即令人送禮過來定下親事！」
+
+沈雲煙也在一旁聽著，見哥哥這門囍事多半要成了，便也起哄道，「不知安哥哥可有婚配，若是…不嫌棄小女，不如便讓這囍事…再添上一筆？」
+
+「小妹你…」沈半夏先是一愣，旋後便笑開懷，連連拍手叫好，「好呀！這樣豈不就是雙喜臨門了嗎！」
+
+安向晚看著二人，犯難著，「這…」她下意識的朝著雨燐的方向看去，卻不想雨燐和木炎只是拉長了耳朵在聽，根本沒往她這處看，反而是亦暖…她看戲似的，噙著笑意，一直往她身上打量著。
+
+安向晚沒給答覆，沈雲煙糾纏道，「安哥哥，人家很乖很聽話的，在家絕不鬧事。」
+
+「我…」因著生意往來，安向晚不好隨即拒絕，而沈家兄妹在此，只要她一句話，這門親事就能定下，根本不必再經商討。無法推脫，難以拒絕，這下可怎麼辦才好？
+
+好…一字就懸在了嗓子眼，安向晚吸了一口氣，就要回應，那邊突然有道聲音插入，打斷了她的思緒。
+
+「安公子前些日子在外，才允過了一位姑娘。他們婚配在即，沈姑娘可要想仔細了才好，婚姻大事不好胡鬧，女子不如男子那般，能夠挑揀地位，一旦錯嫁，入了家門，不僅是要與幾個姐姐妹妹相互爭寵，夫妻間相處，更是要多下工夫，可不比獨身一人，要來得快活。沈姑娘看著也不是需要依傍旁人家世的人，何必為著心思不在自己身上的男人，委曲求全？」亦暖一番話，瞬時將現場的氣氛，打至冰點。
+
+沈半夏皺了眉，卻還是保持著風度，揚著嘴角。沈雲煙面上表情變了幾遍，她指了指安向晚，又看向亦暖，詫異著，「原來安哥哥已有婚配了？」
+
+亦暖只是笑，沈雲煙得不到回答，便又轉頭去看安向晚，「安哥哥，這是幾時的事情，我怎麼都沒聽你提起…？」
+
+安向晚心中也是猶疑，可是她訓練有素，面上表情控管極好，她歉然道，「幾個月前我在外受了傷，傷重不醒，被一戶人家撿了回去，那戶人家的女兒對我照顧有佳，我們…」安向晚飄開了視線，繼續扯謊道，「暗生情愫，某天夜裡，她同我傾訴衷腸，我們一時情不自禁，便…有了虛實。」
+
+「甚麼！？」沈雲煙訝然，連連往後退了幾步，沈半夏擔憂她，忙著過去攙扶，並好言勸道，「既然安兄已有佳人，我的好妹妹呀，你就莫要再為難人家…」
+
+「怎麼會…怎麼會…」沈雲煙呢喃幾聲，依舊不願輕易相信，她看著安向晚，指向亦暖，說，「安哥哥你莫要與人聯合扯謊騙我！這主意…這主意是不是她臨時起意，所想出來的？」
+
+安向晚面無表情，目視前方，冷淡回道，「不是。」那邊亦暖掩著嘴角，忍著笑聲，頻頻顫抖雙肩。安向晚看亦暖笑得這麼歡快，心裡只覺憋屈，她語氣沉了幾分，有些咬牙切齒，「是真的。」
+
+這下子，沈雲煙終於灰了心，沈半夏將她扶到一旁凳子處坐下，才又回到櫃台前，繼續同安向晚說話，「安兄，家父有意擴大與司南的交易，詳細情況，還得請安兄隨我們走一趟，家父有請。」
+
+「另外，上回我們說好的貨…」二人商談起細項，說著，安向晚喊了木炎和雨燐過去，吩咐著去倉房取貨，兩人取過貨單，也不怠慢，隨即去取。
+
+亦暖沒了遮掩，這整理貨架的事情，她也沒做過，也不好繼續待著，免得惹人非議，她趁著無人注意，溜了出去。她在院子裡走動，聽見屋子後面有水聲傳來，她過去查探，瞧見褚守佔著水缸，整個人似是入了魔障，她拼命搓洗著自己的雙手，皮都搓紅擦破了，也不見停歇。
+
+亦暖蹙眉，過去阻止了褚守這詭異的舉動，「褚守，你在發甚麼瘋？」
+
+褚守雙目無神，卻有淚水從眼角滑落，她鼻尖紅通通的，嘴上唸唸叨叨，「這手…不能要了，髒了，得洗…可我怎麼也洗不淨，總有股味道在上面…怎麼辦，怎麼辦…」
+
+這沒頭沒尾的，亦暖也搞不清楚，她捉起褚守的手腕，湊近聞了聞掌心，卻甚麼味道也沒聞見，以為是鼻子不靈通，她眼睛一眨，幻出獸瞳，鼻尖輕嗅，依稀聞見淡淡的動物氣味。
+
+「褚守，你摸了狗子麼？」味道極淡，亦暖遲疑問道，褚守卻像是回憶起甚麼恐懼的事情，她畏懼的睜大起雙眸，望著亦暖，泣不成聲，「是不是…還有味兒！我已經洗了…洗了這般久…」
+
+褚守看著人高馬大的，心性卻還似個孩子，她受極了委屈，好努力才忍住不哭嚎出聲，現在有了亦暖在，有了親近之人，她一卸下心房，淚水便又像洪水潰堤般傾瀉而出。
+
+倉房就在這庭院之後，木炎雨燐取完貨，還在老遠便聽得褚守抽泣的聲音，二人路過時，木炎好奇的探頭望過去。褚守越是這般弱態，雨燐越覺得她不靠譜，心裡更覺煩躁了起來。
+
+「木炎，你替我拿著下。」雨燐將貨物推到木炎手中，朝著褚守走去。
+
+亦暖回頭一瞥，雨燐橫眉直豎，像是要來發難。
+
+「不過就是被狗子蹭了一下，至於這般哭哭啼啼的麼？」雨燐揚手在褚守面前比劃了一下，又將手點在褚守掌心上，半晌，才收起。她一副嫌棄的模樣，說著，「你就算再怎麼喜愛乾淨，但這未免也太過了些罷？」說罷，她轉身就走，木炎還站在那等她，兩人搬著貨，往前廳去。
+
+褚守止住了哭嚎，她動了動鼻尖，馥郁花香撲鼻，掩去了那惱人的氣味，她抖了抖雙手，湊近一嗅，手上那勳人的味道不再，取而代之的是一股青草般的乾爽味道。褚守眼睛亮了起來，歡喜道，「亦暖，我的手乾淨了！雨姑娘好生厲害呀，這是甚麼把戲，這香味是從何處飄來的？」
+
+褚守開心，亦暖也莞爾，她點提，「你先前用法眼看過雨姑娘，說了人家是妖精化身的，怎麼這就忘記了？」妖精最擅長的就是變弄這些戲法。
+
+褚守靈光一閃，大拍掌心，「唉呀，對呢，我怎麼就忘記了！這回，我又受雨姑娘幫助了，來回，我得好生謝過雨姑娘才行。」</code></pre>
+				<p id="6c538e87-c8b8-4037-8c05-9bc3c52a2840" class="">
+				</p>
+			</div>
+
+
+			<h2 id=four>#43 都城商甲沈公子 4</h2>
+			<div class="page-body">
+				<pre><code class="language-Go" style="white-space:pre-wrap;word-break:break-all">沈家給司南送來一筆大生意，安向晚豈能怠慢？隨即與沈公子談定好日子，他日前往沈家拜訪沈老爺。這生意事，就怕生變，兩方都想及早將事情定下，免得夜長夢多。沈家在央縣，路途並不近。他們現在所屬文縣南城，從這裡過去，乘上馬車，快馬加鞭，也得費上三日。
+
+沈家兄妹取完貨後，便差人將東西先行運回央縣沈家，他們二人則是在南城住了客棧，打算等安向晚一起啟程。
+
+因著外出多日，司南裡的帳目落下了許多，鋪子內人影來來去去，木炎將帳本做下註記上繳出去，雨燐則是一邊清點著貨架上的物品，一邊統計倉房的庫存，三人忙活到入夜。
+
+眼看時間不早，帳目也所剩不多，安向晚便讓雨燐木炎先回去歇息，她一人留至深夜，才將帳本核對完畢。司南裡的燈火熄了，安向晚持著提燈，將大門落鎖。穿過迴廊，頭頂明月星稀，偶有微風徐徐，稍帶涼意，暑氣不再濃烈，秋意將近。
+
+她回到自己院中，尚未進房，矗立在房門口，她耳側微動，蹙起了眉梢。許久，寸步未移，藏於陰暗裡的人是個急性子，見她不作態，便自行冒出了頭。
+
+一道黑影從牆邊陰暗處走出，皎潔的月光斜斜地照映在那人身上。安向晚聞聲望去，亦暖朝她走來，面上噙著一絲笑，「安掌櫃素日裡，都是忙活到這麼晚的麼？」
+
+安向晚轉了半身，面對著她，猶疑道，「你怎麼在這裏？」
+
+「給你送藥。時辰都過了，藥都涼了。」
+
+「瑣事繁多，忘了時辰。」安向晚走近，掃了一眼她的手，「藥呢？」
+
+「我倒了。」亦暖擺了擺手，「過了時辰才用藥，對身體無益。」
+
+安向晚垂眸，若有所思，一時沒有接話。亦暖笑問，「怎麼了？」二人沐浴在夜色下，銀白色的光暈柔和了兩人的身段，輪廓、陰影分明，突顯出女子陰柔姣好的身形。
+
+「沒有，我只是忽然想起一些往事。曾經也有人像你這般，吩咐著我要按時辰吃藥…」
+
+亦暖挑了挑眉，眸光漸深，但安向晚沒有看她，對亦暖這深沉的表情，一無所覺。亦暖失笑一聲，「我在司南裡沒有工作，唯有照顧起你的起居，倘如，你覺著我這番作為，讓你感覺困擾，我也可以不做。」
+
+說者無心，聽者有意。以為亦暖誤會了，安向晚抬頭，忙著澄清，「我不是嫌你多事…」
+
+亦暖無所謂的聳了聳肩，口吻平淡，「我險些忘了，你不同於常人，既無壽限，那麼是不是連這肉體皮囊，都要比尋常人還來得堅不可摧些？」
+
+安向晚望著她，一時失了言語。亦暖打趣她，「不過…我瞧安姑娘膚白肉嫩的，也不是那麼結實。」安向晚先前幾番被亦暖無意間看去了身段，她不曾想，亦暖竟也風流了一回，竟拿這種事來輕薄她！
+
+「你…」安向晚面上忽白忽紅，她羞惱著，正要發作，亦暖這時卻又開口，「莫要仗著自己有些優勢，便胡亂糟蹋自己，肉體凡身，也會有病痛苦楚。沒有壽限，不代表不會消亡，你要多珍視自己一些。」
+
+庭園裡依稀有細碎的蟲鳴聲，將這夜色襯得靜謐美好。亦暖邁開腳步，朝著遠處離去，她輕飄飄的落下一句，「安姑娘，時候不早了，好生歇息，明早，我會再送藥過來。」
+
+直至腳步聲淡去，安向晚深沉的歎出一口氣。門被推開，濃稠的深幽張開血盆大口，隨著步伐往前行，安向晚的身影被這漆黑吞沒，直至尋不見她，房門才又緩緩闔上。
+
+一大清早，門外就有吵雜的聲響，雨燐昨日夜裡忙活到很晚，她眼下還睏倦著，側頭往窗邊一看，墨漆漆一片，她眼白往上一吊，翻了個白眼，這天不是還沒亮麼，這麼早，會是誰來找她？
+
+雨燐不情不願的踩上鞋襪，披上外衣，她打著呵欠，前來應門。門還未大開，就先聽見門外那人清澈的嗓音，「雨姑娘，早上好呀！」
+
+才聞聲，未見影。雨燐手臂忽然一頓，那半敞開的門扉，被她使勁扣了回去，但褚守身手敏捷，她腳尖突進，卡在了門扉之間。雨燐才睡醒，人還混沌著，反應力不及，這才讓褚守得逞。
+
+雨燐鬆了手，褚守便將門再次推開，她一張臉白白淨淨的，笑得燦爛，這天色還未亮，雨燐就覺著自己已經見到了朝陽。
+
+雨燐攏了攏披在肩上的外衣，沒好氣的說著，「你這麼早過來找我，有甚麼事？」
+
+褚守憨傻的笑了笑，從懷裡掏出一小包錢袋，遞給雨燐，「給，這是木炎發給我的，說是上個月的工錢。」
+
+雨燐沒有接手，「既是給你的，你便收好。作何要拿來同我顯擺？」
+
+「才不是顯擺…」褚守拉住雨燐的手臂，強行將錢袋塞到對方手裡，「你先前又助了我一回，你那個戲法好厲害的！我曉得不能白白佔人便宜，你給我變戲法，我給你賞錢，這很合理！」
+
+雨燐一臉費解的望著她，「甚麼…甚麼戲法？你給我…甚麼賞錢？」
+
+褚守把她的掌心扳開，讓錢袋能夠穩妥的乘著，這才歡喜的手舞足蹈，她雙臂大張，上下揮動，「就那個呀，在我面前揮了揮手，便有花香綻放，仔細嗅一嗅，一會兒又是乾爽的青草香味。」
+
+雨燐了然的點了點頭，然後將錢袋推了回去，「我不要你的錢。」
+
+褚守雙手往後縮，這錢被雨燐拎著，無處安放，褚守眼珠子左轉右擺，好不容易才擠出說詞，「我…我寄人籬下。你們給了我工作，又供我吃住，還…木炎還贈了我上等的茶葉。你們給我的已經足夠了，這工錢實在太多了，我…我…」
+
+雨燐好笑的看著她，「這些都是你應得的，雖說木炎和氣，待你寬容，但若是在我這邊，你這做事不機敏，且又不擅變通，我得罰扣你工錢了。」
+
+「啊…？我真有這麼差呀…」褚守話鋒一頓，原本應該低沉的情緒，又忽然高漲起來，「那你扣吧，多扣些，這工錢不夠扣的話，我下個月的工錢也給你。」
+
+「不是，你這人…」雨燐只覺心累，她搖了搖頭。褚守見她為難，心想，自己總是這般不知表達，也難怪雨燐不願意收下她的心意。
+
+褚守撫了撫後頸，模樣看著有些侷促，她憋了一陣子，才又說，「其實…就是…那玉…，唉！怎麼說呢…雨姑娘，我不討厭你，我想同你親近些，雖然你總是對我冷嘲熱諷的，但我曉得，你是為著我好，才會這麼說的。這雙生玉的另一半，本該是交由你心悅的人，但卻被我佔了去，我…心有愧對。」
+
+雨燐默了默，褚守原是因著愧疚，才會將自己所有的一切轉交給她。雨燐心裡複雜，一時也說不上是甚麼感覺。她對褚守確實沒有那個意思，而她今生也不曾想過要與誰過日子，倘若真要說，那她只想報恩，伴隨安向晚身側，與之同進退。
+
+褚守這番表達也不是第一次，想來心中介懷極深，雨燐收下錢袋，當是將此事揭過了，「好了，錢袋我收下，日後不許你再同我提及這件事。」
+
+褚守愣了一下，不可置信地望著她，模樣有些無措，「就…就這麼點錢，便要兩清了？」
+
+「你執意糾纏我，會讓我覺著更困擾。」雨燐語氣微冷。
+
+褚守溫順的低下頭，妥協了，「我明白了，我日後不會再提這些。雨姑娘，那我…我可否還能來這裡找你？」
+
+「若是有急事…」
+
+「我問得是尋常時候。」
+
+「唉，隨你意罷。」
+
+終於不再被拒絕，褚守離開時，面上揚著笑容，她步伐輕快，將心中情緒全表露出來。雨燐望著她離去，嘆息一聲，碎道，「這人也是執著…她明明不必這般待我。」
+
+雨燐闔上門，回到床榻，傾了身，卻再無睡意。
+
+午時，趁著眾人用膳時候，安向晚將人聚集起來，商討日後規劃。
+
+木炎放下碗筷，朝安向晚看去。安向晚巡視眾人，說道，「沈家邀約，盛情難卻，我打算明日便隨沈家兄妹去往央縣。」
+
+聞飯菜香，褚守咬著筷子拎著碗，想接著吃，可人家在說話，她不好失了禮數，雨燐就坐在她旁邊，見她這模樣，便朝她手腕招呼過去。褚守愣了愣，雨燐搶過她的筷子，壓回桌面，「莫要不禮貌。」
+
+這邊鬧了點小動靜，幾人紛紛望過來，安向晚莞爾，笑說，「褚守雨燐，我也有事情吩咐著你們去做。先前沈公子差來一筆單子，倉房裡的貨不大夠，我想讓你們前去鬼界臨海鎮處，找小魚兒商談貨物一事。」她說著，從懷中取出一張紙，遞給雨燐，「大概…需要有這麼些個數量，若是小魚兒準備不來，看著能籌多少，剩下的…我再另尋他處。」
+
+褚守湊過去看，雨燐是花精化身，身上總會伴隨著淺淡花香，暗香撲鼻，褚守鼻尖動了動，幾乎是下意識地去尋那花香濃郁處，嗅至脖頸處時，遭雨燐一巴掌拍到了臉頰上，她呼痛一聲，一道冷聲從頭頂上落下，「莫要沒個分寸。」
+
+「另外…」安向晚看往另一側，木炎眼睛明亮地望著她，安向晚抿了抿唇，視線略過木炎，落到一旁亦暖身上，「司南不能沒人照看，此行，亦暖隨我一起。」
+
+亦暖輕笑一聲，「好。」
+
+司南裡好不容易才熱鬧起來，這下子一安排，司南又只剩木炎他一個人了。木炎眼神哀怨，安向晚曉得他心思，心裡為難，只能安撫他，道，「我會儘量快些回來。木炎，央縣有好些個特產，你…思量思量想要些甚麼，我給你買回，作是彌補罷。」</code></pre>
+				<p id="6c538e87-c8b8-4037-8c05-9bc3c52a2840" class="">
+				</p>
+			</div>
+
+
+			<h2 id=five>#44 都城商甲沈公子 5</h2>
+			<div class="page-body">
+				<pre><code class="language-Go" style="white-space:pre-wrap;word-break:break-all">才剛入夜，雨燐褚守便動身啟程，去往臨海鎮，來返一趟最快也需花上半月。若是還要算上和小魚兒商談、取貨…等瑣碎事項，那麼當她們歸回時，恐怕也月餘了。
+
+雨燐想趕在安向晚回到司南時，就將貨物備好，這才拉著褚守連夜啟程，褚守沒有怨言，她盡忠職守，遵循安排。
+
+天色方亮，鳥鳴聲悅耳，司南的大門開了個縫，木炎探頭出來，門外停下兩台馬車，車夫才木炎招了招手，木炎頷首客氣回應。車邊立著兩道人影，是沈半夏和沈雲煙，木炎朝他倆打招呼，「沈公子，沈姑娘。」
+
+沈家兄妹走上臺階，沈半夏身型勻稱，身姿筆挺，他手持摺扇，一襲白裝，風度翩翩。溫聲詢問，「安兄他…」
+
+不待他說完，有道聲音便從木炎身後響起，「沈兄，來得可真早。」安向晚緩步而來，為做男裝扮，她腳下似踩了高蹺，亦暖本與她同高，現下，兩人站在一起，安向晚整整高出了她半顆頭來。
+
+沈半夏笑笑，伸手迎著二位上車。車輪輾過地面，留下淡淡痕跡，木炎在後目送他們離去，直至看不見，他才返身回去。
+
+沈半夏和安向晚一車，兩人路上閒話家常，為著生意事，互探彼此深淺。安向晚並不多話，沈半夏問，她才回，大部分時候都是沈半夏自己在說，他還以為是安向晚對他不感興趣。但那怎麼行呢？他還為求在安姑娘面前博取好感，必須得讓安兄對他另眼相看，覺著放心，才行。沈半夏鉅細靡遺的將自己身世全全闡述，他不攻自破，倒是省得安向晚再費口舌。
+
+沈半夏說了老半天，安向晚只是以淺笑帶過。他飲了一口水囊的水，喉頭正滾動，冷不防聽見安向晚淺回一句，「我小妹她，對沈公子印象不壞。」
+
+沈半夏猛吸一口氣，喉頭一頓，噎著了水，他肺部難受，捂著嘴，乾咳著。安向晚起身，掀開簾子，喊停了馬車，沈半夏心裡急切，他匆忙緩了一口氣，邊咳邊問，「安兄的意思是…安姑娘她，可喜歡我？」
+
+安向晚就要下車，她撥著簾子，回眸笑道，「我不懂姑娘家的心思，但沈兄是一表人才，智貌雙全，待人真誠心切，又豈會有姑娘耐得住，不動芳心？」
+
+此言一出，沈半夏臉上佈滿喜色，他舔了舔唇，露出靦腆的笑容，但情緒高漲難以遮掩，嘴角破了開來，露出一抹燦笑，「害呀…安兄，你這話，說得可真動聽！我就…還差點給你騙了去。你又不是你小妹，怎知她會如何看我呢…？」
+
+安向晚回以微笑，她跳下車廂。朝後走去，這生意事談完了，也就沒必要再與沈半夏獨處。
+
+馬車老早就被安排好，安向晚被沈半夏攬去，沈雲煙朝亦暖眨眼，亦暖配合著上了馬車。行了好長一段路，這沈雲煙許是無聊得緊，總是朝她這處望過來，亦暖不是木頭，被人打量許久，也覺有些不耐，她回頭看去，沈雲煙撞進了她的視線裡，「沈姑娘為何一直看著我？」
+
+沈雲煙微微眯起了眼，湊近她，輕語，「安兄為人不錯吧？」
+
+亦暖不喜被陌生人這般貼近，沈雲煙身上散出一股濃郁的味道，亦暖身上因邪物附體，這氣味太重，令她不適，她往後退了些，沈雲煙見狀，面色微僵，旋即拉開距離，窘迫著，「對不住，我只是想同你打探些隱密的事情。」
+
+「你想問甚麼？」
+
+沈雲煙拈起衣袖，掩嘴羞道，「那一日，你說安兄已有佳人…這個佳人，其實就是你罷？」
+
+亦暖蹙了眉，沒有應話。沈雲煙見她不回話，當作是默認，便又繼續說，「若對象是安兄，我其實並不介意在家是做大還是做小，如果姐姐願意將安兄分一些給妹妹…」說著，她羞紅了臉面，以衣袖捂住了面容，將身子縮瑟了回去。
+
+亦暖闔上眼，再睜開，獸瞳顯現，她掃向沈雲煙身段，定睛在她腹腔處，那裡有顆盈滿流光的珠子，不同於生人有著氣息湧動，這沈雲煙…亦暖目光微沉，不動聲色的收回了視線，她看破卻並不道破。
+
+當沈雲煙卸下袖口時，亦暖眼底獸瞳已經退去。沈雲煙露出女兒家的嬌羞，過來攀附亦暖的胳膊，想套近乎，「姐姐…你就答應妹妹嘛…可好？」
+
+「此事…」亦暖扒開她的手，將手臂拯救出來，沈雲煙滿懷期待的等著她說下去，亦暖朝她淺笑，卻是不領情，「我這個人最不喜與人共有，沈姑娘，對不住了。」
+
+馬車停了下來，車夫掀起簾子，打斷兩人談話。沈雲煙朝外掃了一眼，瞧見安向晚朝著她們這處前來，沈雲煙摸不著頭緒，只得先下去迎人。卻不想，她才站穩腳步，那安向晚便直接掀開簾子，入了廂內。
+
+沈雲煙愣了愣，「…。」原來安兄不是來找她的嗎？
+
+車廂被佔了去，沈雲煙摸了摸鼻子，走往前車，掀簾一看，沈半夏還在那歡喜呵樂著，沈雲煙進展不順，心裡正鬱悶，見了兄長一臉痴傻模樣，心中憋屈，「哥，你別只顧著自己，好歹也幫一幫人家呀！」
+
+沈半夏心情好，語氣也高昂了幾分，「哎，我的好妹妹，待我把安姑娘娶回家門，日後，我與安姑娘商謀合力，少不了有你和安兄獨處的機會！」
+
+聞言，沈雲煙心中一喜，「好呀！那我就等哥哥你與安姑娘的好事啦！」
+
+沈半夏一副勝券在握的模樣，沈雲煙被他情緒渲染，兄妹二人喜上眉梢，只等日後好事將近，他們兩家結為連理，日後強強聯手，包攬下這石玉生意。
+
+車夫突然被喊停，等待半晌，沒有等到吩咐，他撥開簾子，廂內二人忽然襟聲，朝他望去。沈半夏賞了他一個眼神，車夫背脊猛地一寒，連忙退了出去，他執起韁繩，打在馬背上，馬車行駛起來。
+
+隨著前車始動，後車隨之跟上。廂內，亦暖一手撐著下顎，靠在窗沿，安向晚坐在她旁邊，時不時朝她望去。前路漫漫，氣氛微妙，安向晚終是沉不住氣，開口道，「那沈公子難纏，這親事，我不好拒絕他。」
+
+亦暖尋聲回頭，滿目不解，「你若是不喜歡人家，直言了當地拒絕，不就得了？」
+
+安向晚垂了眉目，神情淡淡，似有難言之隱，「我這商鋪能發展起來，沈家在背後給了不少助力。」
+
+亦暖失笑一聲，打趣她，「你可真有能耐，他們這沈家兄妹…哥哥喜歡你，妹妹也喜歡你，難不成你要與他倆成親？你僅一人，如何分作兩角？再者，這事遲早有一日會暴露。我看不妥，莫要到時在人面前落下口舌，這親事還是儘早拒絕為好。」
+
+「我倒是想…」安向晚犯難著。她作為安兄時，亦暖給她尋了個藉口，使她有婚約在身；可她作為安姑娘時，可就沒有這種藉口能使了。
+
+亦暖瞥了她一眼，輕飄飄吐了一句，「你這司南裡也不是沒有男人，必要時，木炎也是可以替作擋箭牌的…」
+
+安向晚，「…。」
+
+「木炎還小，怎麼能…」安向晚好說歹說也是看著木炎從小長到大的，他們之間不僅有年歲差距，木炎待她更似長輩，他們就是要演戲也不合適。
+
+亦暖沒接話，只是洩出了笑聲，安向晚這話明顯站不住腳，她面子擺不住，別過臉，按著眉心，苦惱道，「此事，容我再想想…」
+
+夜幕將至，馬車駛入了都城，依著沈半夏的吩咐，車夫將人送至客棧，安、亦二人相繼下了馬車，沈半夏迎向她們，歉然道，「安兄，沈某招待不周，我尚有要事去辦，就不陪二位留宿了，明日一早，車夫會過來接送二位。」
+
+語畢，沈半夏走回廂內，簾子被掀開，沈雲煙探頭出來，朝她們揮了揮手，馬車漸行漸遠，帶起一片塵土。
+
+原先只需三日路程，不想這沈半夏包攬了所有路費，車夫領錢辦事，一路上，也沒怠慢她們二人。沿路走走停停，行了近一旬，才到央縣沈府。
+
+客棧裡，沈半夏給她倆各自安排了房間。亦暖不多話，安向晚本要找她攀談，才回身，就見那亦暖推開房門，並不做停頓，房門開了又闔上，速度之快，安向晚張了張嘴巴，還未發話，就已不見亦暖身影。安向晚話匣子擱在嗓子眼，沒人矚目她，很是難受。
+
+安向晚眼下做男裝扮，也不好貿然前往亦暖房間，她歎息一聲，只得作罷。
+
+安向晚身子尚未好全，舟車勞頓，倦意上湧，她一沾床鋪便倒頭睡去。
+
+夜深時分，安向晚睡得迷糊，隱約聽見外頭有聲響，奈何她實在太疲倦了，便也沒往心上放，她意識飄忽，下一瞬，又沉沉睡去。
+
+明月當空，月色下，亦暖幻出獸姿，她翻出窗外，疾走在簷瓦上，她鼻尖輕動，沿著氣味，一路跟尋。載著沈半夏的馬車，停在了郊外處的樹下，車夫抱臂打著盹，亦暖從枝頭上落下，她悄聲接近，臨至馬車邊時，四周空氣湧動，她似察覺到甚麼，忽然回頭掃了一眼，緊接著，她手臂伸長往樹幹上勾去，猶如花豹上樹，她身形靈巧地，將身姿沒入樹影中。
+
+那邊有腳步聲踩近，兩道黑影緩緩走來，亦暖屏息凝神，她眨了眨眼，獸瞳泛著幽綠寒光，緊緊盯著來者。二人黑袍掛身，面上戴著半式面罩，是作鬼差裝扮。車夫被動靜吵醒，他呼嚕一聲，迷糊的揉了揉眼睛，見了二位回來，趕緊跳下馬車，彎腰恭敬道，「大人。」
+
+為首的鬼差在車夫面前取下面罩，亦暖探頭去看，那人露出一張白淨斯文的面容，他和氣地笑了笑，「你沒讓人瞧見馬車吧。」
+
+車夫唯唯諾諾的點頭，「沒有！小的辦事，大人可以放心！」
+
+那黑衣人回身吩咐，「雲煙，你先上馬車歇息，我巡守片刻，便趕上。」
+
+兩人卸下黑袍和面罩，底下妝容打扮，與那尋常老百姓無二。亦暖瞧著沈雲煙踩上馬車，而那沈半夏則是往樹林方向走遠，亦暖沒有動作，她在樹上待了足足一個時辰，才見沈半夏走了回來。
+
+沈半夏隨意地，朝著樹梢掃了一眼，亦暖喉頭滾動，緊張地，盯著沈半夏的行動。沈半夏沒有在黑暗中發現她，只見他從懷裡取出小刀，在樹幹上抹下幾道痕跡，當作記號。旋後，他轉身，朝著馬車離去的方向，疾行離開。
+
+身影消失後，亦暖落地，她看向樹幹上的記號，圖樣特殊，看似隨性，但那筆觸卻又熟練地不似胡亂刻下的樣子。此時，遠方天際線方要轉亮，亦暖撫了撫樹上的記號，陷入沉思，一陣子，她才轉身離開。</code></pre>
+				<p id="6c538e87-c8b8-4037-8c05-9bc3c52a2840" class="">
+				</p>
+			</div>
+
+
+			<h2 id=six>#45 都城商家沈公子 6</h2>
+			<div class="page-body">
+				<pre><code class="language-Go" style="white-space:pre-wrap;word-break:break-all">鳥鳴清脆，落在屋簷邊上，嘰嘰喳喳地啼叫著，安向晚捂著腦袋，發出一聲呢喃，她掙扎地翻了身，不願醒來。當她要再睡去時，房門被敲響，聲音擾人，安向晚煩躁地坐起，她披著衣裳就來開門，她思緒尚在混沌中，見了門外人，一時也沒反應過來，還當自己是在司南的偏院裡，向著那人，作勢要發難。
+
+安向晚陰沉著臉，一副沒睡醒的模樣，她口氣不善，「這才幾時，你精神好，也用不著來吵人歇息罷？」
+
+亦暖正裝待命，她挑著眉，看著安向晚一副毫無防備的模樣，她笑了一聲，「安姑娘，好興致。」安向晚蹙著眉，腦中思緒緩緩聚攏，她盯著眼前人，半晌，神情逐漸古怪了起來。
+
+不等她反應過來，亦暖先一步走進屋內，連帶將房門關上，她拉著安向晚來到屏風後，替她整理衣裳，亦暖邊動作邊說，「原來雨姑娘不在，你便不曉得打理自己了麼？」
+
+安向晚眼珠子轉了轉，緩緩想起，她昨天和沈家兄妹出了遠門，而此刻她在外，是做男裝扮…
+
+亦暖眼下這般不管不顧地進了她的房門，若是讓旁人瞧了去，恐怕要惹人遐想。安向晚抿了抿唇，意識到事態的嚴重。
+
+她垂眸一看，亦暖雙手擱在自己胸口上，正在整理她的衣襟。安向晚大吸一口粗氣，猛地撥開亦暖擱在自己胸間的手，她掩住身體，往後退了一大步，「你…你這是作何！你怎麼能進來我的房間？我現在可是男…」
+
+安向晚先前將胸部裹了起來，昨夜累極，也沒解開束縛，亦暖替她更衣時，知曉分寸，並未唐突到她重要的地方。亦暖擺了擺手，面上噙著壞笑，一雙眼賊兮兮的盯著她的胸口看，嘴上可惜的嘆了一聲，字句卻正經，「我曉得你是擔心我們會被旁人誤會了去。但，為時已晚，那沈姑娘心中多有猜想，早就把我們二人視作一對佳人，昨日，她還在那馬車上與我商談，要與我爭個名份呢。」
+
+安向晚呆了一瞬，下意識脫口道，「那你是甚麼意思，可答應她了？」
+
+「我沒答應她。」亦暖望著她發笑，又向前走近，替著安向晚整理衣襟，這下子安向晚也不反抗了，任由著她來，「不過，沈姑娘誤會了我們的關係，也不知，這於你來說，是好，還是不好？」
+
+安向晚斂眉沉思，亦暖理順衣料，抬起頭去看她，聽得安向晚啟口，「我無所謂，你…可會介意與我做戲？」
+
+「只是做戲一場，倒也無妨。」亦暖轉了身，背向她，安向晚追尋著她的背影，亦暖又說，「這沈家兄妹著實難纏，不尋著藉口擺脫他們，你遲早得受他們牽制。安姑娘，先前你替我救下褚守，我欠你一個人情，眼下，我與你做戲，替你解圍，可算是還上了？」
+
+安向晚何其精明的人，如何能夠忍受讓自己吃虧？亦暖本想藉此機會打趣她，不料，安向晚竟與她妥協，低聲應了下來，「司南確實不該倚靠當舖買賣維生，與沈家的生意，我會再尋時機，做下了斷，定不會將己身給賠了進去。」
+
+兩人在房中耽誤了時間，車夫梢人上來催促，二人這才匆忙下樓。車夫畢竟已經收了別人的錢財，縱使對她倆再有不滿，也不能多有怨言，他送著二人上馬車，並不多話攀談，他揮動韁繩，加快馬步。
+
+一路快馬加鞭，壓過好幾里的路程，車夫趕在日落前，進了城，行至沈半夏安排好的客棧，一如前日，車夫將人送達後便離開，相約隔日早晨，再來接送二位。而亦暖也如前日，她在夜深時，悄然離開房中，借著氣味追尋沈家兄妹，她很是好奇，這沈家兄妹既然是鬼差身份，又為何要做尋常人裝扮，潛入市井。而安向晚與沈家行商多年，可曉得對方背後是甚麼身份來歷？
+
+亦暖心中有惑，卻不想打草驚蛇，她只在暗中追查。她雖然答應安向晚要效力於司南，但卻並未打算效忠，因著，她曾受人陷計，所謂一朝被蛇咬，十年怕草繩，如今，她只信自己，不輕信旁人。
+
+沈家兄妹腳程不快，他們乘載的馬車，依舊停在郊區，不入城中。亦暖有了前日的經驗，這次，她沒有接近馬車，尚在老遠，她便潛行藏身，沈半夏為人謹慎，他左顧右盼，確認周遭沒人後，才囑咐沈雲煙卸下裝扮，先行離開。
+
+沈雲煙踩上馬車時，猶疑了一下，「哥，收購玉石一事，你不是已經談成了麼，為何我們還要緊盯鬼界風聲？莫不是，你擔心著他們上繳不出貨來？」
+
+沈半夏催促著她進去，沈雲煙不撓，入了廂內又掀起簾子，作勢要問個清楚明白。沈半夏受不了她這般，只好作解釋，「聽聞司南在鬼界臨海處，與鮫人簽下了生意。這安掌櫃不是一般人，我們尚不知對方深淺，不好過於招搖，因而暴露身份。此行，我們不僅是要以談商為做藉口，進而掩人耳目，更要為這項計畫爭取時間。一來，當家想知曉司南幕後人的真正身份，二來，當家想將他們這玉石生意一網打盡。所以我們要確保他們的人，在這段時間裡，能夠到達臨海地區，待他們取完貨物後，我們再將其…」沈半夏說著，揮手一拍馬屁，馬兒一陣躁動，馬車搖曳著，朝前方行遠了。
+
+這舉動實在突然，也危險。過了老遠，都還能聽見車夫的叫罵聲。
+
+沈半夏沒有追上去，而是回身在林中巡查，確定周遭沒有人跟蹤後，便在樹上落下記號。
+
+沈半夏離開後，亦暖才探身出來。她來到樹下，指腹抹過記號，眸光微沉。原來沈家表面上是要與司南談商，實際上，原是想將好處全全佔為己有。這沈半夏也是好心計，他順水推舟，揚言要提親，視作障眼法，實則卻是能令他更好牽制住安向晚的行動，若是他能夠藉由提親一事便與司南談和，那麼沈家將司南收攏進掌中，則不需損分毫氣力。
+
+此行已無回頭路，眼下，不論如何做抉擇，她們也已經受人擺佈，淪為棋子。亦暖吐出一口惡氣，遠邊天空翻起魚肚白，她返身回到客棧。閉目養神片刻，待天明，她便去敲安向晚的房門。
+
+此時安向晚已經睡醒，有著前車之鑑，幾乎是亦暖來敲門時，她便背著行囊過來開門，兩人相互打了面照，亦暖饒有興致的翹起了唇角，見安向晚這般識趣，心裡那些不快，被她一掃而空，她輕笑一聲，對著安向晚打趣，「喲，安公子今日不需小女服侍了呀？」
+
+安向晚愣了一瞬，頓時無語。
+
+「我們別誤了時辰，倒時又惹得那車夫不快，他可凶了。」
+
+亦暖佯作了然的點了點頭，她讓開身，安向晚從房中出來，亦暖跟在她背後，輕飄飄的碎念著，「安公子沒歇息好，遭人吵醒時，人也挺凶的。」
+
+安向晚，「…。」她停下腳步，頗有些無奈，「亦暖…」才喊道，亦暖不等她說教，快步走過她，也不回頭，僅是揚聲催促道，「快些走快些走，慢了車夫可要念叨囉。」
+
+二人到達沈家時，已是一旬之後。路上耽誤了行程，車夫將人送至沈家門口時，天色漸晚，安向晚下了車，與亦暖並肩而立，她仰頭望著沈家的匾額，不多時，大門微敞，門後有接應探頭出來迎接。
+
+安向晚提步走上台階，那接應略過她，朝著亦暖處看去，安向晚順著視線，也回身去看，見亦暖立在原地，半晌無動靜，她出言叫喚一聲，亦暖這才如夢初醒，連忙跟上。
+
+客房已經備下，安、亦二人被帶往至住處，舟車勞頓，沈家為她們準備下宴席，沈家兄妹前來接風洗塵，四人落座，把酒言歡。
+
+沈半夏朝安向晚敬酒，「家父年事已高，早早便歇下，怠慢了二位，還望安兄莫要計較。」
+
+安向晚舉起酒盞，客氣回道，「沈兄客氣了，這理應是晚輩過去拜訪，既然令尊已經下榻，晚輩也不好再多叨擾。」
+
+酒水下肚，意識飄然，安向晚自從鬼界回來後，受死氣影響，身體抱恙，又經多日奔波，她已是強弩之末，這瓊漿不過入口三杯，她便蓋了酒盞，她扶著腦袋撐在桌上，整個人看著搖搖欲墜，神態不清。沈半夏見狀，嘴角失守，揚聲大笑起來，「原來安兄性子如此溫潤，竟是不擅飲酒作樂呀！」
+
+沈雲煙在一旁掩嘴竊笑，她看這安兄作態保守，為人柔和，本以為是他佯裝出來的表面功夫，如今眼下一見，安兄這般老實，為著禮數，竟是憨厚地把自己給灌喝醉了。沈雲煙媚眼彎彎，對安兄可是越看越覺順眼滿意了。
+
+安向晚身旁，亦暖從容的捏著酒杯，她並不豪飲，只是淺口品嚐，她小眼神飄了飄，對案二人心思不純，也不曉得心中又在計較些甚麼彎彎繞繞的事情。作為陪侍，亦暖適時的放下酒盞，她輕扶著安向晚的胳膊，放輕了聲音，關切她，「安公子，你還好麼？」
+
+安向晚低唔一聲，呼出一口酒氣，她搖搖晃晃的擺了擺手，示意自己沒事，她全程垂著腦袋，對案的人看不明白，只當她是醉得徹底。
+
+沈雲煙拉著沈半夏的衣袖，露出一副女兒家的羞容，「哥，你就可別再捉弄安兄了罷。若是害得人家明早不起，他在父親面前怕是得被胡亂議論捏造了。」
+
+「呀，那是，那是。」沈半夏笑了笑，興致上頭，不免貪杯，他暢飲完手中盞，這才起身向亦暖作揖，揚言告退。亦暖頷首，將二人送至門口，待他們走遠後，才返回屋內。
+
+桌邊，安向晚撐著腦袋，抬眸掃向她。亦暖噙著淺笑走來，安向晚雙頰發紅，許是因著酒意，她眉眼間透出一股媚態，但細看時，安向晚眼底清明得很，她檀口輕啟，字正腔圓，「人都走了罷？」
+
+「嗯。」亦暖要來扶她起身，被安向晚拒絕了。
+
+「我只是有些微醺，不至於這般弱態。」
+
+亦暖鬆了手，笑道，「我料想也是，你同雨姑娘一般，能在褚守面前大肆飲酒，似褚守這般心性隨和的人，都要看不下去，與之計較。想來，你們這酒量理應不淺，非同小可。」
+
+安向晚揉著額側，聽聞亦暖這番言論，她輕擰眉頭，有些怪罪之意，嗔道，「亦暖，你在奚落我麼？」
+
+亦暖望著她，只笑不語。
+
+許是相處時日漸長，便覺熟識了，只是朋友間的小打小鬧，安向晚不會往心上放。
+
+雖說是微醺，但當安向晚坐上床沿時，睏倦直襲腦門，她眼皮沉重，幾度闔起，下顎微點，打起了盹。亦暖見她這般，過來要替她更衣，只是才湊近，安向晚便抗拒地往旁邊閃躲開來，她含糊念叨著，「我身上酒氣味重，薰人，你別靠我這般緊。」
+
+依言，亦暖直起了身，轉頭往外走去。安向晚微微抬眸，目送她走遠，隨著關門聲，她眼睫顫了顫，緩緩闔上眼睛，倚著床柱打瞌睡。片刻後，外頭有腳步聲踩近，安向晚迷迷糊糊間聽見開門聲，但她睏意上頭，當她掙扎的睜開眼時，瞧見亦暖在她面前蹲下身段，耐心著將打濕的布巾，往她臉頰邊撫來。
+
+安向晚迷濛的望著她，開口時，發現喉頭乾澀得緊，「你怎麼又回來了？」
+
+亦暖笑著回道，「雨燐不在，我自然要擔起照顧你的責任。」
+
+「我又不是孩子，何需要人照顧？」
+
+「並不是只有孩子，才會需要被人照顧。」亦暖放柔了聲，手上動作不停，濕濡的布巾從頰上一路往下，撫上下顎，拭入頸間。
+
+「你…」安向晚還要再開口，亦暖卻用布巾按住了她的唇。亦暖面上近來總是呈著笑意，但這笑意卻不見底，她忽然說，「我們婚期在即，這同房…本不該急於一時。不過，既然我們先前曾有過了虛實，這習俗，似乎也沒有遵循的必要了。」說著，亦暖半推半就地躺入安向晚的懷中，兩人身姿曖昧，這一舉動突兀，將安向晚嚇出一個激靈。
+
+這下子，人也醒了大半。而那亦暖還就勾著她的脖頸，不願鬆手。
+
+安向晚僵直身子，「亦暖…」安向晚反應慢了些許，但她不傻笨，稍經一聯想，便察覺異狀。亦暖行為古怪，想來是周圍環境因素導致。莫非是這沈家有詐？
+
+亦暖透露出的訊息實在太少，安向晚摸不著頭緒，只能被動應對。亦暖只是勾著她的脖子，並未再有逾矩，她耳朵微動，側過臉，朝著安向晚的耳畔輕咬出一陣溫熱的吐息，「安公子，夜色已深…不若，我們歇下罷。」她墨瞳在眨眼間轉變，幽綠色的獸瞳展現，獸化使她五官變得敏銳，房舍周圍那些動靜被她察覺、掌握住。
+
+安向晚不知所措地，只能暫且將這戲演下去，她掌心捂上亦暖的腰身，身姿順著重力，往床上倒去。亦暖反應快速，在壓上安向晚之前，她雙臂撐在了安向晚兩側。安向晚對上她的眼眸，看見了她眼底的幽綠，證實了自己的猜想。
+
+如若不是有甚麼不尋常，這亦暖怎會無故與她這般親密？她們之間的交情，還不至於如此…
+
+亦暖見自己被識破，只是一笑，她也沒打算隱瞞。她朝著安向晚眨了眨眼，隨後微微垂眸，眼神細微的瞥向一側，安向晚緊盯她的眉目，了然於心，袖口微動滑出一枚銀鏢，被她順進掌心，收在指尖。
+
+亦暖又是一笑，安向晚止住了動作。亦暖眼底情緒莫辯，她不吭聲，依舊用眼神示意。兩人看似在眉目傳情，實則將這屋子裏隱藏的不速之客全全交流了遍。
+
+指腹上的銀鏢從一枚，轉出五枚，又至雙手，亦暖這才揚起笑容，就似暗號，安向晚倏地凝神，她指骨勁力非凡，幾乎是眼到鏢到，瞬息之間，那屋中暗處傳來輕淺的低鳴聲，許是打中要處，吃了痛，一時忍不住聲。
+
+更有些是一擊擊落，幾道身影從虛空處落下，亦暖隨即過去制服住他們，陰狠著臉，冷聲喝道，「好呀，這就是你們沈家的待客之道麼？」這幾個人身著黑衣，面上只用一塊黑布遮掩，不似鬼差那樣裝扮，亦暖運用獸瞳掃過對方腹腔處，那裡有著生人的氣息流動。
+
+這些人，只是一般人類，而非鬼差假扮…</code></pre>
+				<p id="6c538e87-c8b8-4037-8c05-9bc3c52a2840" class="">
+				</p>
+			</div>
+			
+<h2 id=seven>#46 都城商甲沈公子 7</h2>
+			<div class="page-body">
+				<pre><code class="language-Go" style="white-space:pre-wrap;word-break:break-all">
+落地後，一幫黑衣人沒有應話，亦暖略顯不耐的扯過對方衣領，作勢要教訓。那邊安向晚也過來查看，她扯下其中一名黑衣人身上的面罩，定睛一看，是名年紀尚淺的男孩，他一臉驚恐的望著安向晚，口中咿咿唔唔的，難成字句。
+
+安向晚嘆息一聲，對亦暖開口，「亦暖，罷了，他們是啞巴。」
+
+「算了？怎能就這麼放他們回去？」亦暖哼著氣，尋著粗布要來將人綁起。
+
+安向晚要阻止她，但奈何自己身手氣力不敵對方，亦暖冷笑一聲，安向晚識趣的收起了念頭。
+
+幾個人被亦暖集中綁在房中樑柱下，事畢，她揚眉，拍了拍手上的塵土，口吻頗有些得意，「這沈家也不曉得葫蘆裡賣的甚麼藥…」
+
+安向晚就在一旁盯著她“犯案”，眼下亦暖發話，她神情淡淡的瞥過去。亦暖接著說，「安姑娘，我瞧這夜裡不平靜，安全起見，你我還是謹慎些好。這房捆了這麼些人，實在不適合就寢，不若，你今夜隨我回房睡去罷？」
+
+安向晚暗自歎氣，無可奈何，「我除了依著你，還能有其他選擇麼？」
+
+亦暖回身，狡黠的笑著，「當然沒有。」
+
+兩人房間就被安排在隔壁，亦暖將人領進屋，駕輕就熟地，將安向晚服侍到了床上。安向晚心裡抗拒，怎麼說這裡也是安排給亦暖的房間，她不好恬不知恥地佔了別人的床。
+
+「我還是在桌邊歇息罷。」兩人在床沿拉扯著，安向晚作勢要逃，亦暖不讓，橫身擋在了她面前，阻絕了去路。
+
+亦暖清冷的面容噙著淺薄笑意，「這個時節，夜裡寒涼，你前些日子才落下病根，尚未痊癒，日前你也不按部就班地服藥…，然，你現下擱這同我說著甚麼？」
+
+安向晚啞了口，「我…」這亦暖管起人來，倒還挺嚴厲…
+
+她認命的躺了下來。
+
+亦暖將枕頭讓給了安向晚，她睡在床沿，側著身子，一手曲起壓在耳下。月色闖入，柔光輕柔撲灑在她們身上，安向晚深吸淺吐一口氣，她側頭，亦暖神色柔和的朝她莞爾。
+
+安向晚手撐在床墊上，翻過身對著她，皺眉困惑道，「亦暖，我怎麼覺著，自你從鬼界回來後，整個人的神態就變得不一樣了？」
+
+亦暖依舊是那副臉孔，笑道，「我有麼？」
+
+安向晚眸光沉了些許，無聲的回應了。
+
+「許是邪物作祟罷。」亦暖輕描淡寫地說。
+
+「我初識你時，你也受著邪物侵擾，脾性頑劣、粗暴，也很直性子，且重義講理。」安向晚說著，亦暖點點頭，笑意漸深，「你還挺了解我。」
+
+「可你現在！」安向晚突然變了臉色，情緒多了些起伏，「你雖然脾性依舊頑劣、粗暴，也很直性子、重義，但是…怎麼就越來越不講理了？」
+
+「我哪時候不講理了？」亦暖失笑。
+
+「現在。」安向晚隨即答道，她口吻甚至有些委屈，「明明…本不該是這樣的。木炎也好，雨燐也罷，他們當我是家人，亦是良友，彼此間小吵小鬧，無傷大雅，尚在我能掌控的範疇。可你…我竟卻分不清，你哪時是玩笑，哪時是真意？」
+
+亦暖望著她的眉目，沒有應聲。
+
+安向晚撇了撇嘴角，埋怨地說，「曾前，你情緒外張，耿直地，好叫人識破、拿捏，可如今…我卻覺著你變得越漸陌生，難以琢磨。」就好似突然變了一個人…
+
+「你說得不錯。與你相遇之初，我不識人心深淺險惡，但你教會了我，做人需得留有後路，萬不可輕信人言。你會覺著我陌生，也是同理，但這並非是我不信任你。」亦暖垂眸，淡然說著。
+
+安向晚咬著她的話尾，「你這番話，可是真？」她動了動上身，欺至亦暖面前，兩人距離拉近，亦暖感覺到陰影襲來，連忙抬頭，瞧見安向晚面孔離她不過毫釐，溫軟的氣息貼著肌膚，使得周圍空氣漸漸變得有些燥熱難耐。
+
+而那安向晚卻還不解風情的，自顧自地蹙著眉，擔憂道，「鬼界大典那日，我瞧你捏碎了靈丹，你會不會是受其影響，才導致性情變得如此古怪，而不自知？」
+
+亦暖向著她的眉目，喉頭緩緩滾動，眸光一晃，夾雜諸多情緒。安向晚正在辨別她眼底暗藏的真偽，可那抹情感稍縱即逝，快得令她捉不住蛛絲馬跡。安向晚不死心，繼續說道，「靈丹入體…生人理應是難以駕馭。你真的不要緊麼，若是覺著身體哪裡不舒適…此行，本是因著我起，害你受迫，我自當會負起全責。」
+
+原本涼卻的笑意，又重拾溫度，亦暖勾唇淡笑著，「安向晚，你這席話說得好生奇怪，一會說我邪物附體，遭其操縱，一會又說我受靈丹影響，意識不清，可我分明清醒的很，與你對談如流，而你，卻不相信我，還覺著我這般很是奇怪。因著我和以往展現出的心態不同，你便覺著我陌生了？」
+
+「縱使你眼光獨到，但就連褚守與我朝夕相處多年都難以斷言，了解我這個人，怎麼，你我相處不過半載時日，便自顧自地認為參透了我的心性？你這麼急迫想要探尋我的全貌，可是在擔心，日後你若無法掌控住我，我便會不受你操縱，從你身邊離開麼？」
+
+安向晚神色一凜，許是心事被料中，她一時答不上話。亦暖又說，「也確實。如今，你已經沒有能捉住我的籌碼了。幻象鏡已毀，你若是要以肉身前往鬼界，這背後將會有極大的風險，想必，你不會再貿然行動。而你手上本來握著極好的籌碼，但卻因著你的一時執著，問了不該提及的事，進而觸怒了楚玹，你們這交情，也算是斷盡了罷。而我，受你牽引，依著你們曾前的情面，就事論事，楚玹不至於對我發難，再者，她沒了你，正好也可以尋我作替補。安向晚，在我面前，你已然失去了價值，我瞧得出來，你是在害怕。」
+
+「亦暖！」安向晚打斷她，姿態異常嚴肅，「你當初可是答應過我的。」
+
+「當初是當初，而你現下，不也兌現不了諾言了麼？」
+
+「我怎會兌現不了…」安向晚著急的要反駁，話才出口，便又止了住，她思緒飛快輪轉，心中已有不好預感，「莫非…你要找的失物，就是在那存放鬼器的禁地裡？」
+
+亦暖沒有直面她的問題，「安向晚，我不會屬於司南，也不會屬於你。」
+
+安向晚沒有出言應話，兩人對峙著，沉默異常，僅用神色相互較勁。半晌，亦暖見著安向晚面色越來越鐵青，這才憋不住笑意，洩出陣陣氣音，「安姑娘，我這番話，是逗你玩的。原來…你也會有沉不住氣的時候呀？」
+
+安向晚沒給她好臉色，她轉過身背對她，悶聲道，「你說得確實，句句有理，我豈又分得清你究竟是實情，還是假意？」
+
+亦暖無聲的將唇角裂得更開了，她玩味地說著，「安姑娘，你…鬧脾氣了？」
+
+安向晚不應。
+
+亦暖伸手點了點她的肩頭。安向晚嫌棄地擺了擺肩膀，不想與她親近。
+
+「安姑娘…」亦暖叫喚著，安向晚始終不應，她只好逕自說著，「我們不過萍水相逢一場，你又何必對我如此執著？我是生人，而你不受陽壽所限，我倆終歸不是一路人，我不同褚守、雨燐那般，能夠陪著你一輩子。」
+
+安向晚沒回頭，只是冷聲回應，「誰稀罕要你陪著一輩子了。你也不嫌她們吵鬧，竟要將我與她們作縛一生？」
+
+亦暖輕淺的笑了笑，她眉目越漸柔和，在安向晚瞧不見的時候，尤為濃烈，「安姑娘，沒想到你有時候還挺小孩子氣。」
+
+安向晚被她話語一激，轉過身理論，「就你成熟！也不曉得先前是誰栽在了我的手上，不僅賠上了鬼界珍寶，還哭哭啼啼的央求著我替她救人？」
+
+亦暖不予回應，只是微笑帶過。
+
+安向晚被她看得渾身不自在，心裡原本堵著的那口氣，潛移默化下，被她拋之腦後，「你幹嘛總這樣看著我發笑，可是心裡在盤算著甚麼壞主意…？」
+
+亦暖搖頭，笑意不減，「我只是覺著，你焦急起來的時候，模樣還挺惹人憐愛。」
+
+「你…」安向晚自詡自己臉皮不薄，但亦暖近期一副吃錯藥的模樣，她自覺自己對抗不來，便懶得與她一般計較，「唉。」
+
+亦暖輕輕碰了下她的胳膊，安向晚神情蔫蔫的抬起眼來，亦暖慢悠悠地說，「如今你確實處於弱勢…」說到一半，她瞧見安向晚眼底裡寒光乍現，危機感上湧，她急忙往下說，「既然你心裡覺著不安心，不若這樣罷，我們私底下再做個交易。」
+
+「甚麼交易？」
+
+亦暖伸手在她面前晃了晃，她闔眸再睜，獸型顯現，獸爪鋒利的展示在她們之間。夜色已深，亦暖放輕了語氣，兩人湊在一處，似在耳語，「我能答應你取下這獸爪，但前提是，要在我尋回失物之後。而我，時間有限，安姑娘，你可否能夠允諾，在我陽壽盡了前，替我尋回失物？」
+
+安向晚不好直接應允，「你還未同我明說，你丟失的東西，究竟是甚麼？這大海撈針的…不是我不願意幫，而是…你就算不曉得它喚做甚麼，那至少也該有個樣貌型態罷？」
+
+「是把武器，與褚守握擁的拐刀一般，能夠一分為二，曾前，我將它遺落在了鬼界，時隔經年，如今要再找回，卻是難以尋覓。我與褚守走過鬼界眾多禁地，皆無此物下落，我想…它許是被封藏在更加隱密的地方。」
+
+「能一分為二的，這樣的武器何其多…」安向晚扶額，亦暖這描述的也太籠統，根本尋不完，也尋不來，「可還有再更詳細一點的特徵麼？」
+
+亦暖斂眸，似在思量，半晌，她面色越漸難堪，只能搖頭，歉然道，「對不住，我實是記不清太多了。」
+
+安向晚覺得她這話前後說得奇怪，不解道，「既是你曾前擁有過的物件，重要如斯，想必深刻於心才是，又怎會記不清樣貌？」
+
+「其實…」亦暖嘆息一聲，終於對她坦承，「我也不確信那物件是否存在，這本是我夢中之物，我原是不信這些的。直到，我在市井中瞧見了鬼差，曉得了原來夢裡的那些事，也許不是虛幻…」
+
+兩人相視著，安向晚聽得專注，亦暖望著她的眼睛，彷彿瞧見她眼底裡的倒影，那身影是如此熟悉，可亦暖卻從未摸清、看透。
+
+好似夢裡的她，才是更更真實的，而眼下她的血肉只是一具殘軀敗體，並不完整。於是，她想進而探討這夢境的源頭，或許見到了那物什，她便又能憶起些甚麼來…
+
+「你做的夢，是個甚麼樣子的？」安向晚問。
+
+亦暖說，「很複雜，難辨，夢裡四處皆是陰森森的，就似在鬼界行走，腳下盡是深淵、泥濘，偶時，方能瞥見一絲曙光，但…」她頓了頓，語氣忽然變得有些落寞，「那道曙光，自我涉入鬼界之後，便不再夢見過了。」
+
+「曙光…？」安向晚呢喃一聲，她猜測道，「可是你那時在鬼界碰見了甚麼，因而解開了夢境中的癥結？」
+
+「我不知。」亦暖嘴上說著，但眼神中興起了幾分讚許之色。
+
+安向晚沉吟著，將亦暖前往鬼界的動機，相互連串，較出結論，「所以，依你之言，你執著要探尋的物件，是個虛構之物，而你會走訪鬼界，僅是出自你的一時興致？」
+
+亦暖唇角失守，眨眼應聲，「嗯。」
+
+安向晚賞了她一個白眼，亦暖搶在她打趣自己之前，搶走話頭，「安姑娘，我想，你可以這麼理解，那夢裡的一切，許是曾前…亦或是將來即將發生之事，不論如何，於我，至關重要。」
+</code></pre>
+				<p id="6c538e87-c8b8-4037-8c05-9bc3c52a2840" class="">
+				</p>
+			</div>
+
+
+
+
+<h2 id=eight>#47 都城商甲沈公子 8</h2>
+			<div class="page-body">
+				<pre><code class="language-Go" style="white-space:pre-wrap;word-break:break-all">
+就連天橋底下那說書的莽夫，都不敢這般大張其詞。亦暖此番謬論，實在荒唐，安向晚不僅不信，甚至還有些懷疑亦暖這個人的精神狀況。
+
+一個人究竟要到何種病態，才會頻繁產生幻覺，甚至錯覺，以至於行為上出現偏差？
+
+安向晚擰著眉心，不發一言。這亦暖面向看似正常，卻可惜壞了腦子。也難怪，亦暖時常會有舉止特異、言論狂妄，情緒多變…之行。
+
+亦暖見她不接話，心裡有些忐忑，「安姑娘覺著這交易，該當如何？」
+
+安向晚一番內心爭鬥，一時也不曉得要如何信服亦暖，她面有難色，許是酒意起了效用，她思緒不是那麼清明了，此時，若是胡亂承諾約定，恐會多有疏忽，落下紕漏。
+
+「茲事體大，容我再思量幾日罷。」說著，她闔上眉目，看著就要睡去。亦暖輕輕應聲，她對著安向晚的面容，睜著清明的眼睛，毫無睡意。
+
+不知過了多久，耳邊傳來平穩的呼吸聲，亦暖才又淺淺地勾了勾唇角，她彎了眼睫，似是在安向晚的臉上，瞧出了甚麼歡心的事情。
+
+一夜平安。翌日天明，門外傳來急躁的聲響，床上二人接連轉醒，安向晚半坐起身，迷濛的望向門口處，在那裡，亦暖已經匆忙地踩上鞋襪，過去應門。
+
+門淺淺的開了縫，亦暖探頭出去，門外立著一個陌生男子，亦暖與他對望半晌，男子不發一語，當亦暖覺著有些怪異時，男子從袖口取出一張紙條，遞給亦暖。
+
+亦暖垂眸掃了一眼，閱過紙上的內容後，才又抬眼去看男子。男子模樣樸素，身材壯實，眉目清明，看著十分健全的一名男子，唯獨脖頸處有道暗瘡，亦暖收回視線，暗自心道，怎麼這沈家人好生奇怪，家中用的下人盡是些啞巴？
+
+安向晚理好衣衫過來時，亦暖已經將人打發走了，兩人齊聚小桌前，亦暖將紙條往桌上擱著，安向晚接過手。
+
+字條上寫的不是甚麼生意機密，只是尋常告知，沈家派人傳來消息，讓安向晚午時去正廳商談要事，而這沈老爺性子孤僻，謝絕閒雜人等，只單獨邀請了她。亦暖見安向晚面色有些淡，忍俊不禁，「指不定是筆大生意，你莫要想得太多，庸人自擾。」
+
+「你我一齊，皆是代表著司南…」安向晚悶悶道，顯然不接受這種安排。但她們只是客人，聽從東家安排，寄人籬下，若是拒絕了，不免讓人覺著不識時務，拂人好意，日後留下成見，計較起來還得一番辯論，也是一樁麻煩事。
+
+「沈家既是地方商甲大家，而你在文縣也小有人氣，對方若是要不利於你，還需有個名正言順的藉口，好去堵住眾人悠悠之口。」
+
+「你說得我都明白，我就是心裡不踏實…」
+
+亦暖拍了拍她的肩頭，安向晚扔下紙條，抬眼看她，亦暖笑道，「一個時辰。若不見你歸回，我便去尋你。」
+
+「一個時辰？若是他們真要對我不利，這段時間，都能將我生吞活剝了！」安向晚轉過身，走到梳妝台前，將自己鬆散的髮髻重新整理。亦暖跟在她身後，會意她的行為，接過梳子，替她整頓。
+
+日頭漸高，安向晚估算著時間，拂過衣襟，走出門外。亦暖跟隨在側，將人送至院子口，安向晚這才擺手，讓她留下。亦暖停了腳步，安向晚回身朝她露出一抹淺笑，「昨夜你同我說的交易，我應你。」
+
+聞言，亦暖喜上眉梢，「真的？」
+
+安向晚笑意甚濃，「等我們回了司南，我再與你細說計畫。」
+
+亦暖，「好。」
+
+身影漸行漸遠，直至消失不見，亦暖才有了動作，她步伐輕旋，身姿輕盈地翻上石牆，猶如靈敏的豹子般，她身手矯捷，瞬息間，便躍出老遠。
+
+一覺醒來，亦暖腦中思緒又浮現出了些許殘缺畫面，其中，她依稀地窺探見了沈家的格局，為了證驗那虛實的記憶，她按著記憶裡的路線，悄然無聲的，避開了人流，潛入一處偏僻小院。方落地，亦暖沒有停歇，匆忙朝著屋中探去。
+
+這處院子似乎未有人住，庭中雜草縱橫，簷下懸著一網網的蛛絲，隨風晃盪。亦暖踩過石階，推開門扇，身影晃進了門後，又迅速闔上。
+
+屋中久未整理，滿是塵埃，又因地處偏僻，不利通風，一股難聞的霉味襲來，亦暖難忍的掩住口鼻，輕咳幾聲。
+
+放眼望去，屋中景致尋常，並無特殊之處，但此行，她意不在此。亦暖朝著屋中深處走去，進了裡間。這裡間別有洞天，她左右尋視，忽地瞧見一物，眸光一滯。
+
+角落處擺放著一副小巧石棺，棺蓋並未仔細闔上，滑開了一角。
+
+亦暖屏息著走近，她抿了抿唇角，探頭往那棺口內探去，棺中人靜謐的躺著，那人面容稚嫩，眉目安詳，她長年沉眠於此，不受人打擾，光陰似乎被封塵，停滯了歲月，將她的身段保存在了最為美好的那一刻。
+
+亦暖跪倒在石棺旁，她指尖輕顫，似想去觸摸，卻又瑟縮了。石棺裡躺的是一名年歲尚淺的女孩，面容青澀，雖尚未長開，卻難掩骨子裡的姣好姿色。
+
+亦暖低唔一聲，額間青筋浮顯，莫名突來的鈍感，令她頭痛欲裂，那如夢影般破碎的畫面，宛如海潮襲捲，強硬地湧入她的腦海。
+
+亦暖難耐的抱著頭，喘息著，好一陣子，才緩和下來。她扶著石棺，再次掃向棺中人，此刻，她終於辨出了那人的輪廓，她面上神情交織複雜，心裡卻是悲痛萬分，她指尖緊緊扣著石板，指骨泛白，施力極大，她顫抖著唇，碎語著，「怎麼會…怎麼會…」
+
+「我明明抹去了你的名字，你不該死在這裡…」亦暖塌了雙肩，伏在石棺上，似作哀悼。
+
+不知傷痛多久，待思緒中的悲情消散，亦暖才覺著好受一些，她抹去臉上淚痕，深深吸了一口粗氣，這才又仔細地觀看起石棺內的屍身。許是因著方才失聲的關係，亦暖嗓子有些喑啞，她悶悶碎念道，「我確信，我確實在那冊子上抹去了她的名諱，而她也尚在我面前活蹦亂跳的…這屍體不會是她。但這做工細緻，與她年少時相仿，不仔細辨別，難較差異，也難怪我會錯認他人了…」亦暖伸手觸碰棺中少女的臉頰，才觸及，她便縮起了指尖，她微愣，又伸指去觸碰，觸及處毫無實感，她的手指竟穿過了那具屍身…
+
+「是虛影…？」亦暖呢喃一聲，倏地她意識到甚麼，又改口道，「不，不對，這是幻術…」亦暖伸長手臂，在石棺深處摸索，不多時，她從石棺深處撈出一塊，約半個掌心大小的乳白色石玉。石玉中間被人鑿開了一道小缺口，那缺口中被填入猩紅的色料，亦暖指腹撫過那處，斂眉沉思。
+
+在屋中耽誤多時，亦暖回神，尋向窗外，見過天色，便起身離去。她離開前，將石玉放回了石棺內，那屍身如殘影般，再次顯現，她望著棺內人，心中五味雜陳，卻還是別開了眉目，將棺蓋推回原先的位置，待她抹去了自己的痕跡後，才悄然離去。
+
+另一頭，安向晚依時赴約。她獨身來到正廳，尚在老遠，便有人瞧見她，幾個利索的護院前來迎接，將人領進屋內。安向晚模樣客氣，輕聲謝過，門扇開啟，她才踏入正廳，視線一晃，落至主位，那沈老爺臉上噙著笑容，但那笑意卻不見底，安向晚心頭頓時升騰出一抹不好的預感。不等她反應過來，身後便被人狠狠壓下，她膝窩被人抵住，不得不屈膝跪倒，而她眼角餘光，忽有寒光襲來，冰冷的，覆上她的頸側，刺痛感從脖子處傳來，利刃劃破了她的肌膚，壓出一道血痕。
+
+安向晚抬頭，面上佯作鎮定，她目視前方，「沈老爺這是何意？」
+
+沈老爺捋了捋虛白的鬍鬚，他擺了擺手，護院見狀，收起了長刀，沈老爺笑道，「我們明人不說暗話，小兄弟，我想請你替我向安掌櫃託付幾句話。」他說著，又揚手招了招，暗處裡閃過幾道黑影，安向晚定睛去看時，沈老爺身側聚集了數名黑袍衛士，他們一個個面上皆是戴著獠牙面具，掩去了半張面容。
+
+「我們沈家家大業大，靠的便是走往這三方兩界。」沈老爺抬起下顎，狀似慵懶地，睨視著安向晚，他懷著不善的笑，繼續道，「這玉石生意我做得也有些膩味了，小兄弟，我曉得你們司南背後與鬼界有著聯繫，而聽聞那安掌櫃技法超群，懂得起死回生之術，我想與她當面談一談這門生意，你可有辦法，替我將她請來？」
+
+安向晚抿了抿唇，眸光晃到身旁擒住她的護院身上，再看回來，她對著沈老爺，一字一句的念道，「若是我說不呢。」
+
+不一字剛落，那護院隨即將刀抹上她的頸間，那邊沈老爺即時出聲阻止道，「把刀放下。我是這麼叫你們對待客人的嗎？」
+
+護院嗤了一聲，不情不願的鬆開了安向晚，退到一旁。安向晚得了自由後，輕拂衣袖，站直身板，原先狼狽姿態不復存。沈老爺發笑，「小兄弟，此事由不得你拒絕，若是你還想活命，便替我將話帶到。鬼界能給的好處，我們一樣不少，若是安掌櫃心有所求，我們也能滿足她，只要一切都還有轉圜的餘地，生、死亦能覆！」
+
+安向晚沒有隨即應下，而是掃向沈老爺身側的鬼差，「鬼差自有職責在身，敢問沈老爺是怎麼將他們留在手邊的？」
+
+「哈！都是自家人，他們待在自家處，又有何不妥？」沈老爺露出一抹狡黠，安向晚收回視線，不再多話，只是微微屈了身，答道，「不負沈老爺所託。」
+</code></pre>
+				<p id="6c538e87-c8b8-4037-8c05-9bc3c52a2840" class="">
+				</p>
+			</div>
+
+
+<h2 id=nine>#48 都城商甲沈公子 9</h2>
+			<div class="page-body">
+				<pre><code class="language-Go" style="white-space:pre-wrap;word-break:break-all">
+日影傾斜。安向晚回來時，瞧見亦暖立身於院中，朝著一處觀望，模樣專注，待她走進院子，亦暖才收回心神，前來迎接。
+
+中午這頓飯吃得狼狽，安向晚面色不佳，她頸間血痕已經乾涸，點點血跡染上衣襟，看著懾人。亦暖來到她面前，見了此狀，眉梢輕蹙，「出了甚麼事，你怎麼傷了？」
+
+安向晚下意識撫過脖子，又隨即移開，輕描淡寫道，「許是我不適應這裝扮，令旁人瞧著，覺著我態度輕浮，進而得罪了沈老爺。不過只是一些皮外傷，並未傷及內裡，無礙。」
+
+她們在沈家處處受人監視，此處不是說話的地方，亦暖心裡也明白，便也不再細究，她將人領進屋，兩人對坐於案前。亦暖視線總是落在安向晚頸間，安向晚不自在的攏起領口，輕咳一聲，亦暖會意，她取了茶盞，給兩人添起了茶水。
+
+茶盞推至面前，安向晚沒接過，只是乾看著，亦暖慢悠悠的喝著，一陣子，安向晚才啟口，「沈家這筆交易，該由安掌櫃來親自接手詳談。不日，我們啟程回府，但我還有許多鎖事要辦，屆時還得勞煩你替我，護送安掌櫃一程。」
+
+亦暖提了提眼皮子，壓在桌面上的手，微微探出二指，輕觸桌緣，邊說，「我明白，這都是份內之事。」
+
+安向晚望過她的手勢，心中了然。二人心照不宣，也不再多言，靜默品茶。
+
+中午正廳一事，兩邊鬧得不大愉快。這消息很快便傳到沈半夏耳裡，當晚，沈氏兄妹攜著兩壺美酒前來賠罪。安向晚房中受捆綁的幾個啞巴暗衛，白日時被亦暖打暈移至別處，當沈氏兄妹尋過來時，房中並無異樣。
+
+安向晚脖子上的傷處已經包紮起來，沈半夏見狀，似覺虧欠，歉然道，「安兄，對不住，都怪我辦事不利，才害得你被家父刁難。」
+
+安向晚將二人請進屋內，「沈兄並無過錯，這生意之事，一直皆是由小妹商談，是為兄踰矩了。誤了和沈家的生意。」
+
+沈半夏聞言舒了口氣，連忙過來搭著安向晚的背，揚顯雙方的好交情，「怎麼會呢，安兄，言重了。」
+
+沈雲煙跟在二人之後，也走入房中，她巡視一眼，瞧見亦暖抱臂立在一側，神色淡漠。沈雲煙朝她走去，「姐姐，可能賞個臉？」
+
+亦暖瞥了她一眼，淡淡應聲，「嗯。」
+
+四人相繼入座，安向晚先前在沈氏兄妹面前留下了不擅飲酒的形象，這回，她也不貪杯，僅淺嚐一二，便回絕了敬酒，一旁亦暖神色莫辯，沈雲煙有意討好她，可見她這般陰沉模樣，心裡不由說地忐忑起來，「姐姐，可是這酒水入不得眼？」
+
+亦暖今夜滴酒不進，沈雲煙一席話，惹來一旁二人矚目，亦暖淺淺揚了笑容，但那弧線過分冰冷，叫人不寒而慄，「我們明日便走，不好貪杯醉酒，屆時誤了時辰，受那車夫碎嘴。眼下怠慢二位，全因事出有因，還望二位莫要罪怪。」
+
+「這…」沈半夏僵了嘴角，這下子他也不好再邀杯，「呀…時候確實不早了，如此，我們便不叨擾二位歇息了。」
+
+安向晚也起身，「沈兄，我送你。」
+
+安向晚將人送至院子口，那沈雲煙卻依依不捨的望著她，「安哥哥，我們還能再見麼？」
+
+安向晚不應，只是回以淡笑。半晌，沈雲煙嘆息一聲，終於扭頭離去。
+
+亦暖站在屋簷下，目送著他們。安向晚回來時，亦暖露出笑容，安向晚瞧見了，打趣她道，「你虎著一張臉的時候，還挺可怕，氣氛壓抑的…連我都不敢喘上一口粗氣。」
+
+壞脾氣是裝給外人看的，亦暖斂起情緒，語氣便也和善了，她笑道，「若是要與安掌櫃相比，我可不及她一二。」
+
+「你…唉！」真是時時刻刻不忘數落她。安向晚白了亦暖一眼，又越過她，逕自入房。
+
+一夜無話。翌日天色方亮，她們收拾好行囊，準備返程。二人來到門口，沈家早已安排好馬車候著，沈半夏站在前方與車夫交談，聞身後動靜，他側過身，朝二位打招呼。
+
+沈半夏說，「呀，安兄。」他勾肩搭背將安向晚領上車，這馬車就只備了一輛，亦暖無處迴避，只能跟在他倆之後。三人擠在車廂裡，沈半夏話匣子大開，多是賠罪之辭，安向晚與他一番相互奉承，沈半夏心情轉好，相談甚歡，一路送進下個都城，給二人安排好客棧，這才與之告別。
+
+舟車勞頓，安、亦二人早早回房歇息。深夜時分，夜裡靜謐，亦暖打坐於床中，閉目養神，忽聞窗外動靜，她倏地睜開眉目，不見猶豫，踏鞋翻窗跟上。夜色裡，身著黑衣的鬼差，行如鬼魅，亦暖顯出半身獸型，一路尾隨。
+
+追至郊外樹林，兩道身影立在樹下，正在交談，「沿海處那鮫人村已經被我們的人踏為平地，用不了多久，鬼界那邊就會有人前來追查，屆時，你將這物什當作證物往上級上繳。」
+
+亦暖不好現形以驚動他們談話，只得隱匿聲息，伏於樹後。離得雖遠，但她獸型時聽力極佳，將將把二人對白全聽了去。
+
+「這是何物？」
+
+「這裡頭存放著一枚白玉，白玉被人施了術法，倘如見光，便會召出幻影。」那人頓了頓，咽了口沫，繼續說，「鮫人村裡的掌事，曾前與一鬼差交好，只可惜他們好景不長，那鬼差如今已殉職。」
+
+「這裡面封藏的，就是那位已故鬼差嗎？」
+
+「不錯，此物經由司南安掌櫃之手，這術法精湛，在鬼界本就鮮少有人習得，而又能習得這般至精至純者，在鬼界唯有一人，那人便是鬼界人皆悉知的鬼王么女。我們只要將這物什交出，鬼界將會派人前來偵察，而那鬼王么女如若聰穎，懂得脫身自保的話，那麼司南將會是整個鬼界首當其衝的目標，到時候，這安掌櫃背後再無依靠，我們要將她收為己用，只是遲早的事。」
+
+其中一名鬼差取下面罩及黑袍，現出尋常人裝扮，黑袍之下身段玲瓏，「哥，若是我們計畫順利，這安掌櫃早晚也是你的人了，小妹我就先在此祝賀哥哥了！」光影斜下，照過沈雲煙側臉，更多的月色撲灑在她對面的人身上。
+
+沈半夏也褪下鬼差行裝，面具下他神情得意中帶著些許靦腆，「安掌櫃非是尋常女子，常人怕是難以駕馭，若是我能有幸娶得她，犧牲一些名聲又有何妨？」
+
+「日後當家知曉了哥哥的心思…不論如何，我也定會是站在哥哥這邊的！」
+
+「我的好妹妹呀，得這席話，為兄甚是欣慰。你放心，這門親事一旦定下，我便尋個機會，與安兄那位姑娘商談，小妹可莫要急躁，此事需得細細磨之，我想那姑娘也不似個難商量的，只要我們用對了方法，這安兄還能夠神通廣大，逃得過我倆的手掌心嗎？」
+
+兩人做回尋常百姓，走回城中，亦暖在遠處跟隨著，不知盡頭。
+
+晨光明媚，安向晚迷糊轉醒，她稍作梳理，便提著行囊去隔壁敲門，卻無人應門，她又等了一陣，心道，這亦暖難得貪睡，竟到了這個點都還不起？
+
+身後走過往來過客，一個個朝她遞來探究的目光，安向晚心裡難免起了幾分焦躁，她蜷起指尖，匆促的又敲了幾聲，聲音方落，她旋即按上門扉，推門而入。左右巡視，房中無人，她又走近床邊，床上被褥堆疊整齊，回身一看，屏風上掛著一布包，亦暖的隨身物品皆在裡頭。
+
+安向晚沉吟一聲，「這一大清早，她甚麼東西也沒拿，這般匆忙，究竟是去了哪裡？」
+
+她在房中等待，想著亦暖許是外出片刻，不消多時便會回來。可她這一等便是幾個時辰，其中車夫梢人過來催促，安向晚幾度拖延，誤了時辰，車夫心裡無奈，卻又奈何不了這沈家貴客。安向晚在客棧裡苦等三日，亦暖依舊未歸，她歎息一聲，曉得這人終將是留不住了，這才甘願離開。
+
+馬車走走停停行了十日才至文縣南城，車夫將人平安送達後，也不多言，一揮馬鞭，帶起一片厚重塵土，瀟灑離去。安向晚轉過身，司南今日未開大門，她心中納悶，此行費了不少時日，算算日子，雨燐她們也該是要回來了，而木炎留在司南看家，這個時間，理應待在鋪子內才是，又怎會大門緊鎖呢？
+
+她敲了敲門，門後傳來爪子磨地的聲響，伴隨著細微的呼嚕聲，就是沒衝著她吠，安向晚忍不住發笑，她這看門狗倒是也沒白養。安向晚蹲下身，隔著門扇，輕語，「鯇魚乖，你替我去尋木炎過來。」
+
+狗子呼嚕一聲，爪子撲騰，磨著地面跑遠了。不久，便能聽得木炎哀嚎著走來，「嘶…輕點，輕點！臭笨狗，你咬我出來幹嘛呀？」
+
+一人一狗站在門後，狗子朝著大門叫了一聲，木炎讀懂牠的意思，將門梭移開，大門開了淺縫，木炎探頭出來。安向晚噙著笑，朝他招手。木炎瞬時睜大眼睛，很是驚喜。
+
+二人一狗走到正廳，鋪子內，褚守雨燐坐在一側，尋聲望來，安向晚邊走邊問，「幾個人都在，何故大門深鎖，我們司南今日是不做生意了麼？」
+
+木炎眼尖，瞧見鯇魚就要入屋，急忙蹲下將狗抱出去，頭頂處傳來安向晚問話，他回應道，「不是的，是近日出了些事情，我們處理不來，安姐姐不知歸期，於客人，我們也不好擅自作主，我與雨燐幾經商量，做出退讓，這幾日就只接幾位熟客的訂單。」
+
+安向晚猶疑一瞬，「是出了甚麼事情，竟需要這般避諱？」
+
+那邊褚守低垂下頭，絞著手指，雨燐站起身，朝安向晚走來，她面色難堪，道，「安生，鬼界那邊出事了。」
+
+安向晚驚呼一聲，「甚麼？」
+
+雨燐沒好氣的呼了一口氣，「日前，殿下才派人過來，又是那提著大刀的鬼差，一會又是那惹人眼煩的重明鳥。」
+
+木炎驅趕完狗子回來，聽得她們對談，也接著應話，「是呀，就在安姐姐回來前不久，那鬼差才走，這都幾日了，他們天天造訪，且又奇裝異服的，很是惹眼，嚇著了我們好幾位客人，他們這般不管不顧的闖來，別說是生意上門，要別嚇跑客人就算不錯了。」
+
+幾人入座，木炎不熟悉鬼界，但也被這一個兩個不講理的鬼差弄得心煩意亂，褚守如今依附於司南，遵從指示，也不敢與安向晚抱怨，她從頭至尾，一話不吭，在旁當作個活雕像。
+
+雨燐將日前她和褚守在鬼界發生的事情，全盤告知，安向晚撫著下顎，眼神專注，聽得仔細。
+
+「為著沈家這筆大單子，我與褚守夜以繼日，不敢停歇，就是盼著儘早取回玉石珠寶，得以交貨。卻不想，我們才從鬼界歸來，都還沒歇息上，那鬼界就傳來了消息，說是那沿海處的鮫人村，被人屠村了，傷亡難以計數！」
+
+安向晚大愣，「怎麼會？」
+
+雨燐沒好氣道，「我們也想不透這是怎麼一回事，現在鬼界那邊一口咬定是我和褚守作案，殿下那邊也深受其擾，而作為核心人物的你，外出未歸，唉！我們這兒都亂成一鍋粥了，安生，你說，我們這下該如何才是好？」
+
+木炎和褚守小眼神東望西瞧的，雨燐口吻急躁，愣是想不出個辦法，安向晚斂眉沉思，神態自若，倒是將情緒全藏了起來。
+
+安向晚問，「小魚兒那邊的貨，你們帶回來了罷，現在存於何處？」
+
+終於來了個有關鋪子的對話，木炎揚手搶答，安向晚注意到他的動作，抬眼看去，木炎說，「得知鬼界那邊出事後，這批貨，我們自然不敢留在司南的倉房中。接獲消息當日晚間，我便將這批貨轉往城東的租賃據點，妥善安置。」
+
+安向晚點了點頭，「取回了多少量？」
+
+木炎伶俐的將帳本呈上，安向晚過目後，又是一陣沉默。帳本上記下的貨量不少，這貨量龐大，雨燐她們在鬼界搬運的過程中，想必會引來不少鬼民注目，也難怪事情一發生，便有鬼界追兵前來找碴。她們如若不能自證清白，那麼這淌渾水，便只能含恨嚥下。
+
+三人沒一個有主意，紛紛望著安向晚。安向晚擰起眉心，「此事，還需費時追究，可我們沒有那麼多時間，鬼界急迫要我們給出交代，而我們並沒有站得住腳的說辭能夠脫身。」
+
+三人聞言，面色一垮，白了面容。
+
+「不過…」安向晚掃向他們仨，「卻不是一點辦法也沒有。正因時間緊湊，所以我需要有人替我打掩護。」
+
+「打掩護？」雨燐問，「安生，你莫不是要前去鬼界尋殿下吧？」
+
+安向晚點頭，「我需要知曉殿下的意思。」
+
+「那也不必由你親自走這麼一趟，如今我們手上已無幻象鏡，你再入鬼界，若是被捉住，便是九死一生！」
+
+「茲事體大，再者，此行不論誰去，皆是險惡。」安向晚淡淡道。
+
+確實，那日她們從鬼界出來時，撞見的人實在太多，而她們那時也沒想過要遮掩面容，想必已被不少鬼民記住容貌。就算她們現在易容入鬼界，也難保不會有有心人記住她們的身形身段，甚至是聲色及舉止…
+
+一旦遭到暴露，不僅下場難堪，還恐因而牽連上殿下。
+</code></pre>
+				<p id="6c538e87-c8b8-4037-8c05-9bc3c52a2840" class="">
+				</p>
+			</div>
+
+
+
+<h2 id=ten>#49 都城商甲沈公子 10</h2>
+			<div class="page-body">
+				<pre><code class="language-Go" style="white-space:pre-wrap;word-break:break-all">
+雨燐護主心切，與安向晚僵持不下。褚守在旁左顧右盼，納悶開口，「安姑娘回來這麼久了，怎麼也不見亦暖人影？」
+
+此話一出，雨燐木炎紛紛朝外看去，安向晚默然，褚守見她神色微變，心中暗道不好，急忙跑出門外去尋，繞了院子一圈，她沮喪走回，木炎見狀，直說，「方才我開門時，就只有安姐姐一人在門外。」
+
+相較褚守，雨燐還算鎮靜，她轉頭對著安向晚發話，「那人類姑娘出了何事，怎麼就只你一人歸來？」
+
+安向晚惜字如金，也不辯解，「丟了。」
+
+褚守揚聲驚呼，儼然不信，「丟了？！她這麼大一個人，怎會就丟了？」
+
+安向晚扶額，「我也不曉得怎麼回事，我們原先是一起回程的，孰料，在半路，就一夜睏覺的工夫，她人就不知去向了，我可是在原處等了她足足三日…」說到最後，她甚至有些委屈。
+
+褚守追問，「亦暖不可能這般莽撞，她可有留下甚麼消息？」
+
+安向晚搖頭，「她行囊都沒帶上，又豈有那時間，與我留書…」
+
+安向晚沒將在沈家發生的事情告知他們，而她也沒將亦暖走丟一事與沈家聯繫上，畢竟亦暖身懷武藝，而她看起來也不喜沈家的作態，理應不會甘願受其牽制才是，況且，沈家也沒有理由綁走亦暖，亦暖於沈家，甚至司南，皆無太大的威脅與價值。
+
+「亦暖不會是這種人…她不可能做出背叛之事，她許是遭遇了甚麼不測…不行，我得去尋她。」褚守心中一急，便按耐不住姿態，她起身就要出去，被雨燐大聲叫喚住了，「你站住！」
+
+褚守生怕亦暖出事，卻被人喊住，她又是焦急，又是不知所措，戰戰兢兢地回頭，一副快要哭出來的模樣。雨燐冷聲喝道，「你現在去尋她也無用，我們並無她的消息，你此去無疑是大海撈針，若是能有辦法可尋，安生也就不會一人歸回。」
+
+褚守咬著唇，從雨燐處，望至安向晚，又再轉回來。雨燐所言即是，安向晚也不是那陰狠冷絕之人，亦暖丟了，她怎可能不焦急不迫切，可如若自亂陣腳，那不就反倒成就了那惹起禍端的小人了？
+
+安向晚捏著眉心，面上起了倦容，「事有輕重緩急。褚守，我曉得你心裡急切，想要儘早尋回亦暖，可如若我們不先將司南這事辦妥，日後別說尋亦暖了，我們恐是連個安生之處也沒有了，屆時，倘若亦暖安然歸回，卻找不著我們，又該如何？」
+
+褚守悶不吭聲，但也不再衝動。雨燐走過去，要將她帶回，褚守卻似腳下生了根。雨燐拿她沒辦法，纖手一綻，掌心有淡柔花香飄出，她牽起褚守的手，放柔了聲，輕勸道，「雖然我不願承認，可你們二人如今也已是司南的一份子，我們有情有義，朋友有難，絕不會放著不管不顧。再者，她自身功夫了得，又有妖獸靈丹附體，若是真遭遇甚麼不測，一時半會也難以有甚麼大礙，指不定，不消幾日，她便自行脫困，歸回了。」
+
+木炎也在旁附和，「是呀，亦暖姐姐既能有辦法如此博得安姐姐的信任，心思深沉可見，想來，也不會輕易遭人擄拐了去。」
+
+就在他們平復褚守情緒的時候，門外傳來一道明亮聲音，「喲，我還想著，你們今日怎地這般熱鬧，原是安掌櫃回來了。」
+
+一抹紅袍晃進屋內，重明鳥也不避諱，將這司南權當是自己家那般隨意，「殿下料準時間，安掌櫃外出也該歸回了，不曾想，竟還就準了這麼一回，真讓我碰上了。」
+
+安向晚迎上前來，「外出多日，不曉得鬼界發生了這等大事。不敢猜忌殿下心思，本還想再走一趟，與殿下會面…」
+
+重明鳥打斷她，「萬萬不可，你們眼下已成眾矢之的，一旦踏入鬼界，便是萬劫不復，也甭想回來了。」她邊說，便從懷中取出一物，「我此來，是依殿下意思，前來告知…」
+
+呈在她掌心的，是一塊通體晶瑩的殘玉，而玉中有道刻痕，缺口中被封入乾涸的血液。此物，安向晚並不陌生，是那時她在無望冥海下，從七角水晶處偷偷挖掘，帶出來的殘片。那時，她將這殘片轉手，賣了一個人情，給那鮫人女子小魚兒。
+
+如今這七角水晶殘片在這，那小魚兒人又身在何許？
+
+見過這物什，安向晚面容瞬時青白了，重明鳥一番話，猶如當頭棒喝，「因著此物外流，殿下也不好再摻和其中。安掌櫃，很遺憾，殿下心意已決，但念及舊情，殿下不會派人前來捉補你，但若是有其他人…殿下也難以再攔下。」
+
+話已說得明白，楚玹為求安穩，已將自己置身事外，不願多事。安向晚垮下雙肩，萬念俱灰，她不曾想過自己竟會栽在這生意事上，而她毫無縛雞之力，一步步地，落入了他人的佈下的棋局，縱然她在過程中察覺出了異樣，卻還是為時已晚了。
+
+重明鳥沒有寬慰她，而是將那殘玉交至安向晚，旋後，拂袖離去。
+
+「這下子，我們連鬼界也不用去了。」雨燐悶聲說著。幾個人神態一般，頹然不振。
+
+「我們好不容易將貨物取回，那這些貨，我們還要給沈家送去麼？」木炎拖著雙頰，雖然面上失神落魄的，但腦袋瓜還算清醒，還曉得為著司南進帳。
+
+安向晚沒說話，緊捏著手裡的殘玉。雨燐眼觀鼻鼻觀心，替安向晚回答，「先不論是誰想陷害我們，這批貨定是萬萬不可交代出去。」
+
+雨燐這話說得不夠準確，木炎褚守一知半解的望著她，雨燐心思不似安向晚深沉，一時言不及意，不曉得怎麼說下去，她支支吾吾半晌，也繃不出其他字句。
+
+安向晚適時發話，「在事情尚未明朗之前，這批貨就猶如贓物，若是隨意轉手，非但只會將事情再鬧得更大，不慎把客人牽連至其中，日後真要追究起來，恐會影響我們司南的商譽。」
+
+木炎這下聽明白了，猛點著頭，他又問，「那這批貨豈不是成了燙手山芋，我們也無法隨意處理，只能擱著？」
+
+一連串之事，發生得又急且猛烈，安向晚思慮過甚，腦袋泛起一陣暈眩，眼前似要發黑，她掌心抹過臉面，給自己緩了一口氣，「貨物之事放著不管，暫且還鬧不出甚麼禍事。現下最為要緊的，是日後從鬼界過來的追捕，這司南…我們怕是要保不住了。」
+
+雨燐關切著安向晚的身子，心想，他們仨也商討不出甚麼法子，便及早將眾人散去。雨燐攙扶著安向晚回房，安向晚褪下一身男裝，鬆開了衣口，雨燐打了熱水進屋，替她寬衣解帶。
+
+安向晚仰頭閉目養神，雨燐將潤濕的布巾輕輕壓在她的肩頭，往下擦拭，動作間，聽得安向晚說道，「雨燐，司南是我們費了不少心血才換來的成就，我不想就這樣沒了它。」
+
+雨燐手中動作不停歇，許是接連受了幾番打擊，情緒熬過了頭，反而冷靜了不少，她心平氣和的說著，「鋪子沒了，方能再努力，只要我們人還在…」
+
+「那鬼界人豈是能容得下我們東山再起？」安向晚苦笑一聲，「他們若是那般好商量，我也就不必在他們面前躲躲藏藏些許年了。」
+
+「他們奪去了我許多東西，如今就連我在人間的一席之地，也要蠻橫的收了去…怎麼能…他們怎麼能夠…！」
+
+「安生…」雨燐抬頭去望，驚覺安向晚睜著一雙淚眼，眼眶泛紅，模樣委屈至極。
+
+安向晚哭訴著，「我甚至從未想過要去招惹他們。何故…何故他們總要這般將我牽連其中，這，好是不公平啊…！」
+
+雨燐不曾見過安向晚這般失態，不免慌措，她扔下手中布巾，直起身，將安向晚攏入懷中，溫聲安慰，「安生，他們能夠奪走的，也僅是那些身外之物，你還有我，有木炎，我們曉得你心性，也願意與你一同承擔，你並非一個人，也不孤寂。日後，也還會有許許多多的人似我們這般仰望你，追隨著你。」
+
+安向晚抽噎幾聲，緩過情緒，她不甘心道，「雨燐，我曉得你的意思，我就是心裡不服氣。憑甚麼他們能夠這般隨意將我定罪？他們越是如此，我便是不服，這司南是我在人間裡的根，他們休得從我手中搶了去，哪怕要我與他們玉石俱焚，也在所不惜。」
+
+雨燐和安向晚相處多年，安向晚是個甚麼性子的人，她最是清楚。安向晚為人平和柔善，性子又軟，就是要做強硬之事，也會再三思量，擇善而行。正如她心性軟懦，就似那本性溫順的白兔，一旦被逼急了，也是會毫不猶豫地反撲一口。而這安向晚，從來就不是畏死之人，雨燐生怕她被逼急了，會做出甚麼憾事，急忙勸住她，「安生，我曉得你心中執念極深，萬不到絕境，你莫要將自己輕看！」
+
+安向晚推開她，那看似柔弱的面容上，摻雜著幾分堅定與決絕，「我自有分寸。雨燐，明日我便再啟程，這鋪子中的大小事，便交由你抉擇，萬事當前，定要以你和木炎的安危為重，若有不得以，捨了這處據點便是。」
+
+雨燐愣然，「安生，你才回來，這又要上哪去？」她頓了下，腦袋忽有靈光，追著問道，「你是不是想到甚麼救命的法子了？」
+
+安向晚半晌沒吭聲，反倒把雨燐給看急了。
+
+「沈家…」安向晚斟酌著說辭，撇開了自己被威逼的部分，將沈家與鬼界有勾搭之事道出，雨燐聽完，面色變了幾分，她遲疑道，「沈家與鬼界有交集，這…很是可疑。安生，這其中貓膩就連我都瞧出來了，你不可能沒察覺到罷？」
+
+安向晚垂眸，「沈家是想將我…將整個司南瓜分、吞下，他們目的明確，做法卻不道義。而我們，眼下也沒有其他法子了，我去同沈老爺商量，指不定，他們能夠派人去鬼界言說，屆時，你與褚守這莫須有的罪責，定能水落石出。」
+
+雨燐還是不允，「安生，你這作為，可是要入那虎穴。是認賊作父啊，這萬是不可…」
+
+安向晚淺笑一聲，心中苦澀，「行商本就不似在那江湖闖蕩，能以品性大義定論高低。為商者，要論心計，技高一籌者為勝，利字當前，私慾難斷，善惡便全在一念之間。沈家如是，我亦如是。」
+
+「可…」雨燐還想再說甚麼，安向晚卻將指腹壓上她的唇，不讓她勸言。
+
+「雨燐，當我決定要走上這條道路時，便是註定要對自己狠心絕情些，做個薄情非義之人，如此…才能更勝人一籌，掌握所有。可，我終究不是那般生意人，我有私情，知仁義…」
+
+當初，安向晚便是憐憫雨燐，才將她收服，帶在身側，日夜渡練，修化成精。她有良知，能斷善惡，也明白自己並不合適成建商舖，她會決定在此安生，也僅是為著給身旁追隨自己的人，一個立足之處。司南於她來說，不僅僅只是一個生財鋪子，更是一個讓她有足夠底氣的居所，是她在人間的根本與志向。
+
+安向晚朝她莞爾，「我不是個成材的商人，也沒有那種天賦，我如今中人陷計，落得這番田地，實是也怪不得他人。不過，你說得對，他們能從我手中搶走的，僅是些身外之物，所以…我才更是要前去沈家。為著護你，護木炎…護及我所珍視珍重之人，也護及我所在乎的…」
+
+安向晚還未說完，雨燐便朝她撲擁而上。明明未看見面容，但那壓抑的抽泣聲卻出賣了雨燐，安向晚撫著她的背脊，雨燐明是淚流滿面，卻硬是咬著牙，佯裝兇狠道，「安生，我不再攔你，也定會護好木炎。所以，你給我聽個明白仔細了，我要你，平安回來…！」
+
+安向晚深深吸了一口氣，闔起了雙眸，她穩著語氣，柔聲應道，「…我會的。」
+</code></pre>
+				<p id="6c538e87-c8b8-4037-8c05-9bc3c52a2840" class="">
+				</p>
+			</div>
+
+<h2 id=eleven>#50 都城商甲沈公子 11</h2>
+			<div class="page-body">
+				<pre><code class="language-Go" style="white-space:pre-wrap;word-break:break-all">
+事出突然，為求一線生機，安向晚沒有喘歇的餘地，她稍一整頓，便又匆忙離去。天色未大亮，她們沒有驚動木炎，雨燐在門口為安向晚送行。這個時間，街上行人不多，二人相視，無話勝多言。
+
+安向晚從懷裡取出一物，交至雨燐手中，「這殘片我帶著也無用，你且替我保管著。」言罷，她扯過韁繩，馬兒仰頭搖了搖腦袋，輕剁馬蹄，蓄勢待發。
+
+雨燐翻開布帛，瞥了一眼物什，又隨即將布裹回去，「好。」
+
+安向晚笑了笑，轉身要走，才不過幾個步伐，她又突然停下，雨燐目光追隨她，以為她還有要事交代，便凝神望去，洗耳恭聽。安向晚見狀，有些不自在的飄開視線，支支吾吾的，「如果…如果你瞧見亦暖回來了，便同她知會一聲，我又去了沈家，若是我許久未歸，再讓她…過來接我。」
+
+聞言，雨燐破開嘴角，笑了出聲，「我明白了。安生，你對這人類姑娘心思確實不一般，都落得眼下這光景了，還不忘記掛著人家…」
+
+「我不是…」她想解釋，但話到嘴邊，又覺得自己何須解釋，索性，固執地，也不作辨解了。拉過韁繩，她扭頭就走，雨燐目送她離去，直至拐口，身影消失，她才返身。
+
+隨著司南的大門緩緩闔上，街邊一道身影從暗巷探頭出來，寬鬆的斗篷將身形掩去，他目光掃過司南的匾額，半晌，又將身形縮回暗巷內。
+
+雨燐尚在收拾心緒，她才走過門檻，大門輕輕帶上，一抬頭，褚守神采奕奕的站在她面前，對她眨了眨眼，道早。
+
+「你…你怎麼，不是，你一大清早在這裡瞎晃什麼呀？」雨燐冷不防被她這般無聲無息的，嚇了好大一跳。
+
+褚守一臉無辜，「我睡起了，便會在院子裡走動巡查，然，我瞧著你和安姑娘天色未亮，模樣似要外出，又挑著這個時間行動，許是不想驚擾我和木炎，我便也就不出聲打攪你們。」
+
+雨燐神色一僵，心道不妙，果不其然，這褚守下一刻便朝她追問著，「雨姑娘，安姑娘這才回來，就又趕著急匆匆離去，她這是要上哪去呀？」
+
+雨燐繞過她，躲避追問似的，隨便胡謅一個理由，「她呀…我們這貨交不上，她給人賠罪去了。」也算不得撒謊，這人，總歸是去得沈家不假。
+
+褚守從善如流，也很單純，點頭應聲，「哦！」雨燐腳程快，話音方落，便不見人影，褚守目送她離去，才又再轉回身，向著大門，半晌不動，眸光深沉。
+
+日升月落，斗轉星移。安向晚快馬加鞭，不出五日，便抵達央縣。此時的沈家已經掌握她的行蹤，安排著人，恭候大駕。
+
+安向晚下了馬，走在城中，街邊突然竄出一道身影，隨著對方走近，安向晚才抬眸去看，那人一臉笑盈盈的，笑意裡有幾分討好，便有幾分處心積慮，安向晚對著他，心中以往的積存的好感，頓時煙消雲散，她禮貌的揚起唇角，「沈公子，聽聞兄長提及前些日子與沈家商談得不大融洽，想來，是我兄長多有得罪，不慎惹惱沈老爺，不知小女眼下前來賠罪，可還適當？」
+
+沈半夏笑道，「呀，當然！安姑娘可是咱們沈家的貴客呢，何時過來，我們都歡迎。」他獻殷勤似地，替安向晚招攬過馬匹，有意無意地，走在安向晚身側，似隻揮不走的蠅蚊。
+
+二人邊走邊說，安向晚簡單表明來意，「沈公子，我此來，一是為著想表明和沈家保持著良好的生意往來，二來，實是我有一要事相求。」
+
+沈半夏側過臉，臉上挑起玩味的笑，「哦？」
+
+「安姑娘一直是我們相當重視的生意夥伴，既是夥伴，亦是良友，朋友有難，豈有不幫之理？安姑娘有甚麼吩咐，儘管說來便是。」
+
+安向晚抿了唇，沈半夏視線火熱的，將她的面容仔仔細細瞧了透徹，眼觀安向晚似有難言之隱，那沈半夏心思細膩，體貼她，便替她言述，「家父當時究竟和安兄商談了甚麼，後輩並不知。但安姑娘若是要問司南近日是否惹上了甚麼麻煩，這…其中原由我還是知道一些的。」
+
+安向晚眸光微晃，她佯作出震驚不已的模樣，迫切的拉住沈半夏的袖子，「是何故？」
+
+沈半夏瞧她一副不著頭緒的模樣，心裡甚是歡快，只覺自己就快要將人收為已用，心裡快活，口吻不自覺地愉悅起來，「安姑娘當真是不曉得麼？你們既敢與鬼界人來往生意，那自然便會有人看不慣，這其中得罪了誰，安姑娘應當比我，還要更清晰才是。」
+
+安向晚皺眉沉思，沈半夏見她苦惱，笑意更甚了。安向晚沉吟片刻，還是搖頭，「我想不明白有誰會想陷害我們…唉，事已至此，若要追究源頭，一時也難解這燃眉之急。沈公子，依你看，這事可有得解？」
+
+沈半夏笑了兩聲，沒有應話。他們已經來到沈家門前，沈半夏揚手，將人請進門，「安姑娘，請。家父已經在正廳恭候多時。」
+
+宅院內外戒備森嚴，不似上回模樣，安向晚走過長廊，來到正廳前，四周來往皆是巡邏護院。沈半夏隨身在側，敲響房門，裡面傳來說話聲，而後，房門從裡面打開了。
+
+門內兩側也有護院站守，因著前車之鑑，安向晚警戒著他們，沈半夏先一步入門，安向晚隨後跟上。沈老爺坐在席上，慵懶的抬起眼皮，沈半夏將人帶到後，便退去一旁，列入兩側站守的護院中。
+
+沈老爺手裡抽著水煙，他長長地呼出一口白色輕煙，啟口，「安掌櫃，久仰大名…」他抬起手輕擺，一旁便有護院過來，替他將手裡的煙斗撤下，沈老爺直起背脊，端正坐姿，他從懷中掏出一物，呈在掌中，又言，「聽聞安掌櫃能使得幻術之法，又可知這是甚麼東西？」
+
+安向晚走上前去，至半路，一側護院做出拔刀姿勢，安向晚眼尖，隨即停下腳步，沈老爺見狀，擺了擺手，讓人過來將物件遞給她。
+
+安向晚打量著物件，沈老爺收藏著的，非是尋常玉石，玉面處有道缺口，中間置入了前人血液，而那血液如今已經乾涸，印入玉石中，成為那玉石的養料。此物周身散發著妖邪之氣，裡面藏存著施術者賦予的幻影，只是這玉石裡的人是誰，安向晚無法參透。
+
+安向晚垂眸，撫過玉面，將東西交還回去，也不答話，直言道，「沈老爺如此大費周章的將我請來，想必是有事要求於我，不若我們便不繞那些個彎子，將事情攤明白了說罷？」
+
+沈老爺爽朗一笑，「好！」
+
+「安掌櫃如此爽快，我也不多廢話，我要你替我依著這塊石玉的樣子，造出一個個、一樣樣的術法。」
+
+安向晚說，「要能做出這種玉石，非是一朝一夕，沈老爺可著急著要？」
+
+「我手邊已有素材供你使用，你只需替我將祂們召喚回來。」
+
+聞言，安向晚了然的點了點頭，沈老爺又說，「你替我做事，我不會虧待你。」
+
+「如此…那好罷。」安向晚一應允，那邊沈半夏便走到她身旁來，在她跟前呈上一塊白玉及一把小刀，沈半夏朝她笑道，「安姑娘，給。」沈半夏此舉，是要安向晚展示自己能力，以好博得眾人認可。
+
+安向晚沒吭聲，她取過短刀，指腹輕撫過刀鋒，抹出些許血液，她將指上淺薄猩紅視作筆墨，在那石玉上虛晃地做下幾個手勢，而後，她拉過沈半夏的手臂，將小刀抵在他腕上，輕輕橫了一刀，血珠凝聚滑落，安向晚持著石玉去接，白玉沾染上血液腥氣，透出妖邪的顏色。
+
+在眾目睽睽下，沈半夏身後有白影漸漸凝聚成型，安向晚將刀子交還回去，事已成，她轉身望回沈老爺，「我可以替沈老爺做事，但還望沈老爺能夠顧及兩家情面，務必出手相助，搭救司南於水深火熱之中。」
+
+沈老爺摸了摸下顎，晃了沈半夏身後人一眼，那虛影繞過人群，到沈老爺跟前，曲膝下跪。沈家死去之人，又再次重回世間，這讓沈老爺很是歡喜。他表情鬆動，勾了唇角，「以我們沈家和你司南的交情，這個忙，定是得幫的。你甭擔心，我這就安排人去鬼界查明真相。此間，我還得要勞煩你，替我將這些人叫喚出來…」沈老爺手頭上有副名冊，他一揚手，護院隨即從房中深處翻出一箱箱精琢好的玉石素材。
+
+幻術之法相當耗費心神，安向晚見狀，犯難道，「沈老爺，你這是…」
+
+「要與鬼界爭論，可不是件容易事…」沈老爺意味深長地說著，「聽聞司南裡的幾個夥計，是在鬼界鬧出了禍事，這才招來的鬼界追兵。安掌櫃，這份交易的輕重，該當如何定義？我想，你心中自能定奪罷？」
+
+安向晚捏緊拳頭，咬緊牙關，她邁步向前，接過那名冊，忍辱道，「召出虛影相當耗神，沈老爺若是急迫需要人手，小女也只能盡力而為。」
+
+沈老爺但笑不語，周旁護院負手而立，場面莊嚴，沈老爺沒再發話，他擺了擺手，沈半夏見狀會意，過來將人帶離正廳。
+
+離去前，安向晚瞥了那些護院一眼，赫然發現那沈雲煙竟也在那護院之中佇立。她記得上回過來時，沈老爺周身圍繞著的，盡是鬼界鬼差，而今日，他們褪去那些鬼差的行當，換做尋常人打扮，如此刻意，莫不是想要在她面前遮掩甚麼？
+
+安向晚心神飄得有些遠，步伐不自覺慢了下來，她抬眸向著身前人，思量著，這沈家中使喚的下人，一個個看似精壯能武，卻有殘疾，口不能言。其餘護院多是黑袍掛身，有些行路匆忙，擦肩而過時，能從周身感覺到些許不尋常的氣息，猶如她在鬼界行走時，與在那些鬼民身上感知到的氣息一般。而鬼差本身是沒有這樣的氣息的…
+
+沈家長久以來便與鬼界有牽扯，而上回她做男裝扮來沈家作客時，沈家這幫鬼差頻繁出入鬼界，行事匆忙，很是可疑，而後那沈老爺便向她發難，今日一見，這沈老爺有意將她收入麾下，他的目的顯而易見，無非是要她手上習得的這幻術技法…
+
+怎麼會這麼湊巧呢，沈家一來訂單，她們前腳才去鬼界取貨，後腳那臨海的鮫人村便被人覆滅了？要知道，那鮫人村地處偏僻，尋常時候根本不會有人走訪，如若這痛下殺手的人就是沈家，那麼，他們又是如何知曉司南與鮫人村之間的交易的？
+
+常言，用人不疑，疑人不用。安向晚自是信得過司南裡幾個人的為人，排除司南，與她有牽扯且相關的，便只有鬼界中人，會是楚玹…重明麼？
+
+不…不可能。楚玹行事低調，最怕引火自焚，且她為了避嫌，安向晚不曾見她踏出過鬼樓。雖說重明與鮫人村之間曾前有過瓜葛，可她如今被楚玹收復在側，行蹤受楚玹掌握，楚玹又豈會放任她胡亂給自己惹事？
+
+安向晚苦惱地按了按眉心，倏地，她靈光一閃，憶起了無望冥海下的那座城池，而在當時，那幫鮫人口中反覆說著的城主、和與她在深淵處，七角水晶柱石前，偶然瞥見的那抹身影…
+
+小魚兒曾言，她的心上人和某位鬼差交好，而這位鬼差，即有可能就是那虛境裡鮫人口中的城主…
+
+如果說這城主鬼差背後的身份，與沈家脫不了關係的話，那麼…這一切便能對得上了。
+</code></pre>
+				<p id="6c538e87-c8b8-4037-8c05-9bc3c52a2840" class="">
+				</p>
+			</div>
+
+
+
+<h2 id=twelve>#51 都城商甲沈公子 12</h2>
+			<div class="page-body">
+				<pre><code class="language-Go" style="white-space:pre-wrap;word-break:break-all">
+晃眼間，安向晚已在沈家待了半個月。她跪坐在榻上，前方矮桌上擺滿了玉石，她一手持著名冊，一邊將沈半夏送來的信物一一核對，幻術之法聽著奇幻飄渺，但卻也非是無中生有，需有媒介，方能使得。
+
+而安向晚再怎麼神通廣大，也不可能將這些與自己本就無關的人叫喚出來，而沈家也不可能找得來這麼多人，以鮮血召請，這名冊上，有好些都是沈家祖輩，縱然真的能以近親之血召喚，卻也怕召喚回的，不是名冊上指定的人。
+
+使上一回幻術，身心消耗極大，安向晚不想白費體力做那冤枉事，便讓沈半夏替她將這名冊上那些個人的遺物取來。有了媒介，這名冊上的人，已被她召喚出數十名，可名冊厚實，她費心耗神的，過了好些天，才完成了這麼些…也不知，這沈家要何時才能將司南從事件中拯救出來，都過了半月，也不見他們有半分消息捎來…
+
+安向晚終是耐不住心裡迫切，她想著，許是自己辦事不利，沈家對她要求如此苛刻，自己若是不再努力些，那她這段時日以來的耗損，可不就白費了？她就算是與對方僵持消磨，也定要將自己的價值提高，讓對方心服口服地，為她做事，哪怕，孤注一擲…
+
+房中凝聚著陰冷死氣，晃蕩的黑影四處穿梭。她一股作氣，將術法封入玉石內，不多時，數十名虛影在她面前緩緩呈現。
+
+隨著陰狠戾氣散去，安向晚掌心抵著桌面，身形搖晃，她佝僂著背，大口喘息著，吐息間，她低唔一聲，急忙掩住口鼻，卻是攔不下溫熱濃稠，指縫很快地被猩紅覆蓋，她又重咳一聲，濺出了一地血花。
+
+就在這時，門外傳來急躁的腳步聲，安向晚虛弱的抬起頭，模糊身影背著日光，凝聚在門扇上，那人揚聲急促道，「安姑娘，有消息了！」
+
+安向晚眼神一亮，也顧不及自己身體抱恙，她四肢突然盈滿氣力，直朝門口而去，門打開了，沈半夏立在門外，安向晚一身狼狽，衣襟處染上紅稠，看著懾人。
+
+沈半夏愣了愣，見她身形虛浮，就要伸手攙扶她，卻被安向晚掙脫開了，她直問道，「如何，他們可安穩了？」
+
+沈半夏被拒，面色有些尷尬，但他情緒穩定，隨即將神情整理妥當，他按著安向晚的肩膀，噙著淺笑，道，「鬼界之事已有了結，我想司南眼下這風波很快便能結束，不過…」
+
+安向晚見他說詞停頓，愣神一瞬，催促他道，「不過甚麼？」
+
+沈半夏別開眼，「日前司南受鬼界追查，縱然有我們的人暗中阻擋保護，卻也難做到十全十美。安姑娘這府上，是否有個男孩子，喚作木炎？」
+
+「木炎他怎麼了？」
+
+沈半夏欲言又止，嘆息一聲，道，「他在對峙中受了些傷，被我們的人即時救了下來，司南暫時不是個能夠好好養傷的地方。於是，我便命人將他帶回沈家安置。安姑娘可要去見他一面？」
+
+「要。」安向晚說著，扭頭走回屋內，沈半夏欲要跟隨，他轉身，才晃眼屋內，驚見屋內人潮擠擠，他還未做出反應，那扇門，便被安向晚闔上了。
+
+安向晚換了乾淨衣衫才又出來，沈半夏在屋外守候，方才一瞥，他心裡有幾分激動，不待他詢問，安向晚便先將一帶布包塞到他手上，「這些…是我今早召喚回的舊人，一會，等我先見過木炎，便去和沈家主交付。」
+
+沈半夏抱著布包，呵樂著，「安姑娘真是有效率。家父見了這些，肯定歡喜！」
+
+二人移步他院，前往的路上，雜草橫生，似是許久未曾打理，安向晚皺了眉，這裡怎麼看都不似個能夠養傷的地方。沈半夏側目瞧見安向晚的神情，急忙開口，「這男孩子是我讓人偷偷帶回的，家父並不知情，而我不想讓家父拿此事再要挾你，所以才…」
+
+「…還望安姑娘諒解！」沈半夏說得真誠，安向晚一時也分不出他話中真假，只得淡淡應聲。
+
+這處偏院荒廢已久，二人踏入時，還需撥開雜草堆，才能深入。入院後，院中光景不如先前，圍滿的雜草被人隨意清除，清得不多不少，方能盼清前路，而在院中立著一道身影，沈半夏瞧見了，隨口叫喚，「阿九。」
+
+那名喚作阿九的人，聞聲回頭，那人著一襲黑衫，面戴半式面具，與鬼差裝扮相似，卻又與鬼差不同。阿九身形修長，身材精壯，將一身黑衫襯得筆挺，沈半夏朝他走去，阿九沒有說話，而是微微欠身，揚手指了指屋子的方向。
+
+沈半夏了然，「人在屋中…」
+
+安向晚走過阿九，鼻尖縈繞著一股濃郁的藥草氣味，那氣味重得，就似將水藥打濕在布料後，不被清洗，又被風乾了，稱不上香氣，倒也不是那般難聞，但多了…
+
+安向晚皺著鼻尖，這味道過於濃郁，令她不喜。
+
+三人進入屋內，屋中角落處蜷縮著一個身影，安向晚看見了，急忙過去查看。聽聞動靜，男孩子抬起頭，他一身狼狽，頭髮也塌糊地垂在了面頰旁，衣衫襤褸，不曾想，這年歲尚輕，理應風華無限的小伙子，竟比那街上行乞的老大爺，還要落魄上幾分。
+
+安向晚望著他，心有不忍，「木炎…」
+
+安向晚在沈家過得並不安穩，她氣色欠佳，木炎觀她眉目，心裡也是悲痛萬分，「安姐姐，我沒事。還好…只有我一個人被捉來…」
+
+「捉來？」安向晚驚詫，「木炎，你且誤會了。沈家與我交易，他們會保下司南，而你受了傷，不好在司南安養，才會被帶來這處安置。」
+
+木炎張了張口，想要再說甚麼，卻瞥見安向晚身後站了一個精壯的男子，他抿住了唇，化成一道嘆息，「原來是這樣，看來，是我誤會好人了。」
+
+安向晚見他情緒低落，盡顯疲態，便也不好再多叨擾，只寬慰道，「木炎，等事情都過去了，我帶你回家。」
+
+木炎苦笑一聲，卻還是打氣精神，點頭應話，「安姐姐，我信你，也等你。」
+
+等安向晚過來正廳時，時辰剛過午時，時機不好，碰著了沈老爺在內房午歇，二人在屋外等候，沈半夏言勸她改日再來，可安向晚不願，她想儘快了結紛擾，帶木炎歸家。
+
+傍晚時分，正廳的門終於開了，安向晚急忙上前，沈老爺坐在大位，慵懶的望著她。安向晚取過布包，拉開束口，布包內玉石見了光，虛影呈現，數十名虛影立在安向晚身後，安向晚抬眼去看，沈老爺眉間輕挑，看著很是滿意。
+
+「做得不錯。」沈老爺笑了笑，「安掌櫃的確有兩把刷子，我這沈家…就沒一個有像安掌櫃這般，如此有能耐之人。」
+
+安向晚低眉順眼，「沈老爺，小女所求之事…」
+
+沈老爺蹙起眉頭，「怎麼，這事半夏沒同你說麼？鬼界那邊已得平息，既往不咎。」
+
+得到自己期盼已久的回應，安向晚心頭一喜，她歸心似箭，想與家人團聚，正要開口告還時，那沈老爺卻似看透了她的心思，發話道，「事已了，安掌櫃這下子，便急於兩清了，是麼？」
+
+安向晚愣然，一聲未吭。那沈老爺不放過她，朝著一處喊道，「把人帶上來！」
+
+聞言，安向晚心頭一震，她倉惶地望向沈老爺，只見他身側隨行的護院，將一瘦弱的男孩強壓出來，安向晚辨清來人，頓時心亂如麻，她急促地尋著沈半夏的方向，而沈半夏也在看她，他一臉無可奈何，搖頭嘆息，也是無能為力。
+
+「安掌櫃可識得這個人？」
+
+「放了他。」
+
+「哈！想要我放過他，那就可得看你心意了。」
+
+語畢，安向晚周身有護院靠近，她左右一看，護院手上握著一盞寬杯，遞到她面前，杯中盛著一色澤妖邪的液體，看著絕非善物。
+
+沈老爺解釋道，「此物難得，喚作盤魂香，是以稀罕凶獸之血製成，具有強健體魄之功效…安掌櫃，你幫了我們沈家一大忙，損耗之大，這珍貴藥材我也不吝嗇，便贈與你了。」
+
+由不得安向晚拒絕，她接手輕嗅杯緣，杯中液體雖是以凶獸血液製成，但其氣味卻不腥臭，反倒還有一絲甜膩香氣。安向晚深吸淺吐一口氣，她捏緊杯盞，仔細追問，「只要我飲下此物，你便能放過木炎了，對麼？」
+
+「這孩子只是牽制你的一個手段，於我而言，他沒有價值，只要你歸順於我，我自然不會傷害他。」
+
+「…那好。」安向晚仰頭，一飲即盡。事出突然，那邊木炎見狀，急喊出聲，卻是遲了，「安姐姐，莫要喝下！」
+
+喉頭滾動。她喝得急切，些許液體滑出嘴角，她飲盡後倒扣杯盞，手背抹過唇角，直視著沈老爺，沉聲道，「放人。」
+
+那邊沈老爺見狀，直發笑，「安掌櫃果真是爽快之人…」
+
+木炎得了鬆綁，被人狠力推搡，他踉蹌地跌來安向晚跟前，安向晚箭步上前，撈住他的身子。木炎撲倒在安向晚懷裡，慌措仰頭，淚眼婆娑，急道，「安姐姐，你太胡來了，你怎麼能…怎麼能為著救我，便落得這般受人牽制的下場？」
+
+安向晚本想安撫他的情緒，才提起唇角，要說甚麼寬慰的話，忽地，她神色一滯，有股力道從她體內兇猛竄出，急劇拉扯著她的感官，令她痛苦難耐，一時不得動彈。
+
+木炎見她面色不對勁，連忙穩住自己身形，攙扶住安向晚，「安姐姐，你這是怎麼了？」
+
+藥效發作的快且猛烈，安向晚痛苦地闔起了雙眸，她額間浸出薄汗，這份突來的苦楚讓她難以自己，她艱難的搖了搖頭，口中溢出陣陣喘息，身上氣力盡失，虛倚在木炎肩上。
+
+木炎緊張著她的情況，一刻不敢分神，他見安向晚裸露在外的肌理，似有詭異紅痕劃過，頓時愣了住，為求印證，隨即將安向晚的袖口往上推，只見光潔手臂上佈滿一道道血紅，但那並非創傷，血紅色的紋路掩藏在肌膚下，就似一條條奇異的蟲子，正在佔據著安向晚的肉體。
+
+木炎何曾見過這種情況？他嚇得哆嗦著唇，抱著安向晚，哭喊道，「安姐姐，你莫要嚇我，你…你怎麼會這樣…」
+
+安向晚額間浮出青筋，她咬著牙，卻是說不出話來。
+
+「這盤魂香一體兩面，若善加鍛鍊，能得金剛不壞之身，是為至尊之寶。但，此物非是凡間所有，老夫，也不曾見過有凡人能抵禦住這藥性…」沈老爺端著煙管，緩步來到安向晚面前，他將那管煙置於安向晚頂上，輕輕呼出一口氣，「盤魂香蝕骨，需依仗著這煙氣來壓制體內那份不適。安掌櫃，你若想要舒服些…替我做事，我便許你快活。」
+
+此時的安向晚，意識已漸漸渙散，她在失去意識前，隱約聽見木炎的哭喊聲，以及沈家主對著她陰寒的低喃聲，「安掌櫃，如今，你已無退路了…」
+</code></pre>
+				<p id="6c538e87-c8b8-4037-8c05-9bc3c52a2840" class="">
+				</p>
+			</div>
+
+<h2 id=thirteen>#52 都城商甲沈公子 13</h2>
+			<div class="page-body">
+				<pre><code class="language-Go" style="white-space:pre-wrap;word-break:break-all">
+安向晚迷糊轉醒時，她人已不在正廳。她處在一間陌生房中，房內燃上奇異煙氣，許是受了藥物侵擾，她覺得自己渾身不對勁，氣力盡失，身體匱乏。她雖動彈不得，卻依靠著感官察覺，辨出周身似有人留守，而那人見她醒來，急忙過來關照。
+
+安向晚做不了動作，眼珠子轉呀轉的，瞧見扶起她腰身的人是沈半夏。沈半夏依著她的目光，和善笑道，「安姑娘，還好你睡得不長，我還擔心你便這麼一覺不醒了。」
+
+安向晚試著吐息一聲，她喉頭乾涸，嗓音微啞，斷斷續續的發出幾個短音，不多時，終於能道出字句，「這是…甚麼藥，怎地令人這般難受？」
+
+「盤魂香，這是沈家束縛可用之人時，使下的強硬手段。其中成份，是以存藏在三方兩界中的珍獸傲狠，取其心頭之血做藥引，再融合沈家累世家主之血脈，經過多次淬煉，提取精華。本來，此物若是能駕馭得好，那既是相輔相成的良藥，可…經過沈家一番繁瑣的淬煉後，此藥功效雖然不減，卻也難免摻雜了幾分邪念。」沈半夏摟著她，聲音放得極輕極淺，似是一對濃情蜜意的佳人在說甚麼悄悄話，奈何安向晚無力阻止，只能任由著他擺弄。
+
+「血液…」安向晚沉吟著，「我聽聞在大陸南端一帶，蠻荒之地，便有以專研邪術為志向的蠻人，他們擅使操弄血術，擾亂異族神智。」
+
+「不錯，曾前便有沈家家主為求壯大家族，進而走訪南蠻，習得此法。而你飲下的這物什，便是其中一種血術…」沈半夏頓了頓，他斂眉，露出苦惱模樣，「沈家主青出於藍，更勝於藍，將這門血術研究至精，而這珍獸之血不愧為神物，竟能如此包容這等邪術。安姑娘，你真真不該喝下這東西的…」
+
+「我會如何？」安向晚仰頭望他，沈半夏憐愛地撫過她的臉頰，柔聲應道，「你的肉身因著這血術作用，往後只能依循著施術者的命令，做那認命傀儡。」
+
+「施術者…？」安向晚愣了一下，這盤魂香既然是由沈家歷代家主的血液融合製成，那麼其施術者又該算做是誰？
+
+沈半夏見她遲疑，心中會意，便出言解答，「血脈世襲，這施術者的根本，便也難以較清，也就是說…」他指尖下移，從安向晚下顎，輕輕滑過，按上脖頸，抵著那處脈搏。沈半夏闔眼，凝神再睜，他眼底晃蕩過一絲邪魅紅光，緊接著，安向晚身子一震，猛抽一口大氣，「唔…！」
+
+待安向晚受盡苦楚，沈半夏低沉的聲音，這才從上方緩緩落下，「只要是有著沈家的血脈，皆能是那施術者。」
+
+「可…可有得解？」安向晚咬著牙關，忍過這蝕骨般的苦楚。
+
+「無解，血術邪乎，根本就是以至人於死地的念想所創。」沈半夏指腹一路往下遊走，順著衣裳，摸至袖口，牽住在那布料裡沉睡的玉手，提至二人眼前，「不過，安姑娘，我心悅你，我並不想與族人共享你…」
+
+他說著，從腰間取下短刀，對著安向晚的手臂劃下一刀，鮮紅血珠飛快地凝聚，爭先恐後的從那綻開的皮肉裡鑽出。
+
+此時的安向晚無力呻吟，她難受的蹙起眉頭，淺淺的喘息一聲，而那沈半夏卻還不放過她，又從懷裡取出一枚石玉，對著那創傷處，狠力壓入，待石玉嵌入了血肉之中，他才鬆手。
+
+血術本就邪乎，而這石玉裡封藏的技法也非善類，兩者融合，會得出甚麼結果，安向晚不敢深想，她使勁掙扎，費了好一番氣力，才將將把手搭上自己的手臂，指尖曲起，作勢要把那石玉挖掘出來。
+
+沈半夏見狀，捉住她的手腕，將她制伏在自己懷中。沈半夏壓著她的髮旋，淡淡道，「安姑娘，血術刁鑽難解，唯有此法，才能令你日後好受些。」
+
+「你…對我做了什麼？」
+
+「我要你做我的人，聽我的話。」沈半夏笑道，「石玉吸取天地日月精華，它的精妙之處，便是能作為各路技法之媒介，倘若得以善用，對於這等血術…它也是能抵禦住幾分的。」
+
+「而這石玉之中，埋藏了我的血液。雖說血術受石玉影響，削弱幾分，但因著石玉中存藏著我的精血…我便能比其他族人，更好的佔有你。」
+
+因著司南先前種種處境，安向晚對沈家的觀感，越感厭惡，而沈半夏這一番話道盡，更是令她內心作噁，她一股勁力迸發，甩開沈半夏的手，猛地朝自己手臂上胡亂抓扯，可不過幾下，便被沈半夏再次牢牢禁錮住。
+
+「安姑娘，你別浪費氣力了，你乖乖的，養好身子。你眼下正虛弱，血術相當折磨人，我並不想對你動粗…」
+
+安向晚咬緊牙關，還想再掙扎，身體卻難以發力，她本就是強弩之末，剛才那一下，已經是她殘存的全力，反抗不得，她頹敗的闔上眼。
+
+沈半夏見她安份下來，不免歡喜，「這就對了，你聽話，日後你跟著我，有我護著你，當家就是要對你不利，也還得先問過我。」
+
+沈半夏撫了撫她的面容，自顧自地說著，「過幾日，我便尋個機會向眾人言說，我沈半夏願娶你安向晚為妻，屆時，這沈家便不再有誰，輕視你，怠慢你，那些曾前對你放肆之人，我一個也不會叫他們好過！」
+
+沈半夏自說自話，安向晚沒應，不知過了多久，門外傳來響聲，沈半夏抬眼去看，人影就立在門外，沒發一語。是沈家養的啞人，沈半夏冷著臉，喝道，「進來吧。」
+
+隨著開門聲，安向晚也提了提眼皮，門口身材壯實的男子掃了她一眼，走進屋內。這個人，安向晚見過，去見木炎那時，在偏僻的小院裡，他們有過一面之緣。
+
+「阿九？」沈半夏驚疑一聲。阿九走到他們跟前，單膝下跪，又從袖中取出紙條，沈半夏瞧清了，嘆氣一聲，「安姑娘，我著實想在這裡陪著你，可惜，這沈家裡盡是些辦事不力的庸才！」
+
+一聽沈半夏要走，安向晚揚起幾分精神，她動了動指尖，一點一點摸上袖口。沈半夏走到門口時，心似有所感，他突然回頭，安向晚這舉動不偏不倚地落入他的視線。
+
+安向晚被逮個正著，動作一僵，沈半夏輕淺一笑，卻是對著阿九吩咐道，「替我看好她，莫要讓她做出甚麼傷害自己的事情來。」
+
+阿九本也要離去，得了囑咐，他頷首，腳步停頓，終是留在了房中。
+
+待沈半夏走遠，阿九這才回身。安向晚倚著軟榻，抬著眼皮緊盯著男子。阿九朝她走來，黑袍擺動，帶起沾染在衣服上的濃郁藥味，藥味熏人，安向晚不自覺的皺了鼻尖。
+
+面具下的墨瞳深邃，男子臉型修長，裸露在外的肌膚光潔白皙，難掩姣好姿色，他薄唇輕輕抿著，依著對待沈半夏的態度，他曲膝跪在安向晚跟前。先前安向晚被劃傷手臂，周身地面濺染血跡，袖口紅了大半，猩紅深深淺淺。阿九注意到她的傷處，伸手要觸碰，安向晚見狀，身子微顫，淺淺地朝後瑟縮了一下。
+
+阿九頓住指尖，仰頭打量起安向晚這個人。旋後，他從懷中取出一卷棉布，在安向晚面前揚了揚示意，安向晚咬著下唇，沒接受。
+
+掌心微覆，棉布落了地，阿九冷笑一聲，從腰間取下一把小刀，晃到安向晚面前。安向晚微愣，她蹙起眉梢，遲疑地看向眼前人，這個男子將刀子遞到她面前來，莫非是想要助她？不…他是沈家的下人，認命聽從沈半夏的吩咐，眼下這番，許是在捉弄她，好給自己討幾分樂子。
+
+但，手邊若是能有利器在身，也總比空著手來得強。
+
+安向晚接過小刀，阿九似乎樂見其成，也不阻撓她。安向晚渾身乏力，握著小刀的手微微發顫，她擼起袖子，將刀尖比劃在石玉附近的血肉上，她做事並不拖泥帶水，手起刀落，刀鋒扎進皮肉裡，安向晚眼睛一下也沒眨，指尖蓄力一翻，硬是將那埋在肉中的石玉挑了出來。
+
+染血的石玉落到地上，滾了幾圈，來到阿九腳邊，他撿起，在手中把玩著。半晌，他捏著石玉，傾身貼近安向晚，拉過她的手臂，模樣似是要把石玉再次按壓回去，安向晚臉色泛白，掙扎般地，抵住他的手，哀聲祈求，「不要…」說著，她指尖滑落，氣力盡失，再也穩不住身形，綿軟地栽在阿九的臂膀上，「求你…」
+
+阿九垂眸，手臂輕推安向晚。良久無應，這人已然暈死過去。
+
+阿九，「…。」
+
+墨瞳沉靜，他握住石玉，掌中勁力迸發，再張掌時，散出淡淡白煙。阿九將人帶進懷中，推起她的衣袖，包紮傷處。經過一番折磨，臂上血肉模糊，鮮血未被止住，向外流淌，傷口中心凹陷，如若就這般包紮起來，日後讓沈半夏發現石玉不在，恐惹非議。阿九思量一陣，從懷裡取出一個小布袋，他倒出布袋裡的物件，小巧石玉入掌，與沈半夏置入安向晚臂上的，相差無幾。
+
+阿九輕輕的將東西放入傷口中，旋後，仔細包紮。事畢，他將安向晚放平在地，取過枕頭薄被，悉心顧之。
+</code></pre>
+				<p id="6c538e87-c8b8-4037-8c05-9bc3c52a2840" class="">
+				</p>
+			</div>
+
+<h2 id=fourteen>#53 都城商甲沈公子 14</h2>
+			<div class="page-body">
+				<pre><code class="language-Go" style="white-space:pre-wrap;word-break:break-all">
+在安向晚前去沈家的第五日，司南來了一位稀客。這日一早，木炎照慣例去前廳開了門，雨燐褚守留守院中，近日常有鬼界追兵襲來，欲要將她們二人追捕回去，兩人沒在這些追兵身上少吃苦頭，一番纏鬥，二人日夜難歇，經過商討，三人決定輪流職守，這不，木炎前腳才來開門，褚守後腳便跟上了。
+
+木炎聽聞動靜，一回身，褚守睜著一雙無辜大眼，指著老遠的門外，說道，「木炎，門外有些動靜，我瞧他都徘徊幾日了，不似壞人，可會是司南的常客？」
+
+木炎沉吟一聲，「這，不應該呀…」日前，木炎便把客人安置妥當，又把這段時日司南不開張的消息傳放出去，城中賣貨的商鋪又不止他們這一家，他們不做生意，老百姓便改道去其他地方採辦。
+
+木炎摸著下顎，謹慎再三，他領著褚守出了院子，打算一探究竟。
+
+拉開大門，木炎探頭出去，左顧右盼，門外不見人影，他回頭望向褚守，困惑道，「你不是說了有人麼，那人呢？」
+
+褚守眨了眨眼，她抱著臂，僅用下巴點了一個方向，「喏，人就躲在那處暗巷裡呢，這般鬼鬼祟祟的，且待我將他抓來…！」說時遲那時快，她凌空飛起，腳下輕點，身姿俊俏地滑出了一段路，木炎還來不及回話，便不見褚守身影，他急忙再探頭望外。褚守這廝，竟在瞬息之間，跑到了暗巷中，半拉半拖的，將一身影從暗處扯了出來。木炎見狀，大拍腦門，這褚守做事雷厲風行，也不怕惹上了攤子，難怪雨燐要時常念叨她。
+
+這人斗篷掛身，整個人掩得緊實，木炎從老遠看到跟前，也沒瞧出一個明白來。褚守行事高調，惹來不少注目禮，木炎擔憂招禍上門，哪敢在外多逗留，他匆忙將二人引進院中，旋後闔上大門。
+
+褚守還壓制著那人，木炎走過來，撥開那人帽披，褚守好奇的探來目光，兩人一番打量，神色各異。
+
+木炎皺眉，苦惱道，「唔…我不識得這個人呀。」
+
+褚守睜大眼睛，喊道，「原來是你啊！」
+
+木炎指了指對方，又指向褚守，一時摸不著頭緒，心想，許是鬼界來的客人，也難怪他不認得。
+
+眼見被識破，對方也不再掩藏，她站直身子，對二人頷首，「臨海一事，想必你們已略有耳聞。那幫賊子以為我已身死刀下，卻不想我受了安姑娘庇護，這才得以逃出鬼界…」
+
+這人便是臨海鮫人村的掌事，小魚兒。
+
+她繼續道，邊從寬鬆的袖口裡翻出一張紙契，「我尋著契約上的位置，費了一些時日，好不容易才找著司南，那日撞見了安姑娘外出，我本想著等安姑娘回來了，再行拜訪，孰料…都過了這麼多日，我連一個客人的影都沒見著，怎麼，你們這商鋪是不對外做生意了麼？」
+
+聞言，二人相繼撓了撓頭，褚守只顧著傻笑，木炎揚著嘴角，靦腆道，「原來你就是我們在鬼界據點的掌事，幸會，我喚作木炎。安姐姐前日外出辦事未歸，歸期未定，魚兒姑娘大老遠過來，若是沒有地方去，一個姑娘家也不好在外飄泊，不若，便暫時在司南裡住下吧？」
+
+「也好。」
+
+褚守卻說，「可近日司南不安穩…」
+
+小魚兒眼珠子在兩人間晃了晃。
+
+木炎啊了一聲，趕緊擺手，「不打緊，不打緊，司南在城東處還有個據點，那裡不在明面上，僅是司南的一處倉房，魚兒姑娘若是不嫌棄，便在那處住下吧。」
+
+小魚兒咬著話頭，細問道，「司南裡這是出了甚麼要事，連得生意都做不成了？」
+
+木炎答，「鬼界鮫人村一事，我們遭人嫁禍，近日常有鬼界追兵打擾，我們不好嚇著客人，故暫時歇業。」
+
+「怎會如此…那幫歹人真是無法無天，這鬼界差使又是怎麼辦事的，連個來龍去脈都未釐清，便要來向無罪之人發難？簡直，豈有此理！」小魚兒此行，不外乎就是來找救兵，替自己討回一個公道，卻不想，司南這處也已陷紛擾，自身難保。
+
+木炎招攬二人入屋，粗茶款待，幾人將近日所發生之事，一五一十的交代。小魚兒邊聽邊點頭，但木炎知曉的，不過是片面，待木炎說完，她才做補充，細道，「在二位姑娘取完貨物，當夜，村子便被人襲擊了，村中鮫人無一倖免，當時，我也險些葬身於此，多虧了有安姑娘贈予的石玉，我才因而保下一命。只可惜，後來，待那幫賊人離去後，我想再回頭去尋那枚石玉時，卻是怎麼尋也尋不著了，我料想…應是那幫賊子將東西奪了去。物件貴重，可謂是我與安姑娘之間的信物，我真真是不願就這般糊裡糊塗地，被旁人給順去了！」小魚兒越說越氣惱，握著拳頭，想要發難，卻又不好在人前失了禮數，只得氣憤的自敲腿心，以做發洩。
+
+「石玉…？」木炎嘀咕一聲，褚守回頭與他相看，二人眼神交流一陣，雙雙敲響掌心。小魚兒看不懂他們在打甚麼啞謎，一臉困惑，褚守朝她笑了笑，溫聲道，「魚姑娘，你說得這枚石玉，我們正好有下落。」
+
+小魚兒眸光一亮，傾身壓桌，洗耳恭聽，褚守也有樣學樣，壓桌附耳。木炎見她倆交換過情報，便岔開話題，這小魚兒既是安向晚找來的人手，四捨五入也算是司南的一份子，眼下司南有難，他們也不好將責任全全扔給安向晚。小魚兒先後受人恩惠，木炎一提議，她便應允了。
+
+如今司南這背後的當舖生意是無法再繼續，而鮫人村覆滅，要再尋明珠也無人手，僅是做些不出眾的商貨買賣，利潤微薄，又豈能養活他們這一口口人？
+
+木炎憂愁的按著腦門，小魚兒拖著臉頰笑望著他，褚守腦筋不及他倆，老早就已聽得暈頭轉向，她亡故時年歲尚淺，哪會懂得甚麼經商之道，更豈會明白甚麼…甚麼本金和成本收益？
+
+他們一路從白日商討至日暮，當雨燐睡醒過來時，褚守已經癱倒在桌上，木炎面容枯槁，而對案來了一個新面孔，雨燐一時沒認出人來，還以為是司南的哪路客人。
+
+「褚守，客人尚在，你豈能這般失禮？」隨著步伐越近，小魚兒的面容也漸漸落進了雨燐眼中，哦呀！這不是她們那倒楣的臨海掌櫃麼？
+
+褚守聞聲，懶散的轉了腦袋，身子依舊緊貼桌面，她眼神空洞，瞧見雨燐過來，似是找到了救星，立馬從椅子上跳起來，「雨姑娘！看見你真好！來來來，您快些坐。」
+
+雨燐順承她的好意，入了座，她聽著木炎高談闊論，不過片刻時間，她臉上神情已變了幾變。她從來沒有細究這商鋪背後有多承重，一時半會，也找不來人給她解釋，木炎所言高深精妙，句句皆是肺腑之言，實是令人過份動容。
+
+褚守得了解脫，她站在一旁觀看雨燐神情，見她眉頭越漸深鎖，直至眼神僵直時，她相當貼心地，走了過去，將人搖醒。雨燐茫然的望向她，褚守噙著燦爛的笑容，提醒道，「雨姑娘，你走神了，有失禮數。」
+
+雨燐恍惚著，「啊？」她不曾想，這褚守竟會如此膽大包天，這般對付起她來了！
+
+她倆在旁打岔，木炎這下子也說不下去了，他扶額，一抹倦容，這雨燐過來便代表著要來換崗了，木炎起身朝小魚兒欠了身，就要告退。
+
+小魚兒笑說，「小哥年歲看著不大，倒是有幾分眼見，不過…茲事體大，尚須從長計議，容我思量幾日，再評好歹。」小魚兒初來乍到，對司南不熟悉，木炎後知後覺，才發現是自己急躁了，連忙出言道歉，小魚兒心寬，沒往心裡去。
+
+木炎一走，屋內清靜多了。小魚兒如今會出現在此，絕非偶然，雨燐跟著安向晚多年，多少明白些人情事故，無須褚守提及，也不藏掖，她便先將那水晶殘片呈上，穩住人心。小魚兒見過物件，欣然接下，「原來此物兜兜轉轉，竟又回到了你們手上。」
+
+雨燐道，「說來也真是巧，要不是因著此物外流，安生也不至於要和鬼界斷絕聯繫。」
+
+雨燐話中有話，小魚兒起初以為她是在揶揄自己，後經思量，較出話中含意。小魚兒訝然，「雨姑娘此言何故？」
+
+「安生與你討要那明珠，不過是要與人做下交易。而臨海地處偏僻，鮫人不論是在三方兩界裡，皆是低調行事的物種，又豈會與人矛盾，招惹禍害？」雨燐摩挲著指尖，安向晚沒和她明說的事情，經過幾日反覆思量，她也悟出一些蛛絲馬跡來。原來安向晚藏著掖著，不敢明說的那些話，就是擔心她得知事情全貌後，會再三強行攔下她，不讓她前去那沈家。當初，她心思單純，還以為沈家只是貪婪他們司南背後的渠道，想將他們在人間鬼界的生意一併吞去…
+
+而當時情況急切，又豈能容她冷靜思索？這沈家與鬼界有勾搭便罷，又何須要搜刮這麼些世間明珠寶玉？再者，當重明將水晶殘片帶到他們面前時，她就該將事情聯想起來了…
+
+沈家貪圖的不僅是這些明面上的錢財近利，他們野心之大，他們真正想要的，是安向晚的人。他們要她手上的技法，要她的絕學，要她的所有。要她服從，要她含恨，要她心甘情願的歸順，以助沈家成就大業…
+
+司南眼下造就出的窘境，不過是沈家拿來要挾安向晚的一個法子罷了。
+
+思及此，雨燐氣憤的就要咬碎後牙，她怒拍桌面，破口大罵，「安生你這王八羔子，你要是有膽走，就別給老娘死回來了！」
+
+雨燐這氣話一出，褚守原地嚇了個大跳，小魚兒在對案也睜圓了大眼。
+
+雨燐沒好氣的將自己所想，全盤告知，小魚兒聽完後，覺得有理，但心中感觸更多的，是無可奈何。
+
+怒火過後，三人垂頭嘆息，安向晚做下的決定，不是最好的，卻也是在當下最為萬不得已的。
+</code></pre>
+				<p id="6c538e87-c8b8-4037-8c05-9bc3c52a2840" class="">
+				</p>
+			</div>
+
+<h2 id=fifteen>#54 都城商甲沈公子 15</h2>
+			<div class="page-body">
+				<pre><code class="language-Go" style="white-space:pre-wrap;word-break:break-all">
+隨著日子一天天過去，小魚兒在城東的倉房住下，那日取回的水晶殘片已經損壞，石玉中的虛影不再顯現，小魚兒孑然一身，神情落寞。
+
+木炎偶時會來探訪，但司南危機不除，他不好頻繁走動，如今，他們若能多護下一人，多守住一方地，那也是好的。
+
+鬼界追兵擾人，縱然有褚守雨燐駐守司南，卻也難免有疏漏之時。是夜，還未到木炎換崗，那追兵便又來纏人，褚守雨燐二人分頭對付追兵，不料，此番前來的貨色不同以往，雨燐受困於包圍中，想喊褚守過來幫忙，分神一瞥，那邊褚守也自顧不暇，雙手刀鋒寒光明明晃晃，不曾間斷，二人被迫分離，陷入苦戰。
+
+木炎迷糊睡醒時，戰火尚未停歇，他一時疏忽，未曾防備，不慎落為人質。
+
+雨燐見狀，回想起安向晚交代，一時心急救人，被人鑽了空子，她驚覺時，已是回防不及，腰身被人劃了一刀，猩紅滿地。眼看木炎就要被處刑，她捂住傷口，急喊一聲，「木炎！」
+
+那邊褚守踢飛一人，雙刀舞動，見事態緊迫，她手臂發力，隨著身姿轉動，借力使力地將拐刀投擲出去，刀鋒俐落地劃出一條銀白直線，直逼木炎面門。
+
+這一擊威力之大，木炎害怕的閉上了雙眸，寒氣逼迫脖頸，身體被人緊捉，踉蹌的帶後幾步。當木炎再睜眼時，身後的人已經咽了氣，他嚇得雙腿猛打顫，掙脫出來後，他立不住腳，跌坐在地。
+
+見木炎脫困，褚守轉身去關切雨燐情況，院子裡橫豎躺著人，一動不動，褚守縱身而起，落地時，踩在雨燐跟前，她蹲下身，扶助雨燐雙肩，憂心道，「雨姑娘，你還好麼，傷勢如何，可要緊？」
+
+「我…」雨燐猛抽一口涼氣，咬牙切齒，「不過是些皮肉傷，死不了人！」
+
+雨燐嘴上是這麼說，但褚守不放心她，正想將人扶進屋中時，雨燐卻突然揮手將她推開，又掠過她，朝後急行。就在瞬息間發生的事，褚守彷彿還能聽見她那急促的呼吸聲，以及撕心裂肺的喊聲，可當褚守反應過來時，周身已無雨燐身影。
+
+晃眼間，雨燐踏著輕功，行了老遠。院中木炎又被人捉去，雨燐從後追逐，褚守不敢耽擱，狼狽起身，使起輕功跟上。二人輕功並不遜色，眼看就要追上那歹人，這時，那歹人忽然落進一處暗巷，閃過民房，與二人在街巷屋間嬉戲，把二人鬥個團團轉。
+
+夜色朦朧，月光忽明忽暗，褚守踩過地上血跡，愣然停頓，她險些忘卻呼吸。雨燐腰間傷處不淺，追逐中多有消耗，一時體力不及，撲跪在地，衣裙染血，灘灘聚集身下。
+
+「雨…雨姑娘！」褚守焦急的過去扶她，雨燐不領情，再次拍開她，口吻急得都要哭出來，「先去救木炎！若是他有個甚麼三長兩短，我豈有顏面與安生交代！」
+
+「可是你…」褚守猶豫不絕。
+
+雨燐抬起頭，狠瞪她一眼，她額間青筋浮起，眼底憋得猩紅，淚水在眼眶中打轉，愣是沒把淚珠淌出來，「我暫時不會有事，你快些去啊！」
+
+褚守遲疑的移了幾步，旋後，她轉身，凌空而起，朝著前路追去，雨燐望著她的背影，深深吸了一大口氣，她咬牙發力，站穩身形，緩過氣後，追後跟上。
+
+木炎沿路大聲嚷嚷，惹人煩心，那歹人許是受不住他這大嗓門，停頓下來，將人擊暈。就也這一會兒功夫，那褚守從後追上，手中拐刀緊握，朝著歹人背心緊逼，那人反應靈敏，滑步閃過，褚守一擊不成，反手追擊，歹人腳跟一轉，刀鋒貼著他衣口驚險滑過。
+
+兩人距離極近，褚守對氣味敏感，那人身上帶著一股不自然的濃郁藥味，褚守蹙著眉，覺著哪裡怪異，雙手卻不停頓，朝著歹人連技猛攻，但那人似乎看穿她的招數，步態從容。
+
+褚守後退一段距離，揉了揉鼻尖，疑惑的看向那人，薄唇輕動，似乎有話要說。
+
+帶走木炎的是一名身材壯實的男子，褚守盯著對方半晌，心裡明明有念頭閃過，卻又受眼前所見所擾，不敢妄下定論。
+
+男子面上戴著半罩面飾，他墨瞳漆黑深邃，也在打量著褚守，見褚守不再對他進攻，他輕笑一聲，帶著木炎，轉身離去。
+
+雨燐跟上時，正巧撞見褚守放跑男子，她一時怒火攻心，本想再繼續追擊，身子卻突然間使不上力，無奈之餘，她只能來到褚守身邊，要討個說法，「我不是讓你去救木炎麼，你怎麼…怎麼還把人給放跑了？」
+
+「雨姑娘…那個人，那個人…」褚守不好言喻這種感覺，這情況實在過於詭譎，要是旁人同她這般言說，她肯定也是不會相信的，「我瞧那個人，他好像是亦暖…」
+
+「哈？」雨燐不可置信的盯著她，氣得就要破口大罵，「是你眼瞎還是我眼花，那身形分明是個男子，怎麼看也不會是個姑娘家！」
+
+「可…」褚守沒有站得住腳的說辭，氣勢上弱了幾分，「他看穿了我的動作。」
+
+「這又如何？」雨燐嘆息一聲，「他許是先前便潛伏暗處，瞧著我們退敵，如此…他曉得我們出招路數，也在情理。」
+
+「啊…？」褚守這才恍然大悟，驚覺自己誤了大事，可她心裡那份弔詭的感覺，依舊無法釋然，「但…但是他身上的氣味…」
+
+「氣味？」雨燐覆述，面露不耐。
+
+褚守垂眸，她這下也不敢確信了，不再搭話。是了，亦暖是習得一些醫理，曉得製藥，但天下懂得醫術之人何其多？僅憑外在氣味來判定是不是一個人，著實沒有多大的說服力。
+
+木炎被捉，生死未卜，若是雨燐身上無傷，肯定會與那人再爭個高下，絕不會這般輕易放過，但奈何，雨燐腰間傷勢不得再耽擱，褚守見她氣色欠佳，只得強行把人先帶回去安置。
+
+之後幾日，風平浪靜，她們不再受人追擊。褚守盡忠職守，巡視幾日，不見有可疑之人靠近。兩人思量一番，決定先去城東倉房處，將小魚兒帶回，三人齊聚，商討日後對策。
+
+小魚兒面色冷靜，褚守焦慮的絞著手根，那邊雨燐冷著一張臉，氣勢匆匆，道，「不行，我得去找木炎…」
+
+雨燐耐不住心緒，起身就要走，褚守在後看著，她站起，慌措的就要追上去，這時，小魚兒忽然開口叫喚住她們，「且慢！倘若真如褚守所言，那夜裡帶走木炎的人，是你們相熟之人…」
+
+褚守頓了頓，回頭去望，小魚兒抬眼與她對視，淺笑著，「那姑娘是喚作亦暖吧？你們說，她先前與安姑娘同行，後來卻是未歸，行蹤不明，如今，有個與她相似之人忽然出現，這豈不可疑？」
+
+雨燐也停了腳步，她沒回頭，只是冷冷道，「這又如何，無論對方是誰，木炎被捉已是事實，一日未得他平安脫身的消息，我便要去尋他。」
+
+「雨燐，你冷靜些。」小魚兒招攬著褚守坐下，褚守半信半疑的依言入座，小魚兒這才接著說，「先前，你們推論不錯，倘若這個沈家真要掌控住安姑娘，那麼安姑娘此行一旦成功，解救司南處境，那麼沈家於安姑娘而言，便再無利害關係，如此一來，沈家就算是要強行留人，恐怕也難得說辭。」
+
+聞言，雨燐倏地意識到甚麼，猛然回身，她快步走回，拉開椅凳坐回，三人再次聚在一起，小魚兒比劃著指尖，「既然這陷害司南的人就是沈家，那麼，沈家會再派人過來捉取人質，想來也是合理。他們要與安姑娘談判，這個人質，相對地，就很重要，我想他們理應不會輕易殺害他。」
+
+「再者，如果那夜捉拿木炎之人，就是亦暖…那麼木炎如今的處境，相對地，應當是非常安全。」小魚兒朝著二人莞爾，「但是有一點，我很是不解…」
+
+得知木炎可能平安的消息後，雨燐鬆了口氣，褚守也不再心驚膽顫，兩人受小魚兒話術安撫，慢慢鎮靜下來。褚守應聲，「魚兒姑娘，你且說來。」
+
+小魚兒道，「這個亦暖當真是人類麼？」
+
+褚、雨二人面面相覷，答案淺顯易見，她們實在不懂為何小魚兒會如此一問。
+
+二人點頭，小魚兒見狀，面露愁容，神情費解，褚守即時答道，「魚兒姑娘覺著她不一般，可能是因著她先前服下妖獸內丹的緣故。」
+
+「原是如此…」小魚兒終於舒展眉梢，她連連點頭，似是想通了甚麼，「當初與她見面，我便瞧她有些不對勁，如今聽你一言，看來，是我多想了。」
+</code></pre>
+				<p id="6c538e87-c8b8-4037-8c05-9bc3c52a2840" class="">
+				</p>
+			</div>
+
+
+
+
+
+			
+			
+		</section>
+		<footer class=article-footer>
+			<section class=article-tags>
+				<a href=/tags/markdown/>連載中 </a>
+				   <!--<a href=../tags/css/>Css </a>
+				   <a href=../tags/html/>Html </a>-->
+				   <a href=../tags/themes/>司南 </a> </section> <section class=article-copyright>
+					<svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" />
+						<circle cx="12" cy="12" r="9" />
+						<path d="M14.5 9a3.5 4 0 100 6" />
+					</svg>
+					<span>蔥十七</span>
+			</section>
+		</footer>
+		</article>
+		<!--<div class=disqus-container>
+			<div id=disqus_thread></div>
+			<script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//hugo-theme-stack.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script>
+			<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a> </noscript> <a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span>
+				</a>
+		</div>-->
+		<style>.disqus-container{background-color:var(--card-background);border-radius:var(--card-border-radius);box-shadow:var(--shadow-l1);padding:var(--card-padding)}</style>
+		<script>window.addEventListener("onColorSchemeChange",e=>{typeof DISQUS=="object"&&DISQUS.reset({reload:!0})})</script>
+		<footer class=site-footer>
+			<section class="copyright">
+				&copy; 2020 - 2024 Hugo Theme Stack Starter
+				&used; ©chen.uu Studio 2024.
+			</section>
+			<section class="powerby">
+				Built with <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo</a>
+				<br>
+				Theme <b>
+					<a data-version="3.26.0" href="https://github.com/CaiJimmy/hugo-theme-stack" rel="noopener" target="_blank">Stack</a>
+				</b> designed by <a href="https://jimmycai.com" rel="noopener" target="_blank">Jimmy</a>
+			</section>
+		</footer>
+		<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+			<div class=pswp__bg></div>
+			<div class=pswp__scroll-wrap>
+				<div class=pswp__container>
+					<div class=pswp__item></div>
+					<div class=pswp__item></div>
+					<div class=pswp__item></div>
+				</div>
+				<div class="pswp__ui pswp__ui--hidden">
+					<div class=pswp__top-bar>
+						<div class=pswp__counter></div>
+						<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+						<button class="pswp__button pswp__button--share" title=Share></button>
+						<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+						<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+						<div class=pswp__preloader>
+							<div class=pswp__preloader__icn>
+								<div class=pswp__preloader__cut>
+									<div class=pswp__preloader__donut></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+						<div class=pswp__share-tooltip></div>
+					</div>
+					<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+					</button>
+					<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+					<div class=pswp__caption>
+						<div class=pswp__caption__center></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script>
+		<script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script>
+		<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous>
+		<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous>
+		</main>
+		</div>
+		<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script>
+		<script type=text/javascript src=../../ts/main.js defer></script>
+		<script>
+			(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()
+		</script>
+		</body>
+</html>
